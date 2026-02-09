@@ -1,0 +1,426 @@
+[
+    {
+        "length": 4,
+        "chain": [
+            "Get Tournament Standings",
+            "LeagueTotalStandings",
+            "Baseball League Total Standings",
+            "American Football League Total Standings"
+        ]
+    },
+    {
+        "length": 5,
+        "chain": [
+            "Instagram Username Checker",
+            "Get Username from PK",
+            "Get User",
+            "Get Retweet Users Continuation",
+            "Get Retweet Users"
+        ]
+    },
+    {
+        "length": 4,
+        "chain": [
+            "GetPlayerOverallStatistics",
+            "PlayerStatisticsOverall",
+            "American Football Player Playoffs Statistics",
+            "PlayerPlayoffsStatistics"
+        ]
+    },
+    {
+        "length": 5,
+        "chain": [
+            "Get Media by Code",
+            "Get Media by ID",
+            "Get User Medias",
+            "Get User Media",
+            "Get User Tagged Media"
+        ]
+    },
+    {
+        "length": 4,
+        "chain": [
+            "Year End Top Artists",
+            "Year End Top New Artists",
+            "Artis",
+            "Get Music"
+        ]
+    },
+    {
+        "length": 4,
+        "chain": [
+            "Get Individual Bitcoin News Sources",
+            "Get Football News from a Specific News Source",
+            "News Category",
+            "News List"
+        ]
+    },
+    {
+        "length": 4,
+        "chain": [
+            "getSportsSociologyTopics",
+            "Get Sports News List",
+            "News Category",
+            "Get Recent News by Category"
+        ]
+    },
+    {
+        "length": 4,
+        "chain": [
+            "Get Domain Details",
+            "Whois",
+            "Get WHOIS Batch",
+            "Get WHOIS Batches"
+        ]
+    },
+    {
+        "length": 4,
+        "chain": [
+            "News Article Search",
+            "/v1/aggregation",
+            "Crypto News Search",
+            "Get All Crypto News Articles"
+        ]
+    },
+    {
+        "length": 5,
+        "chain": [
+            "Get Instagram User Information",
+            "Get Followers of an Instagram User",
+            "Get Specified Users Followers",
+            "Get User's Followers",
+            "Get Followers"
+        ]
+    },
+    {
+        "length": 9,
+        "chain": [
+            "Greatest of All Time Hot 100 Songs",
+            "Year-End Hot 100 Songs",
+            "Hot 100 Songs",
+            "Year End Hot 100 Songs",
+            "Year-End Hot 100 Songs",
+            "Hot 100 Songs",
+            "Year End Hot 100 Songs",
+            "Year-End Hot 100 Songs",
+            "Hot 100 Songs"
+        ]
+    },
+    {
+        "length": 4,
+        "chain": [
+            "Autocomplete Search",
+            "AUTOComplete",
+            "Auto-complete API",
+            "youtube_auto_complete"
+        ]
+    },
+    {
+        "length": 6,
+        "chain": [
+            "qrcode_generator",
+            "qrcode",
+            "GenerateQuickQRCode",
+            "Qr Code Generation API",
+            "QR code image",
+            "qrcodefree"
+        ]
+    },
+    {
+        "length": 4,
+        "chain": [
+            "Symbols Historical Prices",
+            "Get Historical Pricing Data",
+            "Historical Price Data for Bitcoin",
+            "Historical Crypto Price API"
+        ]
+    },
+    {
+        "length": 4,
+        "chain": [
+            "Video Subtitles",
+            "Get Subtitle in SRT Format",
+            "Download Subtitle",
+            "Convert/Translate/Download Subtitle"
+        ]
+    },
+    {
+        "length": 4,
+        "chain": [
+            "Elhighlights API",
+            "GetHighlights",
+            "Baseball Match Highlights",
+            "Tennis Event Highlights"
+        ]
+    },
+    {
+        "length": 4,
+        "chain": [
+            "spellCheck",
+            "imageSearch",
+            "Google Images Search API",
+            "Search Images"
+        ]
+    },
+    {
+        "length": 5,
+        "chain": [
+            "Year-End Billboard 200 Albums",
+            "Year End Billboard 200 Albums",
+            "Billboard 200 Albums",
+            "Year-End Billboard Global 200",
+            "Year End Billboard 200 Albums"
+        ]
+    },
+    {
+        "length": 4,
+        "chain": [
+            "WHOIS Lookup v2",
+            "Domain Whois Lookup",
+            "Get WHOIS Batch",
+            "lqv"
+        ]
+    },
+    {
+        "length": 5,
+        "chain": [
+            "Basketball League Total Standings",
+            "Ice Hockey League Total Standings",
+            "American Football League Total Standings",
+            "Basketball League Total Standings",
+            "Ice Hockey League Total Standings"
+        ]
+    },
+    {
+        "length": 5,
+        "chain": [
+            "check_word_spellings",
+            "spellCheck",
+            "newsSearch",
+            "Get Articles",
+            "Articles List"
+        ]
+    },
+    {
+        "length": 4,
+        "chain": [
+            "emailValidation",
+            "/email/valistring",
+            "check_email",
+            "Check Email Validity"
+        ]
+    },
+    {
+        "length": 5,
+        "chain": [
+            "Search Countries By Name",
+            "Google News Search API",
+            "vivanews-search",
+            "Search News",
+            "Get San Francisco Chronicle News"
+        ]
+    },
+    {
+        "length": 4,
+        "chain": [
+            "Get Instagram Users",
+            "Get Followers by Username",
+            "Get User's Followers",
+            "Get Followers"
+        ]
+    },
+    {
+        "length": 4,
+        "chain": [
+            "Verify SMS Code",
+            "Verify Mobile Code",
+            "Send SMS Verification Code",
+            "Anjing SMS API"
+        ]
+    },
+    {
+        "length": 7,
+        "chain": [
+            "Search Suggestions",
+            "AUTOComplete",
+            "autocomplete",
+            "YouTube Auto Complete",
+            "AUTOComplete",
+            "AutoComplete",
+            "YouTube Auto Complete"
+        ]
+    },
+    {
+        "length": 5,
+        "chain": [
+            "Search Anime Quotes",
+            "Get a Random Anime Quote",
+            "Get Anime Quotes",
+            "Get 10 Random Anime Quotes",
+            "Search Anime Quotes"
+        ]
+    },
+    {
+        "length": 6,
+        "chain": [
+            "Get Instagram Media",
+            "Post Downloader",
+            "Download Instagram Video or Reel",
+            "Instagram Reel Downloader",
+            "Get Instagram Reels by Username",
+            "Get Hashtag Reels Feed"
+        ]
+    },
+    {
+        "length": 4,
+        "chain": [
+            "Get Location Information by Zip Code",
+            "Get Zip Code by USPS",
+            "Get Location from Postal Code",
+            "parenting.single_parent_support_groups"
+        ]
+    },
+    {
+        "length": 4,
+        "chain": [
+            "Business Address Search",
+            "Search Address",
+            "/addresses",
+            "Find By Address"
+        ]
+    },
+    {
+        "length": 4,
+        "chain": [
+            "Rugby Category Tournaments",
+            "Get Tournaments by Category",
+            "Cricket Category Tournaments",
+            "Get Cricket Schedules"
+        ]
+    },
+    {
+        "length": 6,
+        "chain": [
+            "Team Standings API",
+            "Cricket Team Standings Seasons",
+            "getLeagueStandings",
+            "Get ICC Standings",
+            "Get Cricket League Rankings",
+            "Basketballv3Rankings"
+        ]
+    },
+    {
+        "length": 6,
+        "chain": [
+            "HSV to HSL",
+            "convertToRGB",
+            "hexToRgb",
+            "Hex to HSV",
+            "Color Code Converter",
+            "hexToHsl"
+        ]
+    },
+    {
+        "length": 4,
+        "chain": [
+            "Get Joke of the Day By Category",
+            "Get Jokes By Specific Category",
+            "Get Joke of the Day",
+            "Get Joke"
+        ]
+    },
+    {
+        "length": 4,
+        "chain": [
+            "Instagram Username Checker",
+            "Get Username from PK",
+            "Get User",
+            "Get Retweet Users Continuation"
+        ]
+    },
+    {
+        "length": 4,
+        "chain": [
+            "HSV to HSL",
+            "convertToRGB",
+            "hexToRgb",
+            "hexToHsl"
+        ]
+    },
+    {
+        "length": 4,
+        "chain": [
+            "/v1/search/hashtag",
+            "Real-time Hashtag Search API",
+            "Hashtags Search",
+            "Get Instagram Hashtag Posts"
+        ]
+    },
+    {
+        "length": 7,
+        "chain": [
+            "Get Player Count",
+            "Football Player Overall Statistics",
+            "getPlayerStats",
+            "GetPlayerOverallStatistics",
+            "PlayerStatisticsOverall",
+            "American Football Player Playoffs Statistics",
+            "PlayerStatistics(Seasons)"
+        ]
+    },
+    {
+        "length": 4,
+        "chain": [
+            "Generate Wifi QR Code",
+            "QR Code Generation",
+            "qrcodefree",
+            "qrcodepro"
+        ]
+    },
+    {
+        "length": 4,
+        "chain": [
+            "Search Keto Recipe",
+            "recipes/list",
+            "Search Recipes",
+            "Recipe API"
+        ]
+    },
+    {
+        "length": 4,
+        "chain": [
+            "Get Media",
+            "Get Media by ID",
+            "Get User Medias",
+            "Get User Media"
+        ]
+    },
+    {
+        "length": 4,
+        "chain": [
+            "Airport Info",
+            "Airport Location Search",
+            "Auto Suggest",
+            "market/v2/auto-complete"
+        ]
+    },
+    {
+        "length": 5,
+        "chain": [
+            "Get Instagram User Contact Info",
+            "GET Following Users by Username",
+            "Get User Following IDs",
+            "Get User Followers",
+            "Get Specified Users Followers"
+        ]
+    },
+    {
+        "length": 4,
+        "chain": [
+            "LeagueSeasons",
+            "Get Club Seasons",
+            "Title Seasons",
+            "Broadcast Info"
+        ]
+    }
+]
