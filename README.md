@@ -90,6 +90,7 @@ python code/ClusterBasedSampling.py
 - 基于工具功能智能推断使用场景
 - 支持通义千问/OpenAI API
 - 生成简洁的场景标签（10-20字）
+
 - 输出："data\tool_chains_with_scenarios_cluster.json"
 **自动识别输入文件**
 
@@ -116,6 +117,7 @@ python code/GenerateScenarios.py
 - 基于工具集Jaccard相似度
 - 基于场景描述语义相似度
 - 综合判断（工具集85%相似 或 工具集70%+场景85%相似）
+
 -输出：data\tool_chains_filtered_cluster.json
 
 ```bash
@@ -129,6 +131,7 @@ python code/FilterAndDeduplicate.py
 - 自我修正：低分触发重新规划
 - 偏好数据生成：用于DPO训练
 - 规划模型与评价模型分离，避免自恋陷阱
+
 -输出：data\plan_results\plan_preference_data_rl.json
 
 ```bash
@@ -141,19 +144,28 @@ python code/PlanAgentRL.py
 
 ### 数据流
 
+```
 原始工具数据 (JSONL)
     ↓ [PrepareData]
-标准化工具定义 (500+ tools)->data\refined_tools.json
+标准化工具定义 (500+ tools)
+    → data/refined_tools.json
     ↓ [FunctionGraphEnhanced]
-函数依赖图 (nodes + edges + metadata)->data\function_graph_enhanced.json
+函数依赖图 (nodes + edges + metadata)
+    → data/function_graph_enhanced.json
     ↓ [ClusterBasedSampling]
-工具链集合 (1000 chains, 4 types)->data\sampled_tool_chains_cluster_zh.json
+工具链集合 (1000 chains, 4 types)
+    → data/sampled_tool_chains_cluster_zh.json
     ↓ [GenerateScenarios]
-带场景工具链 (80 chains with scenarios)->data\tool_chains_with_scenarios_cluster.json
+带场景工具链 (80 chains with scenarios)
+    → data/tool_chains_with_scenarios_cluster.json
     ↓ [FilterAndDeduplicate]
-高质量数据 (50-60 chains, score ≥ 24)->data\tool_chains_filtered_cluster.json
+高质量数据 (50-60 chains, score ≥ 24)
+    → data/tool_chains_filtered_cluster.json
     ↓ [PlanAgentRL]
-偏好训练数据 (preference pairs for DPO)->data\plan_results\plan_preference_data_rl.json
+偏好训练数据 (preference pairs for DPO)
+    → data/plan_results/plan_preference_data_rl.json
+```
+
 
 
 ## 数据格式
