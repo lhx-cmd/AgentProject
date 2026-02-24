@@ -1,0 +1,733 @@
+[
+  {
+    "scenario": "创意写作灵感激发",
+    "tools": {
+      "showerthoughts": "从Reddit子版块最新发布的100条“淋浴思考”（Shower Thoughts）中随机获取一条",
+      "Get a Joke": "获取一则笑话",
+      "Roll Die": "模拟投掷指定面数的骰子"
+    },
+    "tools_count": 3
+  },
+  {
+    "scenario": "加密货币投资与汇率监控",
+    "tools": {
+      "Get Cross-Currencies": "获取多种货币之间的实时汇率",
+      "Most Visited Cryptocurrencies": "返回今日访问量最高的加密货币列表，及其市场数据与统计指标",
+      "Get Exchanges From Screener": "从筛选器中获取交易所列表，支持金融数据的筛选与分析。",
+      "Get Currency Exchange Rates": "获取旅行常用货币的当前汇率"
+    },
+    "tools_count": 4
+  },
+  {
+    "scenario": "在线学习平台运营管理",
+    "tools": {
+      "Generate Quiz": "针对指定主题生成含5道题目的测验，包含题目、选项、正确答案及解析",
+      "Generate Fake Posts": "生成用于测试或演示用途的模拟虚假帖子列表",
+      "Roll Die": "模拟投掷指定面数的骰子",
+      "generate_password_reset_token": "为用户生成密码重置令牌"
+    },
+    "tools_count": 4
+  },
+  {
+    "scenario": "股息收益与增长潜力评估",
+    "tools": {
+      "Stocks Tickers": "从 Seeking Alpha Finance 的指定股票筛选器中获取股票代码（Ticker）列表",
+      "/equity/dividends": "返回指定证券的历史股息数据",
+      "Earnings Per Share (EPS) Trend": "该 API 接口返回指定周期内每股收益（EPS）的估算历史变动分解，含趋势分析与变动解读"
+    },
+    "tools_count": 3
+  },
+  {
+    "scenario": "社交媒体名言精选",
+    "tools": {
+      "Search Quotes": "在社交媒体平台上搜索名言",
+      "Get Quote": "根据ID从社交媒体平台检索指定名言"
+    },
+    "tools_count": 2
+  },
+  {
+    "scenario": "企业员工健康管理与培训计划",
+    "tools": {
+      "leadership.schedule_training": "为一组人员安排领导力培训课程。",
+      "business_communication.get_meeting_duration": "获取特定商务会议的预计持续时长",
+      "resort.get_activity_schedule": "获取指定度假村的活动日程安排",
+      "childhealth.get_immunization_schedule": "获取指定年龄组的推荐免疫接种计划"
+    },
+    "tools_count": 4
+  },
+  {
+    "scenario": "社区安全与用户行为研究",
+    "tools": {
+      "index": "数据挖掘（Data Scouting）的根端点",
+      "auditLogs": "审计数据库日志中的安全事件",
+      "forum.post_analysis": "分析论坛内帖子的内容质量与用户互动情况",
+      "ethnography.collect_data": "收集并结构化整理田野调查所得的人类学（民族志）数据"
+    },
+    "tools_count": 4
+  },
+  {
+    "scenario": "音乐人专辑研究与分类",
+    "tools": {
+      "songs.search": "- 拉丁学名",
+      "Get Artist's Albums": "根据 Spotify URL 返回指定艺术家专辑的详细信息"
+    },
+    "tools_count": 2
+  },
+  {
+    "scenario": "房产投资与加密货币联动分析",
+    "tools": {
+      "Get Intervals": "获取金融领域技术分析所支持的有效时间周期列表。",
+      "Get House Prices": "获取 Rightmove 英国网站中某套房产的详细售价信息。",
+      "Backtrack Kline": "获取指定加密货币交易对在选定交易所及市场的历史 K 线（蜡烛图）数据。"
+    },
+    "tools_count": 3
+  },
+  {
+    "scenario": "赛车手车辆成本评估",
+    "tools": {
+      "Download Driving License Document": "下载客户证件中附带的驾驶执照文件",
+      "Vehicle Ownership Cost by VINs": "基于车辆VIN码及注册州，估算其持有成本",
+      "Driver Information": "基于指定车手ID，提供该F1车手的详细信息"
+    },
+    "tools_count": 3
+  },
+  {
+    "scenario": "酒店员工培训与客房服务管理",
+    "tools": {
+      "addTrainingRecord": "为员工添加培训记录",
+      "casting.submit_audition_video": "提交针对视频制作中某一特定角色的试镜视频",
+      "cleanRoom": "提出客房清洁服务请求",
+      "deleteMessage": "删除一条数字消息"
+    },
+    "tools_count": 4
+  },
+  {
+    "scenario": "自然灾害与语言学习结合应用查看",
+    "tools": {
+      "Get Word of the Day": "从 Dictionary.com 获取当日一词（Word of the Day），含释义及相关信息。",
+      "M4.5+ Earthquakes, Past 7 Days": "获取过去7天内震级≥4.5的所有地震事件列表。",
+      "Realtime Weather API": "获取指定地点或查询条件下的当前天气信息。"
+    },
+    "tools_count": 3
+  },
+  {
+    "scenario": "游戏账号安全管理",
+    "tools": {
+      "Get Random Word by Length and Contain": "返回一个包含指定子串且长度符合要求的随机单词",
+      "/v1/passwordgenerator": "API Ninjas密码生成器API端点：按指定参数生成符合要求的随机密码字符串",
+      "Cards": "从标准52张扑克牌组中抽取多张牌",
+      "Password Generator": "根据用户输入参数生成随机密码"
+    },
+    "tools_count": 4
+  },
+  {
+    "scenario": "智能家居用户行为分析与加密投资推荐",
+    "tools": {
+      "IoTDataAnalyzer.analyzeSensorData": "处理并分析多源物联网传感器数据，识别模式与异常行为。",
+      "Get Big Five Personality Test Questionnaire": "获取“大五人格测试”问卷，用于人格分析。",
+      "GetTopCommunityRatedProstrings": "获取isthiscoinascam.com网站过去7天内社区评分最高的加密项目列表，按评分由高到低排序。"
+    },
+    "tools_count": 3
+  },
+  {
+    "scenario": "音乐趋势分享",
+    "tools": {
+      "HOT TRENDING SONGS POWERED BY TWITTER": "根据指定字符串和时间范围，获取 Twitter 热门趋势歌曲列表。",
+      "post_social_media_status": "在社交媒体发布状态更新。"
+    },
+    "tools_count": 2
+  },
+  {
+    "scenario": "能源与金融交叉分析",
+    "tools": {
+      "Get Daily Index Data": "根据输入参数，获取指定指数的日度时间序列数据（日期、开盘价、最高价、最低价、收盘价、成交量）",
+      "sectors_list": "所有行业板块列表，包含基础信息及时效性关键数据",
+      "stock/get_stock_historical_price_data": "该方法检索股票、货币、ETF、共同基金、美国国债、加密货币、大宗商品及指数的历史价格数据",
+      "Get Canadian Gas Prices by Province": "返回加拿大各省份的平均油价，含省份名称及对应字符串"
+    },
+    "tools_count": 4
+  },
+  {
+    "scenario": "药物研发与房产投资规划",
+    "tools": {
+      "Mortgage Calculator": "计算美国某房产的按揭月供金额。",
+      "calculateLipophilicity": "计算分子的亲脂性（LogP）值。",
+      "Volume Conversion": "在不同体积单位之间进行换算。"
+    },
+    "tools_count": 3
+  },
+  {
+    "scenario": "摩托车车队任务分配与检查",
+    "tools": {
+      "GetAssignedVehicle": "获取指定任务所分配的车辆，用于创建检查清单。",
+      "Get Motorcycle Models by Make and Category": "根据厂商ID和类别获取摩托车车型列表。"
+    },
+    "tools_count": 2
+  },
+  {
+    "scenario": "客户身份验证与通知服务",
+    "tools": {
+      "Phone Number Validation and Look-up": "验证电话号码有效性，并返回运营商、线路类型、携号转网状态、GeoIP 及时区等信息。",
+      "Send SMS with Sender Name": "发送带自定义发件人名称的短信。",
+      "Is a Business?": "验证指定电话号码是否注册为 WhatsApp Business 账户。",
+      "Get Delivery Report": "获取通过 2Factor.in 发送的事务性短信的投递报告。"
+    },
+    "tools_count": 4
+  },
+  {
+    "scenario": "热点话题追踪与内容挖掘",
+    "tools": {
+      "Get Hot Topics": "获取Google当前热门话题排行榜。",
+      "Get Posts from Subreddit": "根据用户自定义参数，检索指定子版块（subreddit）的帖子。",
+      "Twitter Auto Complete API": "返回Twitter搜索查询的自动补全结果。"
+    },
+    "tools_count": 3
+  },
+  {
+    "scenario": "化学分子识别与语言研究结合",
+    "tools": {
+      "identifyMolecule": "基于化学结构识别分子",
+      "Double Name Short": "将输入查询组合为双名（Double Name），并截断至最多25个字符",
+      "getMalayalamWord": "检索马拉雅拉姆语单词的释义及用法",
+      "Uthmani Simple Text API": "检索《古兰经》乌斯曼尼简体文本，支持可选过滤参数以缩小结果范围"
+    },
+    "tools_count": 4
+  },
+  {
+    "scenario": "数字货币交易与活动预警",
+    "tools": {
+      "Get Exchanges Index": "获取 Coinranking 当前支持的所有交易所列表，用于索引目的。",
+      "Symbols": "获取可用货币及其对应汇率的列表。",
+      "events": "获取奥地利林茨市的活动信息",
+      "Get User Setup Progress": "获取用户在 Signl4 关键移动告警工具中“通信”领域的配置进度。"
+    },
+    "tools_count": 4
+  },
+  {
+    "scenario": "披萨店选址与艺术装饰方案",
+    "tools": {
+      "Get ASCII Art by ID": "根据唯一标识符获取先前生成的 ASCII 艺术图像",
+      "GetVaultDetailsByVaultId": "根据唯一标识符获取保险库（vault）的详细信息",
+      "Get Available Locations": "获取可用于 `/leads/leads/` 接口的有效地理位置列表。",
+      "find_nearest_pizza_place": "基于地理位置查找最近的披萨店"
+    },
+    "tools_count": 4
+  },
+  {
+    "scenario": "在线课程测验分析与优化",
+    "tools": {
+      "encode_base64": "将文本字符串以Base64格式编码",
+      "Token Splitter": "使用指定分隔符将输入文本切分为词元（tokens），支持设置最大词元长度及是否包含变体形式等可选参数。",
+      "GetQuizResponses": "检索测验答题响应列表，包括用户答案及情绪分析结果",
+      "getAdmissionRequirements": "检索大学入学要求信息"
+    },
+    "tools_count": 4
+  },
+  {
+    "scenario": "加密货币市场资金流向分析",
+    "tools": {
+      "Chaikin Money Flow (CMF)": "获取指定标的及市场的蔡金资金流量（CMF）指标数据",
+      "GET Top Gainers Losers List": "该接口返回加密货币市场当日涨幅与跌幅排名前列的资产列表",
+      "Get Task Evaluation Results": "从Statusformapperevaluation API 获取任务评估的详细结果",
+      "Server Info": "返回Web推送通知服务器的相关信息"
+    },
+    "tools_count": 4
+  },
+  {
+    "scenario": "宠物地域文化推广",
+    "tools": {
+      "Get Administrative Divisions": "检索可用于“地理编码列表”（Listing by georef）端点的地理行政区划",
+      "Get Cat Breeds by Origin": "按原产国检索猫品种列表",
+      "Fetch No-CORS Image URLs": "获取Instagram帖文、快拍及Reel的无CORS图像URL",
+      "Get User ID by Username": "通过用户名获取Instagram用户的ID及其他基本信息"
+    },
+    "tools_count": 4
+  },
+  {
+    "scenario": "生鲜电商配送服务",
+    "tools": {
+      "Check .com Domain Availability": "查询 .com 域名是否可注册",
+      "checkDeliveryAvailability": "查询指定地理位置是否支持即时配送服务",
+      "createTemperatureControlledShipment": "创建新的温控运输订单",
+      "shareFileInCloud": "从云存储共享文件"
+    },
+    "tools_count": 4
+  },
+  {
+    "scenario": "TikTok用户行为分析与广告优化",
+    "tools": {
+      "Get TikTok User Search Results": "检索特定TikTok用户的搜索结果",
+      "UserInfo": "从Starline系统中获取用户信息",
+      "determineObjectPose": "利用AI识别给定图像中特定物体的姿态。",
+      "ModifyWmf": "修改WMF图像的页面高度、宽度、边框及背景色"
+    },
+    "tools_count": 4
+  },
+  {
+    "scenario": "物流配送区域规划",
+    "tools": {
+      "Find Places by Prefix": "通过输入地点名称前缀搜索地点，并返回匹配地点列表及其地理信息。",
+      "IP Lookup": "返回指定IP地址的地理位置数据。",
+      "Get County Boundaries": "以GeoJSON格式返回指定县区的行政边界。",
+      "Search for Regions by Keyword": "支持按关键词搜索区域，返回匹配区域列表及其对应详情。"
+    },
+    "tools_count": 4
+  },
+  {
+    "scenario": "影评社区运营与风险评估",
+    "tools": {
+      "forum.poll_results": "获取论坛中某项投票的具体结果。",
+      "film_criticism.generate_review": "基于指定标准与用户观感反馈，生成结构化影评。",
+      "FetchRiskProstring": "获取客户的风险评估字符串（risk prostring）。",
+      "OpenGraph Metadata Parser": "从指定URL提取OpenGraph元数据。"
+    },
+    "tools_count": 4
+  },
+  {
+    "scenario": "社交媒体与期货市场联动分析",
+    "tools": {
+      "Get Posts By Subreddit": "获取Reddit指定子版块（subreddit）中的帖子列表",
+      "Get User Likes": "获取指定用户已点赞的推文列表",
+      "Grains Futures Prices API": "获取Investing.com提供的谷物期货当前价格",
+      "Ticker Changes": "返回指定市场及交易代码（symbol）的行情代码（ticker）值与价格变动"
+    },
+    "tools_count": 4
+  },
+  {
+    "scenario": "智能设备新闻推送服务",
+    "tools": {
+      "Get Device Asset Information": "根据唯一标识符获取指定设备资产的详细信息",
+      "Get Project": "返回指定ID的单个项目，包含项目详情及翻译状态",
+      "News Category": "获取按体育类别分类的新闻文章，支持按地区（locale）和时区筛选",
+      "Latest News API": "获取来自不同信源的最新新闻文章"
+    },
+    "tools_count": 4
+  },
+  {
+    "scenario": "电商物流与股票投资监控",
+    "tools": {
+      "get3PLTrackingInfo": "通过第三方物流（3PL）获取已发货商品的物流追踪信息",
+      "Get Timetoken from PubNub Network": "使用指定回调函数，从PubNub网络获取timetoken",
+      "Market Aggressive Small Caps": "获取盈利增长率超过25%的小盘股列表",
+      "stock/get_daily_low": "获取某只股票的当日最低价"
+    },
+    "tools_count": 4
+  },
+  {
+    "scenario": "跨境电商商品定价策略",
+    "tools": {
+      "List Files Under Project": "获取指定项目下的字符串列表及其元数据。",
+      "Get Package List": "获取数据库中所有可用套餐的列表。",
+      "product": "按地区（locale）获取亚马逊商品价格信息。",
+      "Get Moving Average (MA/SMA) Indicator": "获取指定市场、交易符号及时间周期的移动平均线（MA/SMA）指标。"
+    },
+    "tools_count": 4
+  },
+  {
+    "scenario": "体育培训选址与课程规划",
+    "tools": {
+      "Get Airport Coordinates": "返回国家内某地点的经纬度坐标",
+      "Search In Area": "按中心坐标点与缩放级别定义的地理范围搜索企业",
+      "getSwimmingTechnique": "获取游泳技术相关信息。",
+      "getMartialArtsInfo": "获取特定武术流派的详细信息"
+    },
+    "tools_count": 4
+  },
+  {
+    "scenario": "灾害应急响应与资源调度",
+    "tools": {
+      "Weather Details API": "获取指定地点的详细天气信息。",
+      "M4.5+ Earthquakes, Past 7 Days": "获取过去7天内震级≥4.5的所有地震事件列表。",
+      "Country Regions": "检索某国境内的行政区划列表，支持按语言、排序方式、结果数量等可选条件过滤。",
+      "Get Available Phone Numbers for a Country": "获取指定国家的可用电话号码列表。"
+    },
+    "tools_count": 4
+  },
+  {
+    "scenario": "用户信用与音乐偏好分析",
+    "tools": {
+      "creditScore.get_current_score": "获取指定用户的当前信用评分。",
+      "Get User Prostring and Public Playlists": "根据用户ID获取该用户的ProString及其公开歌单列表。",
+      "GetDocumentStrikeOutAnnotations": "从PDF文档中提取划除标注（strikeout annotations）。",
+      "GetFields": "从PDF文档中提取字段内容。"
+    },
+    "tools_count": 4
+  },
+  {
+    "scenario": "能源行业招聘与市场分析",
+    "tools": {
+      "Gas Price Predictions": "提供加拿大各城市明日汽油价格的实时预测，并附带预期日环比变动（单位：美分）。",
+      "getFossilFuelPrice": "获取指定化石燃料的当前价格。",
+      "SERP Analysis": "针对给定搜索词返回 SERP（搜索引擎结果页）分析数据，包括关键词排名难度与流量潜力评估。",
+      "Jobs Search": "使用 Indeed 职位搜索 API，按关键词和地理位置检索职位。"
+    },
+    "tools_count": 4
+  },
+  {
+    "scenario": "电商物流地址优化",
+    "tools": {
+      "GetMarketplaces": "获取指定项目所接入的电商平台列表。",
+      "Get All Products": "从数据库中检索产品列表及其对应编码。",
+      "Get addresses by postcode": "根据指定邮政编码，检索对应的地址或街道列表。",
+      "Postalcode to Location Information": "该接口支持批量查询一个或多个邮政编码，返回其地理位置等详细信息。"
+    },
+    "tools_count": 4
+  },
+  {
+    "scenario": "城市生活助手应用查看附近披萨店、交通位置和房源信息",
+    "tools": {
+      "find_nearest_pizza_place": "基于地理位置查找最近的披萨店",
+      "Bus/Trolley Locations": "获取SEPTA交通网络中当前公交车与无轨电车的实时位置",
+      "Listing Availability Full": "获取房源未来12个月的可预订状态及入住时长规则。**注意**：“available”字段为true仅表示该时段未被占用，并不保证可成功预订；需进一步校验前后日期的入住规则是否满足，方可确认实际可入住",
+      "fighting_game.get_tournament_schedule": "获取特定格斗游戏赛事的赛程安排"
+    },
+    "tools_count": 4
+  },
+  {
+    "scenario": "用户注册信息验证",
+    "tools": {
+      "Disposable Domain and Suggest Domain": "检查指定域名是否为一次性邮箱域名，并提供推荐替代域名",
+      "check_word_spellings": "检查给定单词的拼写正确性"
+    },
+    "tools_count": 2
+  },
+  {
+    "scenario": "品牌营销短信推送",
+    "tools": {
+      "Send Branded SMS to Multiple Numbers": "该API可向多个号码发送品牌短信。",
+      "Is WhatsApp Business?": "检查指定手机号是否为WhatsApp商业账号。"
+    },
+    "tools_count": 2
+  },
+  {
+    "scenario": "印度政治新闻趋势分析",
+    "tools": {
+      "Politics News API": "获取最新政治新闻文章。",
+      "/v1/aggregation": "搜索新闻文章，并按小时或天统计文章数量。",
+      "Get News Articles": "从《印度今日》（India Today）平台获取最新新闻文章列表。"
+    },
+    "tools_count": 3
+  },
+  {
+    "scenario": "电竞赛事分析与预测",
+    "tools": {
+      "LeagueNextMatches": "通过提供赛事ID、赛季ID和页码，获取特定电子竞技联赛的下一场比赛列表。",
+      "MatchH2HDuel": "通过提供比赛ID，获取特定美式橄榄球比赛的双方历史交锋数据。"
+    },
+    "tools_count": 2
+  },
+  {
+    "scenario": "城市交通与赛事出行规划",
+    "tools": {
+      "Races": "返回当前赛季一级方程式（F1）赛事的基本信息",
+      "Get Wagons by MRT Train Number": "获取与指定新加坡地铁（MRT）列车编号关联的车厢信息",
+      "Get Vehicle Trims": "根据指定参数返回车辆配置等级（trim）列表"
+    },
+    "tools_count": 3
+  },
+  {
+    "scenario": "TikTok音乐动态分析与展示",
+    "tools": {
+      "Format Units": "将给定数值按指定单位格式化并返回格式化后的字符串",
+      "jsAstModifier": "该函数根据提供的修改规则，修改JavaScript代码片段的抽象语法树（AST）",
+      "String Captcha": "生成字符串形式的验证码（CAPTCHA）",
+      "Get Music ID by URL": "从TikTok URL中提取音乐ID",
+      "Get Music Posts": "根据music_id获取音乐动态列表",
+      "Music Posts API": "根据指定music_id获取音乐动态列表，支持可选游标分页"
+    },
+    "tools_count": 6
+  },
+  {
+    "scenario": "特殊学生体育课程优化",
+    "tools": {
+      "getAdaptedPEInformation": "获取适应性体育教育相关信息。",
+      "adaptive_learning.update_learning_path": "基于学生在自适应学习平台中的表现，更新其个性化学习路径"
+    },
+    "tools_count": 2
+  },
+  {
+    "scenario": "民宿预订税费计算",
+    "tools": {
+      "Tax Rate Retrieval": "获取指定邮政编码对应的税率",
+      "Airbnb Search API": "按位置、关键词及其他条件搜索 Airbnb 房源"
+    },
+    "tools_count": 2
+  },
+  {
+    "scenario": "短视频内容本地化推广",
+    "tools": {
+      "Get TikTok Video Detail without Watermark": "获取无水印的TikTok视频详情，含标题、描述及其他元数据。",
+      "Convert/Translate/Download Subtitle": "转换、翻译并下载视频字幕；支持传入字幕URL、可选格式及目标语言；响应返回指定格式与语言的转换后字幕。",
+      "GIF Generation API": "该API用于从视频URL生成GIF动图。"
+    },
+    "tools_count": 3
+  },
+  {
+    "scenario": "影评餐厅评价收集",
+    "tools": {
+      "title/get-reviews": "获取IMDb中指定电影标题的影评列表。",
+      "Get Restaurant Reviews": "获取指定餐厅的全部评论列表。"
+    },
+    "tools_count": 2
+  },
+  {
+    "scenario": "影视名言分享平台",
+    "tools": {
+      "Get All Motivational Quotes": "该端点返回全部励志名言；支持通过`skip`和`limit`参数实现分页。",
+      "Get Quote by Movie or TV Show Name": "通过影视作品名称检索其中的名言。",
+      "getRandomQuote": "从预设集合中随机返回一条名言。"
+    },
+    "tools_count": 3
+  },
+  {
+    "scenario": "地理信息查询与国家定位",
+    "tools": {
+      "Get County Boundaries by Name and State": "以GeoJSON格式获取指定州内某县的地理边界。",
+      "Search Countries By Capital": "根据首都名称搜索国家，同时匹配其官方名称与常用名称。"
+    },
+    "tools_count": 2
+  },
+  {
+    "scenario": "体育赛事数据分析与球队管理",
+    "tools": {
+      "Get Football Players": "返回所有现役足球运动员列表，包含姓名、位置、所属球队及其他相关信息。",
+      "NHL Team Info": "该 API 接口返回某支 NHL 球队的详细信息。",
+      "Get Footballers By Name": "从英超联赛统计数据中检索指定姓名的足球运动员列表。"
+    },
+    "tools_count": 3
+  },
+  {
+    "scenario": "品牌与内容整合营销",
+    "tools": {
+      "getBrandPositioning": "获取指定产品的品牌定位信息",
+      "getBibliographicInfo": "获取指定图书的文献学信息（如作者、出版信息等）",
+      "Get App": "获取指定应用程序的信息，包括名称、描述和缩略图"
+    },
+    "tools_count": 3
+  },
+  {
+    "scenario": "社交媒体账号管理与内容策划",
+    "tools": {
+      "Pinterest Username Availability": "检查用户名在Pinterest平台上的可用性",
+      "Get User Prostring and Public Playlists": "根据用户ID获取该用户的ProString及其公开歌单列表。"
+    },
+    "tools_count": 2
+  },
+  {
+    "scenario": "品牌社交媒体内容分析",
+    "tools": {
+      "Get IGTV Prostring": "从指定Instagram专业账号（prostring）获取IGTV内容。",
+      "Get Hashtag Posts": "按给定话题标签（hashtag）检索Instagram帖子。"
+    },
+    "tools_count": 2
+  },
+  {
+    "scenario": "酒店客户体验优化",
+    "tools": {
+      "getCustomerServiceRating": "获取酒店业经营场所的客户服务评分。",
+      "analyze_customer_sentiment": "分析某产品的客户评论情感倾向。",
+      "Get URL Content": "提取指定URL页面的全部内容。",
+      "Extract Text from Webpage": "提取URL查询参数所指向网页中的文本内容。",
+      "Scraper": "使用指定CSS选择器从网站抓取HTML内容",
+      "Web Page Scraper": "通过GET方法抓取网页，返回其HTML源码。"
+    },
+    "tools_count": 6
+  },
+  {
+    "scenario": "动漫主题图片智能分类与分享",
+    "tools": {
+      "Image Hosting API": "用于在Imgur平台上传及获取图片的API",
+      "GET Label Detection": "利用视觉识别工具检测图像关联的标签或分类",
+      "Anime Wallpapers API": "获取与指定CP相关的动漫壁纸，支持按页码、敏感度过滤及可选画质参数"
+    },
+    "tools_count": 3
+  },
+  {
+    "scenario": "英国航班增长与热门航线分析",
+    "tools": {
+      "United Kingdom Scheduled Flights Growth API": "该API提供英国定期出发航班的周度增长数据",
+      "Get Popular Airline Routes": "返回指定航空公司的热门航线列表（按热度排序）。"
+    },
+    "tools_count": 2
+  },
+  {
+    "scenario": "影视内容策划与角色分析",
+    "tools": {
+      "Get Title Seasons": "获取某部影视作品在Netflix平台上的所有季数信息。",
+      "Get New Girl Characters": "该 API 返回电视剧《新女孩》（New Girl）中所有角色及其简要介绍的列表",
+      "GetSingleAnimeEpisodeInfo": "获取单集动漫的详细信息"
+    },
+    "tools_count": 3
+  },
+  {
+    "scenario": "娱乐内容策划与推荐",
+    "tools": {
+      "search_movies_by_genre": "按指定类型搜索电影。",
+      "List Genres": "获取娱乐行业相关题材分类列表。",
+      "getPopularMusic": "获取流行音乐相关信息。"
+    },
+    "tools_count": 3
+  },
+  {
+    "scenario": "加拿大地区业务拓展规划",
+    "tools": {
+      "Get Province/Territory Names": "获取全部省份/地区名称列表",
+      "City List": "返回加拿大指定省份内所有有效城市列表"
+    },
+    "tools_count": 2
+  },
+  {
+    "scenario": "欧盟企业税务合规检查",
+    "tools": {
+      "VAT Validation and Tax Rates": "验证增值税（VAT）号码有效性，并返回关联企业的附加信息",
+      "Valistring VAT": "批量验证增值税（VAT）号码，获取每家公司对应的地址等信息",
+      "Valistring VAT Number": "验证欧盟增值税（VAT）号码，并检索其所属企业的相关信息",
+      "EU VAT Number Checker": "检查欧盟增值税（VAT）号码的有效性"
+    },
+    "tools_count": 4
+  },
+  {
+    "scenario": "加密货币投资分析",
+    "tools": {
+      "Get Technical Information of Cryptocurrency": "获取指定加密货币的技术信息",
+      "Historical Crypto Price API": "返回指定时间区间和加密货币的历史数据，包括开盘价、最高价、最低价和收盘价"
+    },
+    "tools_count": 2
+  },
+  {
+    "scenario": "多语言内容管理系统",
+    "tools": {
+      "/detect": "用于执行标准（单语种）语言检测的API端点。",
+      "Get All Endpoints": "获取数据库中全部可用接口端点列表"
+    },
+    "tools_count": 2
+  },
+  {
+    "scenario": "社交媒体股票热度分析",
+    "tools": {
+      "/get-social-trending/impressions": "获取社交媒体上按曝光量排序的前 50 只金融类股票代码（Ticker）。",
+      "Get Social Trending Likes": "获取按点赞数排序、并按社交平台及可选参数筛选的前 50 只热门股票代码（Ticker）。"
+    },
+    "tools_count": 2
+  },
+  {
+    "scenario": "体育赛事多语言直播支持",
+    "tools": {
+      "Locales": "获取支持的本地化语言环境（locale）列表，用于翻译目的。",
+      "Get Teams Translations": "获取体育领域各球队名称的翻译。",
+      "Get Team Translations": "获取指定本地化语言环境下各球队名称的翻译。"
+    },
+    "tools_count": 3
+  },
+  {
+    "scenario": "客户反馈情感分析",
+    "tools": {
+      "analyzeSentiment": "分析文本数据的情感倾向。",
+      "Text Sentiment Analysis": "判定给定文本的情感极性，归类为正面、负面或中性。"
+    },
+    "tools_count": 2
+  },
+  {
+    "scenario": "外卖平台地址输入优化",
+    "tools": {
+      "/addresses/autocomplete": "根据搜索关键词提供地址建议结果",
+      "Address Autosuggest API": "地址自动补全 API 是一项网络服务，针对给定搜索词返回地址建议；通过 JSON 接口支持完整或部分地址查询的建议提取"
+    },
+    "tools_count": 2
+  },
+  {
+    "scenario": "短视频平台内容调研",
+    "tools": {
+      "Search": "在YouTube上搜索视频",
+      "Search Videos by Keywords": "基于关键词在TikTok上搜索视频，并支持按排序方式、发布时间、地区及分页进行筛选"
+    },
+    "tools_count": 2
+  },
+  {
+    "scenario": "宠物店犬种信息管理",
+    "tools": {
+      "Get Breeds by Type": "按类型检索犬种列表",
+      "Get All Dog Breeds": "获取全部犬种及其详细信息列表",
+      "Get Breed Information": "该接口返回某一特定犬种的详细信息"
+    },
+    "tools_count": 3
+  },
+  {
+    "scenario": "圣训研究与分类查询",
+    "tools": {
+      "Get Hadith Collection by ID": "根据唯一 ID 获取指定圣训集（Hadith Collection）",
+      "Get Hadiths by Collection": "按圣训集分页检索圣训列表；每个圣训集包含若干分类，每条圣训归属于一个分类，每个分类隶属于一个圣训集；默认每页 10 条、第 1 页，支持自定义 limit 和 page 参数",
+      "Get Hadiths by Category": "按指定分类检索圣训列表；每条圣训关联一个分类及所属圣训集"
+    },
+    "tools_count": 3
+  },
+  {
+    "scenario": "社交媒体内容策划",
+    "tools": {
+      "Get Memes": "获取指定类型与风格（genre）的梗图（meme）列表。",
+      "Trending Memes": "获取指定 Reddit 子版块（subreddit）中最新的热门梗图。"
+    },
+    "tools_count": 2
+  },
+  {
+    "scenario": "全球股指对比分析",
+    "tools": {
+      "Get Global Indices by Performance": "基于表现情况获取全球股票市场指数数据。",
+      "Get Major Indices": "获取指定国家在金融领域的主要股指数据。"
+    },
+    "tools_count": 2
+  },
+  {
+    "scenario": "动漫语录内容创作",
+    "tools": {
+      "Get Anime Quotes by Character": "按角色名称检索动漫语录",
+      "Get 10 Random Anime Quotes": "获取 10 条随机动漫语录。",
+      "Search Anime Quotes": "基于搜索关键词分页检索动漫语录",
+      "Get a Random Anime Quote": "获取一条来自动漫来源的随机语录。"
+    },
+    "tools_count": 4
+  },
+  {
+    "scenario": "线下活动门票核销",
+    "tools": {
+      "Create QR Code": "为指定 URL 生成二维码，并以指定格式返回。",
+      "qrcodepro": "生成支持自定义参数（如尺寸、颜色、容错等级等）的二维码。"
+    },
+    "tools_count": 2
+  },
+  {
+    "scenario": "非洲市场资源与语言调研",
+    "tools": {
+      "African Country Resources": "提供非洲国家维持经济运转所依赖的最重要资源列表；输入国家名称作为参数，返回含描述的资源清单",
+      "Languages by Country": "返回指定非洲国家所使用语言的 JSON 对象信息"
+    },
+    "tools_count": 2
+  },
+  {
+    "scenario": "民宿投资选址分析",
+    "tools": {
+      "Download Filtered Amenities": "下载酒店或住宿设施的配套服务（amenities）列表，并支持按条件筛选。",
+      "Get Rent Zestimate and Comparable Properties": "返回房产租金估值（Rent Zestimate）及同区域可比房源信息。"
+    },
+    "tools_count": 2
+  },
+  {
+    "scenario": "幽默内容创作助手",
+    "tools": {
+      "Get Joke": "从黑色幽默笑话工具中获取一则笑话。",
+      "Get Jokes By Specific Category": "按类别检索笑话列表，支持分页与排序。",
+      "/dad-jokes/random": "返回一则随机“老爸笑话”（Dad Joke）。"
+    },
+    "tools_count": 3
+  },
+  {
+    "scenario": "多平台内容优化与投资研究",
+    "tools": {
+      "autosuggest": "针对给定关键词提供SEO友好的相关关键词建议。",
+      "market/v2/auto-complete": "为给定查询词或关键词提供自动补全建议。",
+      "Get YouTube Autocomplete Suggestions": "基于提供的关键词，返回YouTube搜索的自动补全预测列表。",
+      "AutoComplete": "在金融领域（特指TradingView平台）中，为给定术语或短语提供自动补全建议。"
+    },
+    "tools_count": 4
+  }
+]

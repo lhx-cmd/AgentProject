@@ -1,0 +1,5211 @@
+[
+  {
+    "scenario_id": 1,
+    "scenario": "Instagram话题标签全维度分析",
+    "tools": {
+      "Hashtag Metadata V2": "获取社交平台指定话题标签的元数据。V2 版本返回的数据比旧版接口更丰富。",
+      "Hashtag Info": "获取 Instagram 上指定话题标签的全部信息。",
+      "Search Hashtags": "根据关键词在 Instagram 上搜索话题标签。",
+      "Hashtag Feed V2": "根据指定话题标签获取 Instagram 帖子列表。"
+    },
+    "tools_length": 4,
+    "user_question": "如何利用Hashtag Metadata V2和Search Hashtags分析Instagram话题标签的热度与相关性？",
+    "preference_data": {
+      "user_question": "如何利用Hashtag Metadata V2和Search Hashtags分析Instagram话题标签的热度与相关性？",
+      "samples": [
+        {
+          "plan": {
+            "fixed_question": "如何利用Hashtag Metadata V2和Search Hashtags分析Instagram话题标签的热度与相关性？",
+            "thought": "通过结合Hashtag Metadata V2获取元数据和Search Hashtags搜索相关话题标签，可以评估话题标签的热度与相关性。进一步使用Hashtag Feed V2分析帖子内容，验证标签的实际使用情况。",
+            "steps": [
+              {
+                "thought": "首先需要明确目标关键词，以便搜索相关的话题标签。",
+                "title": "确定目标关键词",
+                "content": "根据分析需求，列出希望研究的核心关键词或主题。",
+                "tools": null,
+                "dependencies": null
+              },
+              {
+                "thought": "使用Search Hashtags工具搜索与目标关键词相关的热门话题标签。",
+                "title": "搜索相关话题标签",
+                "content": "调用Search Hashtags接口，输入目标关键词，获取一系列相关的话题标签及其基本信息。",
+                "tools": [
+                  "Search Hashtags"
+                ],
+                "dependencies": [
+                  "确定目标关键词"
+                ]
+              },
+              {
+                "thought": "通过Hashtag Metadata V2获取每个话题标签的详细元数据，包括热度指标（如使用次数）。",
+                "title": "获取话题标签元数据",
+                "content": "对上一步中找到的每个话题标签，调用Hashtag Metadata V2接口以收集其详细的元数据，用于分析热度。",
+                "tools": [
+                  "Hashtag Metadata V2"
+                ],
+                "dependencies": [
+                  "搜索相关话题标签"
+                ]
+              },
+              {
+                "thought": "分析话题标签的相关性，基于元数据中的信息进行筛选和排序。",
+                "title": "分析话题标签相关性",
+                "content": "根据元数据中的指标（如使用频率、流行度），结合实际业务需求，筛选出最相关的话题标签。",
+                "tools": null,
+                "dependencies": [
+                  "获取话题标签元数据"
+                ]
+              },
+              {
+                "thought": "利用Hashtag Feed V2查看具体帖子内容，验证话题标签的实际使用情况。",
+                "title": "验证话题标签实际使用情况",
+                "content": "调用Hashtag Feed V2接口，获取指定话题标签下的帖子列表，分析这些帖子是否符合预期主题，确保标签的相关性和热度。",
+                "tools": [
+                  "Hashtag Feed V2"
+                ],
+                "dependencies": [
+                  "分析话题标签相关性"
+                ]
+              },
+              {
+                "thought": "总结分析结果，形成关于话题标签热度与相关性的报告。",
+                "title": "生成分析报告",
+                "content": "整理前几步的数据与发现，撰写包含热度排名、相关性评估及实际使用情况的完整报告。",
+                "tools": null,
+                "dependencies": [
+                  "验证话题标签实际使用情况"
+                ]
+              }
+            ]
+          },
+          "evaluation": {
+            "completeness": {
+              "score": 9,
+              "reason": "规划涵盖了从目标关键词确定到最终报告生成的完整流程，步骤清晰且全面。唯一可以改进的地方是增加对潜在异常情况（如API调用失败）的处理说明。"
+            },
+            "rationality": {
+              "score": 10,
+              "reason": "每一步都基于合理的逻辑推导，工具选择与任务需求高度匹配，能够有效解决问题。整体思路符合分析热度与相关性的目标。"
+            },
+            "tool_usage": {
+              "score": 10,
+              "reason": "合理使用了Hashtag Metadata V2、Search Hashtags和Hashtag Feed V2等工具，充分发挥了它们的功能特点，满足了各阶段的需求。"
+            },
+            "dependencies": {
+              "score": 10,
+              "reason": "步骤之间的依赖关系明确且合理，每个步骤都以前一个步骤的结果为基础，确保了流程的连贯性和可操作性。"
+            },
+            "executability": {
+              "score": 9,
+              "reason": "规划具有较高的可执行性，但未提及具体的时间安排或资源分配，可能会在实际执行中影响效率。此外，对于非技术背景的用户，可能需要补充更多关于工具使用的细节说明。"
+            },
+            "total_score": 9.6,
+            "overall_comment": "该规划整体质量较高，逻辑清晰，工具使用得当，步骤之间衔接紧密。建议补充异常处理机制和时间/资源分配计划，以进一步提升其完整性和可执行性。"
+          },
+          "temperature": 0.7999999999999999
+        },
+        {
+          "plan": {
+            "fixed_question": "如何利用Hashtag Metadata V2和Search Hashtags分析Instagram话题标签的热度与相关性？",
+            "thought": "通过结合Hashtag Metadata V2获取话题标签的元数据，以及Search Hashtags搜索相关话题标签，可以全面分析其热度与相关性。同时，可利用Hashtag Feed V2辅助验证数据的实际应用效果。",
+            "steps": [
+              {
+                "thought": "首先明确需要分析的目标关键词，以确定初始的话题标签集合。",
+                "title": "确定目标关键词",
+                "content": "根据用户需求，列出一组用于分析的关键词或话题标签。",
+                "tools": null,
+                "dependencies": null
+              },
+              {
+                "thought": "使用Search Hashtags工具搜索与目标关键词相关的Instagram话题标签。",
+                "title": "搜索相关话题标签",
+                "content": "调用Search Hashtags接口，输入目标关键词，获取相关话题标签列表。",
+                "tools": [
+                  "Search Hashtags"
+                ],
+                "dependencies": [
+                  "确定目标关键词"
+                ]
+              },
+              {
+                "thought": "利用Hashtag Metadata V2获取每个话题标签的元数据，包括热度指标（如帖子数量、使用频率等）。",
+                "title": "获取话题标签元数据",
+                "content": "对上一步生成的话题标签列表逐一调用Hashtag Metadata V2接口，提取元数据以评估热度。",
+                "tools": [
+                  "Hashtag Metadata V2"
+                ],
+                "dependencies": [
+                  "搜索相关话题标签"
+                ]
+              },
+              {
+                "thought": "通过对比不同话题标签的元数据，分析其热度和相关性。",
+                "title": "分析热度与相关性",
+                "content": "基于元数据中的指标（如帖子数量、互动率等），比较各话题标签的热度，并结合关键词的相关性进行筛选。",
+                "tools": null,
+                "dependencies": [
+                  "获取话题标签元数据"
+                ]
+              },
+              {
+                "thought": "利用Hashtag Feed V2验证热门话题标签的实际内容表现。",
+                "title": "验证热门话题标签的实际应用",
+                "content": "调用Hashtag Feed V2接口，查看指定话题标签下的最新帖子，分析其内容质量和互动情况。",
+                "tools": [
+                  "Hashtag Feed V2"
+                ],
+                "dependencies": [
+                  "分析热度与相关性"
+                ]
+              }
+            ]
+          },
+          "evaluation": {
+            "completeness": {
+              "score": 9,
+              "reason": "规划涵盖了从目标关键词确定到热度与相关性分析，再到实际内容验证的完整流程，逻辑清晰且步骤全面。唯一可改进之处是未提及如何处理异常情况（如API调用失败或数据缺失）。"
+            },
+            "rationality": {
+              "score": 10,
+              "reason": "每一步都基于合理的逻辑推导，工具选择和使用顺序符合分析需求，能够有效解决问题。"
+            },
+            "tool_usage": {
+              "score": 10,
+              "reason": "合理利用了Hashtag Metadata V2、Search Hashtags和Hashtag Feed V2等工具，充分发挥了各工具的功能特点，满足分析需求。"
+            },
+            "dependencies": {
+              "score": 10,
+              "reason": "步骤之间的依赖关系明确且合理，确保了流程的连贯性和逻辑性，避免了不必要的重复或混乱。"
+            },
+            "executability": {
+              "score": 8,
+              "reason": "整体规划具有较高的可执行性，但未详细说明如何处理大规模数据或性能瓶颈问题，可能在实际操作中需要进一步优化。"
+            },
+            "total_score": 9.4,
+            "overall_comment": "该规划整体质量较高，结构清晰，工具使用得当，逻辑严谨，具备较强的实用性和可操作性。建议补充对潜在异常情况的处理方案以及性能优化策略，以进一步提升规划的完善性和鲁棒性。"
+          },
+          "temperature": 0.8999999999999999
+        },
+        {
+          "plan": {
+            "fixed_question": "如何利用Hashtag Metadata V2和Search Hashtags分析Instagram话题标签的热度与相关性？",
+            "thought": "通过结合Hashtag Metadata V2获取元数据，以及Search Hashtags搜索相关话题标签，可以全面分析热度与相关性。后续可进一步借助Hashtag Feed V2查看实际帖子内容以验证分析结果。",
+            "steps": [
+              {
+                "thought": "明确需要分析的话题标签，并使用Search Hashtags工具搜索相关的标签。",
+                "title": "搜索相关话题标签",
+                "content": "根据用户提供的关键词或目标领域，使用Search Hashtags工具在Instagram上查找相关的话题标签列表。",
+                "tools": [
+                  "Search Hashtags"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "获取每个话题标签的元数据，包括热度指标（如使用次数）和其他相关信息。",
+                "title": "获取话题标签元数据",
+                "content": "对搜索到的每个话题标签，调用Hashtag Metadata V2接口，获取其详细元数据，例如使用频率、热度趋势等。",
+                "tools": [
+                  "Hashtag Metadata V2"
+                ],
+                "dependencies": [
+                  "搜索相关话题标签"
+                ]
+              },
+              {
+                "thought": "分析话题标签的相关性和热度，筛选出最相关且热度较高的标签。",
+                "title": "分析热度与相关性",
+                "content": "基于元数据中的热度指标和标签描述信息，评估各话题标签的热度与相关性，挑选出适合进一步分析的目标标签。",
+                "tools": null,
+                "dependencies": [
+                  "获取话题标签元数据"
+                ]
+              },
+              {
+                "thought": "查看具体帖子内容，验证标签的实际使用情况是否符合预期。",
+                "title": "验证标签使用情况",
+                "content": "针对筛选出的目标标签，调用Hashtag Feed V2接口获取对应帖子列表，检查这些标签在实际内容中的应用是否匹配分析需求。",
+                "tools": [
+                  "Hashtag Feed V2"
+                ],
+                "dependencies": [
+                  "分析热度与相关性"
+                ]
+              }
+            ]
+          },
+          "evaluation": {
+            "completeness": {
+              "score": 9,
+              "reason": "规划涵盖了从搜索话题标签到验证标签使用情况的完整流程，步骤清晰且全面。唯一可以改进的地方是增加对异常情况（如无相关标签或元数据缺失）的处理说明。"
+            },
+            "rationality": {
+              "score": 10,
+              "reason": "每一步骤都基于合理的逻辑推导，工具选择与目标匹配，分析过程符合热度与相关性评估的需求。"
+            },
+            "tool_usage": {
+              "score": 10,
+              "reason": "合理选择了Hashtag Metadata V2、Search Hashtags和Hashtag Feed V2等工具，充分发挥了各工具的功能特点，满足分析需求。"
+            },
+            "dependencies": {
+              "score": 10,
+              "reason": "步骤之间的依赖关系明确且合理，后续步骤均以前序步骤的结果为基础，确保了流程的连贯性。"
+            },
+            "executability": {
+              "score": 8,
+              "reason": "整体规划具有较高的可执行性，但未提及具体的时间安排或资源分配，可能在实际操作中需要进一步细化。"
+            },
+            "total_score": 9.4,
+            "overall_comment": "该规划结构清晰、逻辑严谨，工具选择得当，能够有效解决如何利用Hashtag Metadata V2和Search Hashtags分析Instagram话题标签热度与相关性的问题。建议补充异常处理机制和时间/资源分配细节以进一步提升完善度。"
+          },
+          "temperature": 0.7
+        }
+      ],
+      "best_plan": {
+        "fixed_question": "如何利用Hashtag Metadata V2和Search Hashtags分析Instagram话题标签的热度与相关性？",
+        "thought": "通过结合Hashtag Metadata V2获取元数据和Search Hashtags搜索相关话题标签，可以评估话题标签的热度与相关性。进一步使用Hashtag Feed V2分析帖子内容，验证标签的实际使用情况。",
+        "steps": [
+          {
+            "thought": "首先需要明确目标关键词，以便搜索相关的话题标签。",
+            "title": "确定目标关键词",
+            "content": "根据分析需求，列出希望研究的核心关键词或主题。",
+            "tools": null,
+            "dependencies": null
+          },
+          {
+            "thought": "使用Search Hashtags工具搜索与目标关键词相关的热门话题标签。",
+            "title": "搜索相关话题标签",
+            "content": "调用Search Hashtags接口，输入目标关键词，获取一系列相关的话题标签及其基本信息。",
+            "tools": [
+              "Search Hashtags"
+            ],
+            "dependencies": [
+              "确定目标关键词"
+            ]
+          },
+          {
+            "thought": "通过Hashtag Metadata V2获取每个话题标签的详细元数据，包括热度指标（如使用次数）。",
+            "title": "获取话题标签元数据",
+            "content": "对上一步中找到的每个话题标签，调用Hashtag Metadata V2接口以收集其详细的元数据，用于分析热度。",
+            "tools": [
+              "Hashtag Metadata V2"
+            ],
+            "dependencies": [
+              "搜索相关话题标签"
+            ]
+          },
+          {
+            "thought": "分析话题标签的相关性，基于元数据中的信息进行筛选和排序。",
+            "title": "分析话题标签相关性",
+            "content": "根据元数据中的指标（如使用频率、流行度），结合实际业务需求，筛选出最相关的话题标签。",
+            "tools": null,
+            "dependencies": [
+              "获取话题标签元数据"
+            ]
+          },
+          {
+            "thought": "利用Hashtag Feed V2查看具体帖子内容，验证话题标签的实际使用情况。",
+            "title": "验证话题标签实际使用情况",
+            "content": "调用Hashtag Feed V2接口，获取指定话题标签下的帖子列表，分析这些帖子是否符合预期主题，确保标签的相关性和热度。",
+            "tools": [
+              "Hashtag Feed V2"
+            ],
+            "dependencies": [
+              "分析话题标签相关性"
+            ]
+          },
+          {
+            "thought": "总结分析结果，形成关于话题标签热度与相关性的报告。",
+            "title": "生成分析报告",
+            "content": "整理前几步的数据与发现，撰写包含热度排名、相关性评估及实际使用情况的完整报告。",
+            "tools": null,
+            "dependencies": [
+              "验证话题标签实际使用情况"
+            ]
+          }
+        ]
+      },
+      "best_score": 9.6,
+      "worst_plan": {
+        "fixed_question": "如何利用Hashtag Metadata V2和Search Hashtags分析Instagram话题标签的热度与相关性？",
+        "thought": "通过结合Hashtag Metadata V2获取元数据，以及Search Hashtags搜索相关话题标签，可以全面分析热度与相关性。后续可进一步借助Hashtag Feed V2查看实际帖子内容以验证分析结果。",
+        "steps": [
+          {
+            "thought": "明确需要分析的话题标签，并使用Search Hashtags工具搜索相关的标签。",
+            "title": "搜索相关话题标签",
+            "content": "根据用户提供的关键词或目标领域，使用Search Hashtags工具在Instagram上查找相关的话题标签列表。",
+            "tools": [
+              "Search Hashtags"
+            ],
+            "dependencies": []
+          },
+          {
+            "thought": "获取每个话题标签的元数据，包括热度指标（如使用次数）和其他相关信息。",
+            "title": "获取话题标签元数据",
+            "content": "对搜索到的每个话题标签，调用Hashtag Metadata V2接口，获取其详细元数据，例如使用频率、热度趋势等。",
+            "tools": [
+              "Hashtag Metadata V2"
+            ],
+            "dependencies": [
+              "搜索相关话题标签"
+            ]
+          },
+          {
+            "thought": "分析话题标签的相关性和热度，筛选出最相关且热度较高的标签。",
+            "title": "分析热度与相关性",
+            "content": "基于元数据中的热度指标和标签描述信息，评估各话题标签的热度与相关性，挑选出适合进一步分析的目标标签。",
+            "tools": null,
+            "dependencies": [
+              "获取话题标签元数据"
+            ]
+          },
+          {
+            "thought": "查看具体帖子内容，验证标签的实际使用情况是否符合预期。",
+            "title": "验证标签使用情况",
+            "content": "针对筛选出的目标标签，调用Hashtag Feed V2接口获取对应帖子列表，检查这些标签在实际内容中的应用是否匹配分析需求。",
+            "tools": [
+              "Hashtag Feed V2"
+            ],
+            "dependencies": [
+              "分析热度与相关性"
+            ]
+          }
+        ]
+      },
+      "worst_score": 9.4,
+      "preference_pairs": [
+        {
+          "chosen": {
+            "fixed_question": "如何利用Hashtag Metadata V2和Search Hashtags分析Instagram话题标签的热度与相关性？",
+            "thought": "通过结合Hashtag Metadata V2获取元数据和Search Hashtags搜索相关话题标签，可以评估话题标签的热度与相关性。进一步使用Hashtag Feed V2分析帖子内容，验证标签的实际使用情况。",
+            "steps": [
+              {
+                "thought": "首先需要明确目标关键词，以便搜索相关的话题标签。",
+                "title": "确定目标关键词",
+                "content": "根据分析需求，列出希望研究的核心关键词或主题。",
+                "tools": null,
+                "dependencies": null
+              },
+              {
+                "thought": "使用Search Hashtags工具搜索与目标关键词相关的热门话题标签。",
+                "title": "搜索相关话题标签",
+                "content": "调用Search Hashtags接口，输入目标关键词，获取一系列相关的话题标签及其基本信息。",
+                "tools": [
+                  "Search Hashtags"
+                ],
+                "dependencies": [
+                  "确定目标关键词"
+                ]
+              },
+              {
+                "thought": "通过Hashtag Metadata V2获取每个话题标签的详细元数据，包括热度指标（如使用次数）。",
+                "title": "获取话题标签元数据",
+                "content": "对上一步中找到的每个话题标签，调用Hashtag Metadata V2接口以收集其详细的元数据，用于分析热度。",
+                "tools": [
+                  "Hashtag Metadata V2"
+                ],
+                "dependencies": [
+                  "搜索相关话题标签"
+                ]
+              },
+              {
+                "thought": "分析话题标签的相关性，基于元数据中的信息进行筛选和排序。",
+                "title": "分析话题标签相关性",
+                "content": "根据元数据中的指标（如使用频率、流行度），结合实际业务需求，筛选出最相关的话题标签。",
+                "tools": null,
+                "dependencies": [
+                  "获取话题标签元数据"
+                ]
+              },
+              {
+                "thought": "利用Hashtag Feed V2查看具体帖子内容，验证话题标签的实际使用情况。",
+                "title": "验证话题标签实际使用情况",
+                "content": "调用Hashtag Feed V2接口，获取指定话题标签下的帖子列表，分析这些帖子是否符合预期主题，确保标签的相关性和热度。",
+                "tools": [
+                  "Hashtag Feed V2"
+                ],
+                "dependencies": [
+                  "分析话题标签相关性"
+                ]
+              },
+              {
+                "thought": "总结分析结果，形成关于话题标签热度与相关性的报告。",
+                "title": "生成分析报告",
+                "content": "整理前几步的数据与发现，撰写包含热度排名、相关性评估及实际使用情况的完整报告。",
+                "tools": null,
+                "dependencies": [
+                  "验证话题标签实际使用情况"
+                ]
+              }
+            ]
+          },
+          "chosen_score": 9.6,
+          "rejected": {
+            "fixed_question": "如何利用Hashtag Metadata V2和Search Hashtags分析Instagram话题标签的热度与相关性？",
+            "thought": "通过结合Hashtag Metadata V2获取话题标签的元数据，以及Search Hashtags搜索相关话题标签，可以全面分析其热度与相关性。同时，可利用Hashtag Feed V2辅助验证数据的实际应用效果。",
+            "steps": [
+              {
+                "thought": "首先明确需要分析的目标关键词，以确定初始的话题标签集合。",
+                "title": "确定目标关键词",
+                "content": "根据用户需求，列出一组用于分析的关键词或话题标签。",
+                "tools": null,
+                "dependencies": null
+              },
+              {
+                "thought": "使用Search Hashtags工具搜索与目标关键词相关的Instagram话题标签。",
+                "title": "搜索相关话题标签",
+                "content": "调用Search Hashtags接口，输入目标关键词，获取相关话题标签列表。",
+                "tools": [
+                  "Search Hashtags"
+                ],
+                "dependencies": [
+                  "确定目标关键词"
+                ]
+              },
+              {
+                "thought": "利用Hashtag Metadata V2获取每个话题标签的元数据，包括热度指标（如帖子数量、使用频率等）。",
+                "title": "获取话题标签元数据",
+                "content": "对上一步生成的话题标签列表逐一调用Hashtag Metadata V2接口，提取元数据以评估热度。",
+                "tools": [
+                  "Hashtag Metadata V2"
+                ],
+                "dependencies": [
+                  "搜索相关话题标签"
+                ]
+              },
+              {
+                "thought": "通过对比不同话题标签的元数据，分析其热度和相关性。",
+                "title": "分析热度与相关性",
+                "content": "基于元数据中的指标（如帖子数量、互动率等），比较各话题标签的热度，并结合关键词的相关性进行筛选。",
+                "tools": null,
+                "dependencies": [
+                  "获取话题标签元数据"
+                ]
+              },
+              {
+                "thought": "利用Hashtag Feed V2验证热门话题标签的实际内容表现。",
+                "title": "验证热门话题标签的实际应用",
+                "content": "调用Hashtag Feed V2接口，查看指定话题标签下的最新帖子，分析其内容质量和互动情况。",
+                "tools": [
+                  "Hashtag Feed V2"
+                ],
+                "dependencies": [
+                  "分析热度与相关性"
+                ]
+              }
+            ]
+          },
+          "rejected_score": 9.4,
+          "score_diff": 0.1999999999999993
+        },
+        {
+          "chosen": {
+            "fixed_question": "如何利用Hashtag Metadata V2和Search Hashtags分析Instagram话题标签的热度与相关性？",
+            "thought": "通过结合Hashtag Metadata V2获取元数据和Search Hashtags搜索相关话题标签，可以评估话题标签的热度与相关性。进一步使用Hashtag Feed V2分析帖子内容，验证标签的实际使用情况。",
+            "steps": [
+              {
+                "thought": "首先需要明确目标关键词，以便搜索相关的话题标签。",
+                "title": "确定目标关键词",
+                "content": "根据分析需求，列出希望研究的核心关键词或主题。",
+                "tools": null,
+                "dependencies": null
+              },
+              {
+                "thought": "使用Search Hashtags工具搜索与目标关键词相关的热门话题标签。",
+                "title": "搜索相关话题标签",
+                "content": "调用Search Hashtags接口，输入目标关键词，获取一系列相关的话题标签及其基本信息。",
+                "tools": [
+                  "Search Hashtags"
+                ],
+                "dependencies": [
+                  "确定目标关键词"
+                ]
+              },
+              {
+                "thought": "通过Hashtag Metadata V2获取每个话题标签的详细元数据，包括热度指标（如使用次数）。",
+                "title": "获取话题标签元数据",
+                "content": "对上一步中找到的每个话题标签，调用Hashtag Metadata V2接口以收集其详细的元数据，用于分析热度。",
+                "tools": [
+                  "Hashtag Metadata V2"
+                ],
+                "dependencies": [
+                  "搜索相关话题标签"
+                ]
+              },
+              {
+                "thought": "分析话题标签的相关性，基于元数据中的信息进行筛选和排序。",
+                "title": "分析话题标签相关性",
+                "content": "根据元数据中的指标（如使用频率、流行度），结合实际业务需求，筛选出最相关的话题标签。",
+                "tools": null,
+                "dependencies": [
+                  "获取话题标签元数据"
+                ]
+              },
+              {
+                "thought": "利用Hashtag Feed V2查看具体帖子内容，验证话题标签的实际使用情况。",
+                "title": "验证话题标签实际使用情况",
+                "content": "调用Hashtag Feed V2接口，获取指定话题标签下的帖子列表，分析这些帖子是否符合预期主题，确保标签的相关性和热度。",
+                "tools": [
+                  "Hashtag Feed V2"
+                ],
+                "dependencies": [
+                  "分析话题标签相关性"
+                ]
+              },
+              {
+                "thought": "总结分析结果，形成关于话题标签热度与相关性的报告。",
+                "title": "生成分析报告",
+                "content": "整理前几步的数据与发现，撰写包含热度排名、相关性评估及实际使用情况的完整报告。",
+                "tools": null,
+                "dependencies": [
+                  "验证话题标签实际使用情况"
+                ]
+              }
+            ]
+          },
+          "chosen_score": 9.6,
+          "rejected": {
+            "fixed_question": "如何利用Hashtag Metadata V2和Search Hashtags分析Instagram话题标签的热度与相关性？",
+            "thought": "通过结合Hashtag Metadata V2获取元数据，以及Search Hashtags搜索相关话题标签，可以全面分析热度与相关性。后续可进一步借助Hashtag Feed V2查看实际帖子内容以验证分析结果。",
+            "steps": [
+              {
+                "thought": "明确需要分析的话题标签，并使用Search Hashtags工具搜索相关的标签。",
+                "title": "搜索相关话题标签",
+                "content": "根据用户提供的关键词或目标领域，使用Search Hashtags工具在Instagram上查找相关的话题标签列表。",
+                "tools": [
+                  "Search Hashtags"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "获取每个话题标签的元数据，包括热度指标（如使用次数）和其他相关信息。",
+                "title": "获取话题标签元数据",
+                "content": "对搜索到的每个话题标签，调用Hashtag Metadata V2接口，获取其详细元数据，例如使用频率、热度趋势等。",
+                "tools": [
+                  "Hashtag Metadata V2"
+                ],
+                "dependencies": [
+                  "搜索相关话题标签"
+                ]
+              },
+              {
+                "thought": "分析话题标签的相关性和热度，筛选出最相关且热度较高的标签。",
+                "title": "分析热度与相关性",
+                "content": "基于元数据中的热度指标和标签描述信息，评估各话题标签的热度与相关性，挑选出适合进一步分析的目标标签。",
+                "tools": null,
+                "dependencies": [
+                  "获取话题标签元数据"
+                ]
+              },
+              {
+                "thought": "查看具体帖子内容，验证标签的实际使用情况是否符合预期。",
+                "title": "验证标签使用情况",
+                "content": "针对筛选出的目标标签，调用Hashtag Feed V2接口获取对应帖子列表，检查这些标签在实际内容中的应用是否匹配分析需求。",
+                "tools": [
+                  "Hashtag Feed V2"
+                ],
+                "dependencies": [
+                  "分析热度与相关性"
+                ]
+              }
+            ]
+          },
+          "rejected_score": 9.4,
+          "score_diff": 0.1999999999999993
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": 2,
+    "scenario": "手球赛事与球员多维度数据查询",
+    "tools": {
+      "Get Handball Tournaments": "获取体育领域中 handball_data 工具所覆盖的手球赛事列表。",
+      "Get Team Players Statistics Seasons": "根据球队 ID 获取手球队员各赛季统计数据。",
+      "Team Stats": "提供 NBA 各球队的团队统计数据；可选传入 `leagueYear` 或 `team` 参数以筛选对应年份或球队的结果。",
+      "PlayerStatistics(Seasons)": "获取特定赛季中某球员的统计数据。",
+      "PlayerUniqueTournamentOverallStatistics": "获取某球员在指定赛事中所有赛季的综合统计数据。",
+      "GetPlayerOverallStatistics": "获取某手球运动员在指定赛事赛季中的综合统计数据。",
+      "PlayerStatisticsOverall": "获取某篮球运动员在指定赛事及赛季中的综合统计数据。",
+      "Football Match Player Statistics": "获取某场足球比赛的球员统计数据。",
+      "Football Player Overall Statistics": "获取某足球运动员在指定赛事及赛季中的综合统计数据。",
+      "getPlayerStats": "获取某足球运动员的统计数据。"
+    },
+    "tools_length": 10,
+    "user_question": "我想了解2023年手球锦标赛中，某支球队的球员在不同赛季的得分和助攻数据，以及球队整体表现统计。",
+    "preference_data": {
+      "user_question": "我想了解2023年手球锦标赛中，某支球队的球员在不同赛季的得分和助攻数据，以及球队整体表现统计。",
+      "samples": [
+        {
+          "plan": {
+            "fixed_question": "查询2023年手球锦标赛中某支球队的球员在不同赛季的得分和助攻数据，以及球队整体表现统计。",
+            "thought": "需要分步骤获取球队ID、球员统计数据、球队整体表现，并确保所有数据与2023年手球锦标赛相关。",
+            "steps": [
+              {
+                "thought": "首先获取2023年手球锦标赛的赛事列表，以便确认目标赛事。",
+                "title": "获取2023年手球锦标赛列表",
+                "content": "调用 Get Handball Tournaments 工具，筛选出2023年的手球锦标赛。",
+                "tools": [
+                  "Get Handball Tournaments"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "根据用户指定的球队名称或相关信息，找到对应球队的ID。",
+                "title": "确定目标球队ID",
+                "content": "从上一步获取的锦标赛列表中，查找目标球队并提取其唯一标识符（ID）。",
+                "tools": null,
+                "dependencies": [
+                  0
+                ]
+              },
+              {
+                "thought": "通过球队ID获取该队球员在不同赛季的得分和助攻数据。",
+                "title": "获取球员各赛季统计数据",
+                "content": "调用 Get Team Players Statistics Seasons 工具，传入球队ID以获取球员的详细数据。",
+                "tools": [
+                  "Get Team Players Statistics Seasons"
+                ],
+                "dependencies": [
+                  1
+                ]
+              },
+              {
+                "thought": "查询球队在2023年锦标赛中的整体表现统计。",
+                "title": "获取球队整体表现统计",
+                "content": "使用 Team Stats 工具，设置 leagueYear 参数为2023，筛选出目标球队的整体数据。",
+                "tools": [
+                  "Team Stats"
+                ],
+                "dependencies": [
+                  1
+                ]
+              }
+            ]
+          },
+          "evaluation": {
+            "completeness": {
+              "score": 9,
+              "reason": "规划涵盖了问题中的所有关键需求，包括球员得分和助攻数据、球队整体表现统计，并明确了分步骤的实现方式。但未明确如何处理用户未指定具体球队的情况，可能需要补充默认逻辑或提示机制。"
+            },
+            "rationality": {
+              "score": 10,
+              "reason": "步骤设计合理且符合逻辑，从赛事列表到球队ID，再到球员和球队统计数据，层层递进，确保了数据获取的准确性和相关性。"
+            },
+            "tool_usage": {
+              "score": 10,
+              "reason": "工具选择恰当，每个步骤都使用了合适的API工具（如Get Handball Tournaments、Get Team Players Statistics Seasons等），并正确传递了依赖参数。"
+            },
+            "dependencies": {
+              "score": 10,
+              "reason": "依赖关系清晰明确，每一步骤都基于前序步骤的结果，避免了循环依赖或遗漏依赖的问题，确保了流程的连贯性。"
+            },
+            "executability": {
+              "score": 8,
+              "reason": "规划整体可执行性强，但可能存在一些潜在问题，例如目标球队名称模糊匹配时的处理逻辑未明确，以及API调用失败时的容错机制未提及。"
+            },
+            "total_score": 9,
+            "overall_comment": "该规划整体质量较高，覆盖了问题的核心需求，步骤设计合理且工具使用得当。但在细节处理上仍有改进空间，例如对用户输入的灵活性支持和异常处理机制的补充。总体而言，这是一个可靠且可行的解决方案。"
+          },
+          "temperature": 0.8999999999999999
+        },
+        {
+          "plan": {
+            "fixed_question": "查询2023年手球锦标赛中某支球队的球员在不同赛季的得分和助攻数据，以及球队整体表现统计。",
+            "thought": "首先需要明确目标球队及赛事，然后获取球员的多赛季统计数据和球队的整体表现统计，最后整合结果。",
+            "steps": [
+              {
+                "thought": "确定2023年手球锦标赛的具体赛事ID，为后续查询提供基础。",
+                "title": "获取2023年手球锦标赛列表",
+                "content": "调用 Get Handball Tournaments 工具，筛选出2023年的手球锦标赛并记录相关赛事ID。",
+                "tools": [
+                  "Get Handball Tournaments"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "根据用户关注的球队，获取该球队球员在不同赛季的得分和助攻数据。",
+                "title": "获取球队球员各赛季统计数据",
+                "content": "通过 Get Team Players Statistics Seasons 工具，输入目标球队ID，提取球员在多个赛季中的得分和助攻数据。",
+                "tools": [
+                  "Get Team Players Statistics Seasons"
+                ],
+                "dependencies": [
+                  "获取2023年手球锦标赛列表"
+                ]
+              },
+              {
+                "thought": "获取球队在2023年手球锦标赛中的整体表现统计，包括胜率、得分等指标。",
+                "title": "获取球队整体表现统计",
+                "content": "使用 PlayerUniqueTournamentOverallStatistics 工具，结合目标球队ID和赛事ID，获取球队在2023年手球锦标赛中的综合表现数据。",
+                "tools": [
+                  "PlayerUniqueTournamentOverallStatistics"
+                ],
+                "dependencies": [
+                  "获取2023年手球锦标赛列表"
+                ]
+              },
+              {
+                "thought": "将球员个人数据与球队整体表现统计进行整合，形成最终报告。",
+                "title": "整合数据并生成报告",
+                "content": "汇总球员在不同赛季的得分和助攻数据，以及球队整体表现统计，输出为结构化格式。",
+                "tools": null,
+                "dependencies": [
+                  "获取球队球员各赛季统计数据",
+                  "获取球队整体表现统计"
+                ]
+              }
+            ]
+          },
+          "evaluation": {
+            "completeness": {
+              "score": 9,
+              "reason": "规划涵盖了问题的核心需求，包括球员多赛季得分和助攻数据、球队整体表现统计，并明确了步骤。但未明确如何确定目标球队ID，可能需要补充用户输入或选择环节。"
+            },
+            "rationality": {
+              "score": 8,
+              "reason": "逻辑清晰，步骤合理，能够有效解决问题。但在实际执行中，可能存在跨赛季数据获取的复杂性，需进一步验证工具是否支持跨赛季查询。"
+            },
+            "tool_usage": {
+              "score": 10,
+              "reason": "工具选择恰当，每一步都使用了合适的API工具来完成任务，且工具的功能与需求匹配良好。"
+            },
+            "dependencies": {
+              "score": 9,
+              "reason": "依赖关系明确，步骤之间的衔接合理。唯一不足是未提及如何处理工具调用失败或数据缺失的情况，建议增加容错机制。"
+            },
+            "executability": {
+              "score": 8,
+              "reason": "整体规划可执行性强，但需要确保所使用的工具（如Get Team Players Statistics Seasons）能够支持跨赛季数据查询，否则可能影响实际操作。"
+            },
+            "total_score": 8.8,
+            "overall_comment": "该规划总体上非常全面且合理，能够有效解决用户提出的问题。主要改进点在于：明确目标球队ID的获取方式、验证工具对跨赛季数据的支持能力，以及增加容错机制以应对潜在的数据缺失问题。通过这些优化，规划将更加完善和可靠。"
+          },
+          "temperature": 0.7
+        },
+        {
+          "plan": {
+            "fixed_question": "查询2023年手球锦标赛中某支球队的球员在不同赛季的得分和助攻数据，以及球队整体表现统计。",
+            "thought": "需要分步骤获取球队球员的统计数据及球队整体表现。首先明确目标赛事和球队ID，然后分别获取球员的赛季统计数据和球队整体表现数据。",
+            "steps": [
+              {
+                "thought": "确定2023年手球锦标赛是否在覆盖范围内，并获取其赛事ID。",
+                "title": "获取手球锦标赛列表",
+                "content": "调用 Get Handball Tournaments 工具获取所有支持的手球赛事列表，从中筛选出2023年的锦标赛及其对应的赛事ID。",
+                "tools": [
+                  "Get Handball Tournaments"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "根据用户指定的球队名称或ID，获取该球队球员在不同赛季的得分和助攻数据。",
+                "title": "获取球队球员各赛季统计数据",
+                "content": "通过 Get Team Players Statistics Seasons 工具，传入球队ID，获取球员在多个赛季中的得分、助攻等详细数据。",
+                "tools": [
+                  "Get Team Players Statistics Seasons"
+                ],
+                "dependencies": [
+                  "获取手球锦标赛列表"
+                ]
+              },
+              {
+                "thought": "获取目标球队在2023年手球锦标赛中的整体表现统计。",
+                "title": "获取球队整体表现数据",
+                "content": "调用 PlayerUniqueTournamentOverallStatistics 工具，结合赛事ID与球队ID，获取球队在2023年锦标赛中的整体表现统计。",
+                "tools": [
+                  "PlayerUniqueTournamentOverallStatistics"
+                ],
+                "dependencies": [
+                  "获取手球锦标赛列表"
+                ]
+              }
+            ]
+          },
+          "evaluation": {
+            "completeness": {
+              "score": 9,
+              "reason": "规划涵盖了问题的核心需求，包括球员得分和助攻数据、球队整体表现统计，并明确了分步骤的实现路径。但未明确如何处理用户未指定球队名称或ID的情况，可能需要补充输入验证环节。"
+            },
+            "rationality": {
+              "score": 8,
+              "reason": "整体逻辑清晰合理，工具调用与目标一致。但在第三步中使用了‘PlayerUniqueTournamentOverallStatistics’工具，该工具名称暗示其主要针对球员而非球队整体表现，可能存在命名或工具选择上的偏差。"
+            },
+            "tool_usage": {
+              "score": 8,
+              "reason": "工具选择基本符合需求，能够有效支持数据获取。然而，第三步中的工具名称与实际用途不完全匹配，建议确认工具功能是否覆盖球队整体表现统计。"
+            },
+            "dependencies": {
+              "score": 10,
+              "reason": "依赖关系明确且合理，后续步骤均基于前序步骤的结果，确保了流程的连贯性。"
+            },
+            "executability": {
+              "score": 8,
+              "reason": "规划具备较高的可执行性，但需进一步确认工具的实际功能是否与描述一致，尤其是第三步中的工具是否能提供球队整体表现数据。此外，缺乏对异常情况（如赛事ID或球队ID不存在）的处理说明。"
+            },
+            "total_score": 8.6,
+            "overall_comment": "该规划总体上结构清晰，逻辑严谨，能够有效解决用户提出的问题。但在工具选择和输入验证方面存在改进空间，建议进一步确认工具功能并完善异常处理机制，以提升规划的完整性和可靠性。"
+          },
+          "temperature": 0.7999999999999999
+        }
+      ],
+      "best_plan": {
+        "fixed_question": "查询2023年手球锦标赛中某支球队的球员在不同赛季的得分和助攻数据，以及球队整体表现统计。",
+        "thought": "需要分步骤获取球队ID、球员统计数据、球队整体表现，并确保所有数据与2023年手球锦标赛相关。",
+        "steps": [
+          {
+            "thought": "首先获取2023年手球锦标赛的赛事列表，以便确认目标赛事。",
+            "title": "获取2023年手球锦标赛列表",
+            "content": "调用 Get Handball Tournaments 工具，筛选出2023年的手球锦标赛。",
+            "tools": [
+              "Get Handball Tournaments"
+            ],
+            "dependencies": []
+          },
+          {
+            "thought": "根据用户指定的球队名称或相关信息，找到对应球队的ID。",
+            "title": "确定目标球队ID",
+            "content": "从上一步获取的锦标赛列表中，查找目标球队并提取其唯一标识符（ID）。",
+            "tools": null,
+            "dependencies": [
+              0
+            ]
+          },
+          {
+            "thought": "通过球队ID获取该队球员在不同赛季的得分和助攻数据。",
+            "title": "获取球员各赛季统计数据",
+            "content": "调用 Get Team Players Statistics Seasons 工具，传入球队ID以获取球员的详细数据。",
+            "tools": [
+              "Get Team Players Statistics Seasons"
+            ],
+            "dependencies": [
+              1
+            ]
+          },
+          {
+            "thought": "查询球队在2023年锦标赛中的整体表现统计。",
+            "title": "获取球队整体表现统计",
+            "content": "使用 Team Stats 工具，设置 leagueYear 参数为2023，筛选出目标球队的整体数据。",
+            "tools": [
+              "Team Stats"
+            ],
+            "dependencies": [
+              1
+            ]
+          }
+        ]
+      },
+      "best_score": 9,
+      "worst_plan": {
+        "fixed_question": "查询2023年手球锦标赛中某支球队的球员在不同赛季的得分和助攻数据，以及球队整体表现统计。",
+        "thought": "需要分步骤获取球队球员的统计数据及球队整体表现。首先明确目标赛事和球队ID，然后分别获取球员的赛季统计数据和球队整体表现数据。",
+        "steps": [
+          {
+            "thought": "确定2023年手球锦标赛是否在覆盖范围内，并获取其赛事ID。",
+            "title": "获取手球锦标赛列表",
+            "content": "调用 Get Handball Tournaments 工具获取所有支持的手球赛事列表，从中筛选出2023年的锦标赛及其对应的赛事ID。",
+            "tools": [
+              "Get Handball Tournaments"
+            ],
+            "dependencies": []
+          },
+          {
+            "thought": "根据用户指定的球队名称或ID，获取该球队球员在不同赛季的得分和助攻数据。",
+            "title": "获取球队球员各赛季统计数据",
+            "content": "通过 Get Team Players Statistics Seasons 工具，传入球队ID，获取球员在多个赛季中的得分、助攻等详细数据。",
+            "tools": [
+              "Get Team Players Statistics Seasons"
+            ],
+            "dependencies": [
+              "获取手球锦标赛列表"
+            ]
+          },
+          {
+            "thought": "获取目标球队在2023年手球锦标赛中的整体表现统计。",
+            "title": "获取球队整体表现数据",
+            "content": "调用 PlayerUniqueTournamentOverallStatistics 工具，结合赛事ID与球队ID，获取球队在2023年锦标赛中的整体表现统计。",
+            "tools": [
+              "PlayerUniqueTournamentOverallStatistics"
+            ],
+            "dependencies": [
+              "获取手球锦标赛列表"
+            ]
+          }
+        ]
+      },
+      "worst_score": 8.6,
+      "preference_pairs": [
+        {
+          "chosen": {
+            "fixed_question": "查询2023年手球锦标赛中某支球队的球员在不同赛季的得分和助攻数据，以及球队整体表现统计。",
+            "thought": "需要分步骤获取球队ID、球员统计数据、球队整体表现，并确保所有数据与2023年手球锦标赛相关。",
+            "steps": [
+              {
+                "thought": "首先获取2023年手球锦标赛的赛事列表，以便确认目标赛事。",
+                "title": "获取2023年手球锦标赛列表",
+                "content": "调用 Get Handball Tournaments 工具，筛选出2023年的手球锦标赛。",
+                "tools": [
+                  "Get Handball Tournaments"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "根据用户指定的球队名称或相关信息，找到对应球队的ID。",
+                "title": "确定目标球队ID",
+                "content": "从上一步获取的锦标赛列表中，查找目标球队并提取其唯一标识符（ID）。",
+                "tools": null,
+                "dependencies": [
+                  0
+                ]
+              },
+              {
+                "thought": "通过球队ID获取该队球员在不同赛季的得分和助攻数据。",
+                "title": "获取球员各赛季统计数据",
+                "content": "调用 Get Team Players Statistics Seasons 工具，传入球队ID以获取球员的详细数据。",
+                "tools": [
+                  "Get Team Players Statistics Seasons"
+                ],
+                "dependencies": [
+                  1
+                ]
+              },
+              {
+                "thought": "查询球队在2023年锦标赛中的整体表现统计。",
+                "title": "获取球队整体表现统计",
+                "content": "使用 Team Stats 工具，设置 leagueYear 参数为2023，筛选出目标球队的整体数据。",
+                "tools": [
+                  "Team Stats"
+                ],
+                "dependencies": [
+                  1
+                ]
+              }
+            ]
+          },
+          "chosen_score": 9,
+          "rejected": {
+            "fixed_question": "查询2023年手球锦标赛中某支球队的球员在不同赛季的得分和助攻数据，以及球队整体表现统计。",
+            "thought": "首先需要明确目标球队及赛事，然后获取球员的多赛季统计数据和球队的整体表现统计，最后整合结果。",
+            "steps": [
+              {
+                "thought": "确定2023年手球锦标赛的具体赛事ID，为后续查询提供基础。",
+                "title": "获取2023年手球锦标赛列表",
+                "content": "调用 Get Handball Tournaments 工具，筛选出2023年的手球锦标赛并记录相关赛事ID。",
+                "tools": [
+                  "Get Handball Tournaments"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "根据用户关注的球队，获取该球队球员在不同赛季的得分和助攻数据。",
+                "title": "获取球队球员各赛季统计数据",
+                "content": "通过 Get Team Players Statistics Seasons 工具，输入目标球队ID，提取球员在多个赛季中的得分和助攻数据。",
+                "tools": [
+                  "Get Team Players Statistics Seasons"
+                ],
+                "dependencies": [
+                  "获取2023年手球锦标赛列表"
+                ]
+              },
+              {
+                "thought": "获取球队在2023年手球锦标赛中的整体表现统计，包括胜率、得分等指标。",
+                "title": "获取球队整体表现统计",
+                "content": "使用 PlayerUniqueTournamentOverallStatistics 工具，结合目标球队ID和赛事ID，获取球队在2023年手球锦标赛中的综合表现数据。",
+                "tools": [
+                  "PlayerUniqueTournamentOverallStatistics"
+                ],
+                "dependencies": [
+                  "获取2023年手球锦标赛列表"
+                ]
+              },
+              {
+                "thought": "将球员个人数据与球队整体表现统计进行整合，形成最终报告。",
+                "title": "整合数据并生成报告",
+                "content": "汇总球员在不同赛季的得分和助攻数据，以及球队整体表现统计，输出为结构化格式。",
+                "tools": null,
+                "dependencies": [
+                  "获取球队球员各赛季统计数据",
+                  "获取球队整体表现统计"
+                ]
+              }
+            ]
+          },
+          "rejected_score": 8.8,
+          "score_diff": 0.1999999999999993
+        },
+        {
+          "chosen": {
+            "fixed_question": "查询2023年手球锦标赛中某支球队的球员在不同赛季的得分和助攻数据，以及球队整体表现统计。",
+            "thought": "需要分步骤获取球队ID、球员统计数据、球队整体表现，并确保所有数据与2023年手球锦标赛相关。",
+            "steps": [
+              {
+                "thought": "首先获取2023年手球锦标赛的赛事列表，以便确认目标赛事。",
+                "title": "获取2023年手球锦标赛列表",
+                "content": "调用 Get Handball Tournaments 工具，筛选出2023年的手球锦标赛。",
+                "tools": [
+                  "Get Handball Tournaments"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "根据用户指定的球队名称或相关信息，找到对应球队的ID。",
+                "title": "确定目标球队ID",
+                "content": "从上一步获取的锦标赛列表中，查找目标球队并提取其唯一标识符（ID）。",
+                "tools": null,
+                "dependencies": [
+                  0
+                ]
+              },
+              {
+                "thought": "通过球队ID获取该队球员在不同赛季的得分和助攻数据。",
+                "title": "获取球员各赛季统计数据",
+                "content": "调用 Get Team Players Statistics Seasons 工具，传入球队ID以获取球员的详细数据。",
+                "tools": [
+                  "Get Team Players Statistics Seasons"
+                ],
+                "dependencies": [
+                  1
+                ]
+              },
+              {
+                "thought": "查询球队在2023年锦标赛中的整体表现统计。",
+                "title": "获取球队整体表现统计",
+                "content": "使用 Team Stats 工具，设置 leagueYear 参数为2023，筛选出目标球队的整体数据。",
+                "tools": [
+                  "Team Stats"
+                ],
+                "dependencies": [
+                  1
+                ]
+              }
+            ]
+          },
+          "chosen_score": 9,
+          "rejected": {
+            "fixed_question": "查询2023年手球锦标赛中某支球队的球员在不同赛季的得分和助攻数据，以及球队整体表现统计。",
+            "thought": "需要分步骤获取球队球员的统计数据及球队整体表现。首先明确目标赛事和球队ID，然后分别获取球员的赛季统计数据和球队整体表现数据。",
+            "steps": [
+              {
+                "thought": "确定2023年手球锦标赛是否在覆盖范围内，并获取其赛事ID。",
+                "title": "获取手球锦标赛列表",
+                "content": "调用 Get Handball Tournaments 工具获取所有支持的手球赛事列表，从中筛选出2023年的锦标赛及其对应的赛事ID。",
+                "tools": [
+                  "Get Handball Tournaments"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "根据用户指定的球队名称或ID，获取该球队球员在不同赛季的得分和助攻数据。",
+                "title": "获取球队球员各赛季统计数据",
+                "content": "通过 Get Team Players Statistics Seasons 工具，传入球队ID，获取球员在多个赛季中的得分、助攻等详细数据。",
+                "tools": [
+                  "Get Team Players Statistics Seasons"
+                ],
+                "dependencies": [
+                  "获取手球锦标赛列表"
+                ]
+              },
+              {
+                "thought": "获取目标球队在2023年手球锦标赛中的整体表现统计。",
+                "title": "获取球队整体表现数据",
+                "content": "调用 PlayerUniqueTournamentOverallStatistics 工具，结合赛事ID与球队ID，获取球队在2023年锦标赛中的整体表现统计。",
+                "tools": [
+                  "PlayerUniqueTournamentOverallStatistics"
+                ],
+                "dependencies": [
+                  "获取手球锦标赛列表"
+                ]
+              }
+            ]
+          },
+          "rejected_score": 8.6,
+          "score_diff": 0.40000000000000036
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": 3,
+    "scenario": "活动门票二维码生成与核验",
+    "tools": {
+      "qrcodefree": "免费二维码/条形码生成器 API。",
+      "Qr Code Generation API": "该 API 根据指定 URL 生成对应的二维码图片。",
+      "Get Specific QR Code": "获取指定已注册二维码的相关信息。",
+      "Generate QR Code": "通过提供内容生成二维码。",
+      "Generate Advance - Base64": "以 Base64 格式生成二维码，并支持额外配置选项。"
+    },
+    "tools_length": 5,
+    "user_question": "关于活动门票二维码生成与核验的问题",
+    "preference_data": {
+      "user_question": "关于活动门票二维码生成与核验的问题",
+      "samples": [
+        {
+          "plan": {
+            "fixed_question": "如何生成并核验活动门票的二维码？",
+            "thought": "需要设计一个流程，包括二维码生成和核验两部分。生成部分可利用提供的二维码生成工具，核验部分需获取二维码内容并验证其有效性。",
+            "steps": [
+              {
+                "thought": "确定二维码生成的内容，例如活动门票的唯一标识符（如UUID）或URL。",
+                "title": "确定二维码内容",
+                "content": "根据活动门票信息生成唯一的标识符或访问链接，作为二维码的内容。",
+                "tools": null,
+                "dependencies": null
+              },
+              {
+                "thought": "选择合适的二维码生成工具，将内容转化为二维码图片。",
+                "title": "生成二维码图片",
+                "content": "使用Generate QR Code或Generate Advance - Base64 API生成二维码图片，并保存为文件或Base64格式以供后续使用。",
+                "tools": [
+                  "Generate QR Code",
+                  "Generate Advance - Base64"
+                ],
+                "dependencies": [
+                  "确定二维码内容"
+                ]
+              },
+              {
+                "thought": "为核验二维码，需记录二维码的注册信息以便后续查询。",
+                "title": "注册二维码信息",
+                "content": "将二维码内容与活动门票信息绑定，并存储在数据库中，同时调用Get Specific QR Code API验证二维码是否成功注册。",
+                "tools": [
+                  "Get Specific QR Code"
+                ],
+                "dependencies": [
+                  "生成二维码图片"
+                ]
+              },
+              {
+                "thought": "设计核验流程，通过扫描二维码读取内容并验证其有效性。",
+                "title": "实现二维码核验",
+                "content": "扫描二维码后提取内容，查询数据库确认其有效性及状态（如未使用、已使用等），完成核验。",
+                "tools": null,
+                "dependencies": [
+                  "注册二维码信息"
+                ]
+              }
+            ]
+          },
+          "evaluation": {
+            "completeness": {
+              "score": 9,
+              "reason": "规划涵盖了二维码生成与核验的主要步骤，包括内容确定、生成图片、注册信息和核验流程。但未明确提及异常处理（如二维码无效或扫描失败的情况），稍显不足。"
+            },
+            "rationality": {
+              "score": 10,
+              "reason": "整体逻辑清晰合理，从生成到核验的流程设计符合实际需求，每一步都紧密衔接且具有可操作性。"
+            },
+            "tool_usage": {
+              "score": 8,
+              "reason": "选用了合适的工具（Generate QR Code 和 Generate Advance - Base64 API）来生成二维码，并使用 Get Specific QR Code API 进行验证。但未详细说明这些工具的具体实现方式及可能的替代方案。"
+            },
+            "dependencies": {
+              "score": 10,
+              "reason": "各步骤之间的依赖关系明确，例如生成二维码图片依赖于确定内容，核验流程依赖于注册信息，确保了流程的连贯性。"
+            },
+            "executability": {
+              "score": 9,
+              "reason": "规划中的步骤具体且易于执行，但缺少对数据库设计的细节描述（如如何存储二维码信息及其状态），这可能会影响实施时的效率。"
+            },
+            "total_score": 9,
+            "overall_comment": "该规划整体上非常全面且合理，能够有效解决活动门票二维码生成与核验的问题。建议补充异常处理机制以及数据库设计的更多细节，以进一步提升完整性和可执行性。"
+          },
+          "temperature": 0.8999999999999999
+        },
+        {
+          "plan": {
+            "fixed_question": "如何生成和核验活动门票的二维码？",
+            "thought": "需要设计一个流程，包括二维码生成、存储相关信息以及核验功能。利用可用工具完成二维码生成，并确保核验时能够快速获取二维码关联信息。",
+            "steps": [
+              {
+                "thought": "确定门票相关信息并生成唯一标识符，用于二维码内容。",
+                "title": "生成门票唯一标识符",
+                "content": "为每张门票创建唯一的标识符（如UUID），并将该标识符与门票详细信息绑定，存储在数据库中。",
+                "tools": null,
+                "dependencies": null
+              },
+              {
+                "thought": "使用工具生成包含唯一标识符的二维码图片。",
+                "title": "生成二维码",
+                "content": "调用 Generate QR Code 工具，将门票唯一标识符作为内容生成二维码图片。",
+                "tools": [
+                  "Generate QR Code"
+                ],
+                "dependencies": [
+                  "生成门票唯一标识符"
+                ]
+              },
+              {
+                "thought": "保存二维码相关信息到系统中，便于后续核验。",
+                "title": "注册二维码信息",
+                "content": "将生成的二维码及其关联的门票信息（如唯一标识符、活动详情等）存储在系统中，便于核验时查询。",
+                "tools": null,
+                "dependencies": [
+                  "生成二维码"
+                ]
+              },
+              {
+                "thought": "设计核验流程，通过扫描二维码快速获取其关联信息并验证有效性。",
+                "title": "实现二维码核验功能",
+                "content": "使用 Get Specific QR Code 工具，扫描二维码后查询其关联信息，并验证门票状态是否有效（如未使用、已过期等）。",
+                "tools": [
+                  "Get Specific QR Code"
+                ],
+                "dependencies": [
+                  "注册二维码信息"
+                ]
+              },
+              {
+                "thought": "优化二维码生成性能，支持大规模活动需求。",
+                "title": "可选：批量生成二维码",
+                "content": "如果活动规模较大，可以使用 Generate Advance - Base64 工具以 Base64 格式批量生成二维码图片，提升效率。",
+                "tools": [
+                  "Generate Advance - Base64"
+                ],
+                "dependencies": [
+                  "生成门票唯一标识符"
+                ]
+              }
+            ]
+          },
+          "evaluation": {
+            "completeness": {
+              "score": 9,
+              "reason": "规划涵盖了二维码生成、存储、核验以及优化的全流程，步骤清晰且全面。唯一不足是没有明确提及异常处理机制（如二维码损坏或无法扫描的情况）。"
+            },
+            "rationality": {
+              "score": 10,
+              "reason": "整体逻辑合理，从生成唯一标识符到核验功能的设计符合实际需求，且考虑了大规模活动的性能优化。"
+            },
+            "tool_usage": {
+              "score": 8,
+              "reason": "工具选择合理，但未详细说明工具的具体实现方式或备选方案。例如，Generate QR Code 和 Get Specific QR Code 工具的功能描述较为笼统。"
+            },
+            "dependencies": {
+              "score": 10,
+              "reason": "各步骤之间的依赖关系明确且合理，确保了流程的连贯性和可操作性。"
+            },
+            "executability": {
+              "score": 9,
+              "reason": "规划具有较高的可执行性，但未提及具体的技术栈或平台限制，可能对实施造成一定影响。"
+            },
+            "total_score": 9,
+            "overall_comment": "该规划整体设计合理且全面，能够有效解决活动门票二维码生成与核验的问题。建议补充异常处理机制和工具实现细节，以进一步提升规划的完整性和可行性。"
+          },
+          "temperature": 0.7999999999999999
+        },
+        {
+          "plan": {
+            "fixed_question": "如何生成和核验活动门票的二维码？",
+            "thought": "需要规划生成二维码和核验二维码的完整流程，包括选择合适的工具生成二维码、存储相关信息以及实现核验逻辑。",
+            "steps": [
+              {
+                "thought": "确定门票信息内容并生成唯一的二维码。",
+                "title": "生成二维码",
+                "content": "根据活动门票的具体信息（如票号、活动名称等），调用二维码生成工具创建二维码图片。",
+                "tools": [
+                  "Generate QR Code"
+                ],
+                "dependencies": null
+              },
+              {
+                "thought": "将二维码与门票信息绑定并存储到数据库中以备后续核验。",
+                "title": "存储门票信息",
+                "content": "将生成的二维码内容（例如URL或文本）与门票详细信息关联，并存储在数据库中。",
+                "tools": null,
+                "dependencies": [
+                  "生成二维码"
+                ]
+              },
+              {
+                "thought": "开发核验系统以验证二维码的有效性。",
+                "title": "核验二维码",
+                "content": "通过扫描二维码获取其内容，并查询数据库确认该门票是否有效（未使用且匹配记录）。",
+                "tools": [
+                  "Get Specific QR Code"
+                ],
+                "dependencies": [
+                  "存储门票信息"
+                ]
+              },
+              {
+                "thought": "优化二维码生成过程，支持高级配置需求（如嵌入Logo）。",
+                "title": "高级二维码生成（可选）",
+                "content": "如果需要更高质量或定制化的二维码，可以使用支持Base64编码及额外配置选项的API生成二维码。",
+                "tools": [
+                  "Generate Advance - Base64"
+                ],
+                "dependencies": [
+                  "生成二维码"
+                ]
+              }
+            ]
+          },
+          "evaluation": {
+            "completeness": {
+              "score": 9,
+              "reason": "规划涵盖了二维码生成、存储、核验以及可选的高级功能，整体流程较为完整。但未提及异常处理（如二维码损坏或无效的情况），略显不足。"
+            },
+            "rationality": {
+              "score": 8,
+              "reason": "步骤逻辑清晰，符合实际需求，但在‘高级二维码生成’部分未明确说明是否为必要步骤，可能会引起混淆。"
+            },
+            "tool_usage": {
+              "score": 7,
+              "reason": "工具选择合理，但对工具的具体实现细节和适用场景描述较少，例如未解释为何选择特定工具或其优势。"
+            },
+            "dependencies": {
+              "score": 10,
+              "reason": "依赖关系明确且合理，每一步都清楚地指出了前置条件，确保了流程的连贯性。"
+            },
+            "executability": {
+              "score": 8,
+              "reason": "规划具备较高的可执行性，但缺少对技术难点的详细分析（如并发核验时的性能问题），可能影响实际落地效果。"
+            },
+            "total_score": 8.4,
+            "overall_comment": "该规划整体结构清晰，覆盖了二维码生成与核验的核心流程，并通过合理的依赖关系确保了逻辑的连贯性。然而，在异常处理、工具选择和技术难点分析方面仍有改进空间。建议补充更多细节以提升规划的全面性和可行性。"
+          },
+          "temperature": 0.7
+        }
+      ],
+      "best_plan": {
+        "fixed_question": "如何生成并核验活动门票的二维码？",
+        "thought": "需要设计一个流程，包括二维码生成和核验两部分。生成部分可利用提供的二维码生成工具，核验部分需获取二维码内容并验证其有效性。",
+        "steps": [
+          {
+            "thought": "确定二维码生成的内容，例如活动门票的唯一标识符（如UUID）或URL。",
+            "title": "确定二维码内容",
+            "content": "根据活动门票信息生成唯一的标识符或访问链接，作为二维码的内容。",
+            "tools": null,
+            "dependencies": null
+          },
+          {
+            "thought": "选择合适的二维码生成工具，将内容转化为二维码图片。",
+            "title": "生成二维码图片",
+            "content": "使用Generate QR Code或Generate Advance - Base64 API生成二维码图片，并保存为文件或Base64格式以供后续使用。",
+            "tools": [
+              "Generate QR Code",
+              "Generate Advance - Base64"
+            ],
+            "dependencies": [
+              "确定二维码内容"
+            ]
+          },
+          {
+            "thought": "为核验二维码，需记录二维码的注册信息以便后续查询。",
+            "title": "注册二维码信息",
+            "content": "将二维码内容与活动门票信息绑定，并存储在数据库中，同时调用Get Specific QR Code API验证二维码是否成功注册。",
+            "tools": [
+              "Get Specific QR Code"
+            ],
+            "dependencies": [
+              "生成二维码图片"
+            ]
+          },
+          {
+            "thought": "设计核验流程，通过扫描二维码读取内容并验证其有效性。",
+            "title": "实现二维码核验",
+            "content": "扫描二维码后提取内容，查询数据库确认其有效性及状态（如未使用、已使用等），完成核验。",
+            "tools": null,
+            "dependencies": [
+              "注册二维码信息"
+            ]
+          }
+        ]
+      },
+      "best_score": 9,
+      "worst_plan": {
+        "fixed_question": "如何生成和核验活动门票的二维码？",
+        "thought": "需要规划生成二维码和核验二维码的完整流程，包括选择合适的工具生成二维码、存储相关信息以及实现核验逻辑。",
+        "steps": [
+          {
+            "thought": "确定门票信息内容并生成唯一的二维码。",
+            "title": "生成二维码",
+            "content": "根据活动门票的具体信息（如票号、活动名称等），调用二维码生成工具创建二维码图片。",
+            "tools": [
+              "Generate QR Code"
+            ],
+            "dependencies": null
+          },
+          {
+            "thought": "将二维码与门票信息绑定并存储到数据库中以备后续核验。",
+            "title": "存储门票信息",
+            "content": "将生成的二维码内容（例如URL或文本）与门票详细信息关联，并存储在数据库中。",
+            "tools": null,
+            "dependencies": [
+              "生成二维码"
+            ]
+          },
+          {
+            "thought": "开发核验系统以验证二维码的有效性。",
+            "title": "核验二维码",
+            "content": "通过扫描二维码获取其内容，并查询数据库确认该门票是否有效（未使用且匹配记录）。",
+            "tools": [
+              "Get Specific QR Code"
+            ],
+            "dependencies": [
+              "存储门票信息"
+            ]
+          },
+          {
+            "thought": "优化二维码生成过程，支持高级配置需求（如嵌入Logo）。",
+            "title": "高级二维码生成（可选）",
+            "content": "如果需要更高质量或定制化的二维码，可以使用支持Base64编码及额外配置选项的API生成二维码。",
+            "tools": [
+              "Generate Advance - Base64"
+            ],
+            "dependencies": [
+              "生成二维码"
+            ]
+          }
+        ]
+      },
+      "worst_score": 8.4,
+      "preference_pairs": [
+        {
+          "chosen": {
+            "fixed_question": "如何生成并核验活动门票的二维码？",
+            "thought": "需要设计一个流程，包括二维码生成和核验两部分。生成部分可利用提供的二维码生成工具，核验部分需获取二维码内容并验证其有效性。",
+            "steps": [
+              {
+                "thought": "确定二维码生成的内容，例如活动门票的唯一标识符（如UUID）或URL。",
+                "title": "确定二维码内容",
+                "content": "根据活动门票信息生成唯一的标识符或访问链接，作为二维码的内容。",
+                "tools": null,
+                "dependencies": null
+              },
+              {
+                "thought": "选择合适的二维码生成工具，将内容转化为二维码图片。",
+                "title": "生成二维码图片",
+                "content": "使用Generate QR Code或Generate Advance - Base64 API生成二维码图片，并保存为文件或Base64格式以供后续使用。",
+                "tools": [
+                  "Generate QR Code",
+                  "Generate Advance - Base64"
+                ],
+                "dependencies": [
+                  "确定二维码内容"
+                ]
+              },
+              {
+                "thought": "为核验二维码，需记录二维码的注册信息以便后续查询。",
+                "title": "注册二维码信息",
+                "content": "将二维码内容与活动门票信息绑定，并存储在数据库中，同时调用Get Specific QR Code API验证二维码是否成功注册。",
+                "tools": [
+                  "Get Specific QR Code"
+                ],
+                "dependencies": [
+                  "生成二维码图片"
+                ]
+              },
+              {
+                "thought": "设计核验流程，通过扫描二维码读取内容并验证其有效性。",
+                "title": "实现二维码核验",
+                "content": "扫描二维码后提取内容，查询数据库确认其有效性及状态（如未使用、已使用等），完成核验。",
+                "tools": null,
+                "dependencies": [
+                  "注册二维码信息"
+                ]
+              }
+            ]
+          },
+          "chosen_score": 9,
+          "rejected": {
+            "fixed_question": "如何生成和核验活动门票的二维码？",
+            "thought": "需要设计一个流程，包括二维码生成、存储相关信息以及核验功能。利用可用工具完成二维码生成，并确保核验时能够快速获取二维码关联信息。",
+            "steps": [
+              {
+                "thought": "确定门票相关信息并生成唯一标识符，用于二维码内容。",
+                "title": "生成门票唯一标识符",
+                "content": "为每张门票创建唯一的标识符（如UUID），并将该标识符与门票详细信息绑定，存储在数据库中。",
+                "tools": null,
+                "dependencies": null
+              },
+              {
+                "thought": "使用工具生成包含唯一标识符的二维码图片。",
+                "title": "生成二维码",
+                "content": "调用 Generate QR Code 工具，将门票唯一标识符作为内容生成二维码图片。",
+                "tools": [
+                  "Generate QR Code"
+                ],
+                "dependencies": [
+                  "生成门票唯一标识符"
+                ]
+              },
+              {
+                "thought": "保存二维码相关信息到系统中，便于后续核验。",
+                "title": "注册二维码信息",
+                "content": "将生成的二维码及其关联的门票信息（如唯一标识符、活动详情等）存储在系统中，便于核验时查询。",
+                "tools": null,
+                "dependencies": [
+                  "生成二维码"
+                ]
+              },
+              {
+                "thought": "设计核验流程，通过扫描二维码快速获取其关联信息并验证有效性。",
+                "title": "实现二维码核验功能",
+                "content": "使用 Get Specific QR Code 工具，扫描二维码后查询其关联信息，并验证门票状态是否有效（如未使用、已过期等）。",
+                "tools": [
+                  "Get Specific QR Code"
+                ],
+                "dependencies": [
+                  "注册二维码信息"
+                ]
+              },
+              {
+                "thought": "优化二维码生成性能，支持大规模活动需求。",
+                "title": "可选：批量生成二维码",
+                "content": "如果活动规模较大，可以使用 Generate Advance - Base64 工具以 Base64 格式批量生成二维码图片，提升效率。",
+                "tools": [
+                  "Generate Advance - Base64"
+                ],
+                "dependencies": [
+                  "生成门票唯一标识符"
+                ]
+              }
+            ]
+          },
+          "rejected_score": 9,
+          "score_diff": 0
+        },
+        {
+          "chosen": {
+            "fixed_question": "如何生成并核验活动门票的二维码？",
+            "thought": "需要设计一个流程，包括二维码生成和核验两部分。生成部分可利用提供的二维码生成工具，核验部分需获取二维码内容并验证其有效性。",
+            "steps": [
+              {
+                "thought": "确定二维码生成的内容，例如活动门票的唯一标识符（如UUID）或URL。",
+                "title": "确定二维码内容",
+                "content": "根据活动门票信息生成唯一的标识符或访问链接，作为二维码的内容。",
+                "tools": null,
+                "dependencies": null
+              },
+              {
+                "thought": "选择合适的二维码生成工具，将内容转化为二维码图片。",
+                "title": "生成二维码图片",
+                "content": "使用Generate QR Code或Generate Advance - Base64 API生成二维码图片，并保存为文件或Base64格式以供后续使用。",
+                "tools": [
+                  "Generate QR Code",
+                  "Generate Advance - Base64"
+                ],
+                "dependencies": [
+                  "确定二维码内容"
+                ]
+              },
+              {
+                "thought": "为核验二维码，需记录二维码的注册信息以便后续查询。",
+                "title": "注册二维码信息",
+                "content": "将二维码内容与活动门票信息绑定，并存储在数据库中，同时调用Get Specific QR Code API验证二维码是否成功注册。",
+                "tools": [
+                  "Get Specific QR Code"
+                ],
+                "dependencies": [
+                  "生成二维码图片"
+                ]
+              },
+              {
+                "thought": "设计核验流程，通过扫描二维码读取内容并验证其有效性。",
+                "title": "实现二维码核验",
+                "content": "扫描二维码后提取内容，查询数据库确认其有效性及状态（如未使用、已使用等），完成核验。",
+                "tools": null,
+                "dependencies": [
+                  "注册二维码信息"
+                ]
+              }
+            ]
+          },
+          "chosen_score": 9,
+          "rejected": {
+            "fixed_question": "如何生成和核验活动门票的二维码？",
+            "thought": "需要规划生成二维码和核验二维码的完整流程，包括选择合适的工具生成二维码、存储相关信息以及实现核验逻辑。",
+            "steps": [
+              {
+                "thought": "确定门票信息内容并生成唯一的二维码。",
+                "title": "生成二维码",
+                "content": "根据活动门票的具体信息（如票号、活动名称等），调用二维码生成工具创建二维码图片。",
+                "tools": [
+                  "Generate QR Code"
+                ],
+                "dependencies": null
+              },
+              {
+                "thought": "将二维码与门票信息绑定并存储到数据库中以备后续核验。",
+                "title": "存储门票信息",
+                "content": "将生成的二维码内容（例如URL或文本）与门票详细信息关联，并存储在数据库中。",
+                "tools": null,
+                "dependencies": [
+                  "生成二维码"
+                ]
+              },
+              {
+                "thought": "开发核验系统以验证二维码的有效性。",
+                "title": "核验二维码",
+                "content": "通过扫描二维码获取其内容，并查询数据库确认该门票是否有效（未使用且匹配记录）。",
+                "tools": [
+                  "Get Specific QR Code"
+                ],
+                "dependencies": [
+                  "存储门票信息"
+                ]
+              },
+              {
+                "thought": "优化二维码生成过程，支持高级配置需求（如嵌入Logo）。",
+                "title": "高级二维码生成（可选）",
+                "content": "如果需要更高质量或定制化的二维码，可以使用支持Base64编码及额外配置选项的API生成二维码。",
+                "tools": [
+                  "Generate Advance - Base64"
+                ],
+                "dependencies": [
+                  "生成二维码"
+                ]
+              }
+            ]
+          },
+          "rejected_score": 8.4,
+          "score_diff": 0.5999999999999996
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": 4,
+    "scenario": "新闻文章关键词自动提取",
+    "tools": {
+      "KeywordExtractor.extractKeywords": "基于指定提取方法从输入文本中提取关键词，并返回关键词列表。",
+      "textMining.extract_keywords": "从给定文本中提取关键词。",
+      "Keyword Extraction": "从给定文本中提取相关关键词。"
+    },
+    "tools_length": 3,
+    "user_question": "如何从新闻文章中自动提取关键词以提高内容分类效率？",
+    "preference_data": {
+      "user_question": "如何从新闻文章中自动提取关键词以提高内容分类效率？",
+      "samples": [
+        {
+          "plan": {
+            "fixed_question": "如何从新闻文章中自动提取关键词以提高内容分类效率？",
+            "thought": "通过多种关键词提取工具的组合使用，可以提高提取的准确性和效率，从而优化内容分类的效果。",
+            "steps": [
+              {
+                "thought": "分析输入文本的特点并确定合适的关键词提取方法。",
+                "title": "分析文本与选择方法",
+                "content": "评估新闻文章的语言特点、领域特性以及长度，选择适合的关键词提取算法或工具。",
+                "tools": null,
+                "dependencies": []
+              },
+              {
+                "thought": "利用KeywordExtractor.extractKeywords提取初步关键词。",
+                "title": "初步关键词提取",
+                "content": "调用KeywordExtractor.extractKeywords方法，基于TF-IDF或其他内置算法提取文本中的候选关键词。",
+                "tools": [
+                  "KeywordExtractor.extractKeywords"
+                ],
+                "dependencies": [
+                  "分析文本与选择方法"
+                ]
+              },
+              {
+                "thought": "使用textMining.extract_keywords进行补充提取。",
+                "title": "补充关键词提取",
+                "content": "调用textMining.extract_keywords方法，基于统计或规则的方法进一步提取可能遗漏的重要关键词。",
+                "tools": [
+                  "textMining.extract_keywords"
+                ],
+                "dependencies": [
+                  "初步关键词提取"
+                ]
+              },
+              {
+                "thought": "结合多种工具的结果进行去重和排序。",
+                "title": "关键词整合与优化",
+                "content": "将不同工具提取出的关键词列表合并，并根据词频或权重进行排序，去除重复项。",
+                "tools": null,
+                "dependencies": [
+                  "初步关键词提取",
+                  "补充关键词提取"
+                ]
+              },
+              {
+                "thought": "验证提取结果并调整参数以提升准确性。",
+                "title": "结果验证与参数调优",
+                "content": "人工检查提取的关键词是否符合预期，并根据需要调整各工具的参数（如停用词表、最小词长等）。",
+                "tools": null,
+                "dependencies": [
+                  "关键词整合与优化"
+                ]
+              }
+            ]
+          },
+          "evaluation": {
+            "completeness": {
+              "score": 9,
+              "reason": "规划涵盖了从文本分析到结果验证的完整流程，步骤清晰且全面。唯一可以改进的地方是增加对工具选择标准的具体说明，例如为什么选择特定的关键词提取工具。"
+            },
+            "rationality": {
+              "score": 8,
+              "reason": "整体逻辑合理，采用多种工具组合的方式能够提高提取效果。但未明确提及如何处理不同工具之间的冲突（如权重分配问题），这可能会影响最终结果的准确性。"
+            },
+            "tool_usage": {
+              "score": 8,
+              "reason": "使用了两种不同的关键词提取工具，并结合人工验证，体现了多样性和灵活性。然而，未详细说明这些工具的具体优势或适用场景，可能导致实际操作中选择不当。"
+            },
+            "dependencies": {
+              "score": 10,
+              "reason": "各步骤之间的依赖关系定义明确，确保了流程的连贯性，没有出现逻辑断层或循环依赖的问题。"
+            },
+            "executability": {
+              "score": 7,
+              "reason": "规划具备较高的可执行性，但由于缺乏对工具参数调整的具体指导（如停用词表、算法阈值等），在实施过程中可能会遇到困难。此外，人工验证环节的工作量较大，需进一步优化。"
+            },
+            "total_score": 8.4,
+            "overall_comment": "该规划总体上结构清晰、逻辑严谨，覆盖了关键词提取的主要环节，并通过多工具组合提升了提取效果。但在工具选择依据、冲突解决机制以及参数调优方面还有改进空间。建议补充更多细节以增强规划的实用性和鲁棒性。"
+          },
+          "temperature": 0.8999999999999999
+        },
+        {
+          "plan": {
+            "fixed_question": "如何从新闻文章中自动提取关键词以提高内容分类效率？",
+            "thought": "通过利用可用的关键词提取工具，对新闻文章进行处理，从而生成有助于内容分类的关键词列表。",
+            "steps": [
+              {
+                "thought": "选择适合的关键词提取工具并明确输入数据。",
+                "title": "准备阶段",
+                "content": "分析各个关键词提取工具的特点，确定使用KeywordExtractor.extractKeywords作为主要工具，并准备好待处理的新闻文章文本。",
+                "tools": [
+                  "KeywordExtractor.extractKeywords"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "将新闻文章文本传递给选定的关键词提取工具。",
+                "title": "执行关键词提取",
+                "content": "调用KeywordExtractor.extractKeywords方法，从输入的新闻文章中提取出一组关键词。",
+                "tools": [
+                  "KeywordExtractor.extractKeywords"
+                ],
+                "dependencies": [
+                  "准备阶段"
+                ]
+              },
+              {
+                "thought": "验证提取结果的有效性并优化。",
+                "title": "结果评估与优化",
+                "content": "检查提取出的关键词是否能够准确反映新闻文章的主题。如果效果不理想，调整提取方法或参数，重复提取过程。",
+                "tools": null,
+                "dependencies": [
+                  "执行关键词提取"
+                ]
+              },
+              {
+                "thought": "将提取的关键词应用于内容分类流程。",
+                "title": "应用关键词于分类任务",
+                "content": "将提取出的关键词集成到内容分类系统中，以提高分类效率和准确性。",
+                "tools": null,
+                "dependencies": [
+                  "结果评估与优化"
+                ]
+              }
+            ]
+          },
+          "evaluation": {
+            "completeness": {
+              "score": 8,
+              "reason": "规划涵盖了从工具选择到关键词提取、结果评估及应用的主要步骤，整体流程较为完整。但未提及如何具体调整参数或优化方法，略显不足。"
+            },
+            "rationality": {
+              "score": 9,
+              "reason": "规划逻辑清晰，步骤合理，能够有效解决自动提取关键词的问题。每一步骤的依赖关系明确，符合实际操作需求。"
+            },
+            "tool_usage": {
+              "score": 7,
+              "reason": "选择了KeywordExtractor.extractKeywords作为主要工具，但未说明为何该工具优于其他选项，也未提及备选方案，可能限制灵活性。"
+            },
+            "dependencies": {
+              "score": 10,
+              "reason": "各步骤之间的依赖关系明确且合理，确保了流程的连贯性和可执行性。"
+            },
+            "executability": {
+              "score": 8,
+              "reason": "规划具备较高的可执行性，但缺乏对潜在问题（如工具兼容性、数据格式等）的具体应对措施，可能影响实施效果。"
+            },
+            "total_score": 8.4,
+            "overall_comment": "该规划整体质量较高，逻辑清晰且步骤合理，能够有效指导新闻文章关键词提取工作。但在工具选择的多样性、优化方法的具体化以及潜在问题的应对上还有改进空间。"
+          },
+          "temperature": 0.7999999999999999
+        },
+        {
+          "plan": {
+            "fixed_question": "如何从新闻文章中自动提取关键词以提高内容分类效率？",
+            "thought": "通过使用关键词提取工具，从新闻文章中提取出核心关键词，从而提升内容分类的效率。规划将围绕工具选择、文本预处理、关键词提取和结果优化展开。",
+            "steps": [
+              {
+                "thought": "准备输入文本并进行必要的预处理，例如去除噪声数据和标准化格式。",
+                "title": "文本预处理",
+                "content": "对新闻文章进行清理，包括去除HTML标签、停用词过滤和分词操作，确保输入文本的质量。",
+                "tools": null,
+                "dependencies": []
+              },
+              {
+                "thought": "选择适合的关键词提取工具，并应用到预处理后的文本上。",
+                "title": "关键词提取",
+                "content": "利用KeywordExtractor.extractKeywords或textMining.extract_keywords工具，基于TF-IDF或TextRank等方法提取关键词。",
+                "tools": [
+                  "KeywordExtractor.extractKeywords",
+                  "textMining.extract_keywords"
+                ],
+                "dependencies": [
+                  "文本预处理"
+                ]
+              },
+              {
+                "thought": "对提取出的关键词进行筛选和优化，确保其与新闻主题高度相关。",
+                "title": "关键词优化",
+                "content": "根据领域知识或上下文信息，对提取的关键词列表进行去重、排序和权重调整。",
+                "tools": null,
+                "dependencies": [
+                  "关键词提取"
+                ]
+              },
+              {
+                "thought": "将优化后的关键词应用于内容分类任务，验证其效果。",
+                "title": "分类效率验证",
+                "content": "将提取的关键词作为特征输入分类模型，评估其对分类效率的提升效果。",
+                "tools": null,
+                "dependencies": [
+                  "关键词优化"
+                ]
+              }
+            ]
+          },
+          "evaluation": {
+            "completeness": {
+              "score": 9,
+              "reason": "规划涵盖了从文本预处理到分类效率验证的完整流程，步骤清晰且全面。唯一可以改进的地方是增加对工具选择标准的具体说明，例如为何选择特定关键词提取方法（TF-IDF或TextRank）。"
+            },
+            "rationality": {
+              "score": 8,
+              "reason": "整体逻辑合理，步骤之间的衔接自然，符合关键词提取和内容分类的技术路径。但未提及如何处理多语言新闻文章的情况，这在实际应用中可能是一个重要考虑点。"
+            },
+            "tool_usage": {
+              "score": 7,
+              "reason": "提到了一些具体的工具和方法（如KeywordExtractor.extractKeywords、TF-IDF、TextRank），但没有详细说明这些工具的适用场景和优缺点，可能导致实施时的选择困难。"
+            },
+            "dependencies": {
+              "score": 10,
+              "reason": "步骤之间的依赖关系明确且合理，每个步骤都清楚地指出了其前置条件，确保了规划的连贯性和可操作性。"
+            },
+            "executability": {
+              "score": 8,
+              "reason": "规划具有较高的可执行性，但由于缺乏对潜在问题（如数据质量问题、领域适应性）的讨论，可能会在实际操作中遇到障碍。建议补充风险评估和应对策略。"
+            },
+            "total_score": 8.4,
+            "overall_comment": "该规划整体上结构清晰、逻辑严谨，能够有效指导从新闻文章中自动提取关键词以提高内容分类效率的任务。但在工具选择的细节、多语言支持以及潜在风险的应对方面还有提升空间。通过进一步完善这些部分，规划将更具实用性和鲁棒性。"
+          },
+          "temperature": 0.7
+        }
+      ],
+      "best_plan": {
+        "fixed_question": "如何从新闻文章中自动提取关键词以提高内容分类效率？",
+        "thought": "通过多种关键词提取工具的组合使用，可以提高提取的准确性和效率，从而优化内容分类的效果。",
+        "steps": [
+          {
+            "thought": "分析输入文本的特点并确定合适的关键词提取方法。",
+            "title": "分析文本与选择方法",
+            "content": "评估新闻文章的语言特点、领域特性以及长度，选择适合的关键词提取算法或工具。",
+            "tools": null,
+            "dependencies": []
+          },
+          {
+            "thought": "利用KeywordExtractor.extractKeywords提取初步关键词。",
+            "title": "初步关键词提取",
+            "content": "调用KeywordExtractor.extractKeywords方法，基于TF-IDF或其他内置算法提取文本中的候选关键词。",
+            "tools": [
+              "KeywordExtractor.extractKeywords"
+            ],
+            "dependencies": [
+              "分析文本与选择方法"
+            ]
+          },
+          {
+            "thought": "使用textMining.extract_keywords进行补充提取。",
+            "title": "补充关键词提取",
+            "content": "调用textMining.extract_keywords方法，基于统计或规则的方法进一步提取可能遗漏的重要关键词。",
+            "tools": [
+              "textMining.extract_keywords"
+            ],
+            "dependencies": [
+              "初步关键词提取"
+            ]
+          },
+          {
+            "thought": "结合多种工具的结果进行去重和排序。",
+            "title": "关键词整合与优化",
+            "content": "将不同工具提取出的关键词列表合并，并根据词频或权重进行排序，去除重复项。",
+            "tools": null,
+            "dependencies": [
+              "初步关键词提取",
+              "补充关键词提取"
+            ]
+          },
+          {
+            "thought": "验证提取结果并调整参数以提升准确性。",
+            "title": "结果验证与参数调优",
+            "content": "人工检查提取的关键词是否符合预期，并根据需要调整各工具的参数（如停用词表、最小词长等）。",
+            "tools": null,
+            "dependencies": [
+              "关键词整合与优化"
+            ]
+          }
+        ]
+      },
+      "best_score": 8.4,
+      "worst_plan": {
+        "fixed_question": "如何从新闻文章中自动提取关键词以提高内容分类效率？",
+        "thought": "通过使用关键词提取工具，从新闻文章中提取出核心关键词，从而提升内容分类的效率。规划将围绕工具选择、文本预处理、关键词提取和结果优化展开。",
+        "steps": [
+          {
+            "thought": "准备输入文本并进行必要的预处理，例如去除噪声数据和标准化格式。",
+            "title": "文本预处理",
+            "content": "对新闻文章进行清理，包括去除HTML标签、停用词过滤和分词操作，确保输入文本的质量。",
+            "tools": null,
+            "dependencies": []
+          },
+          {
+            "thought": "选择适合的关键词提取工具，并应用到预处理后的文本上。",
+            "title": "关键词提取",
+            "content": "利用KeywordExtractor.extractKeywords或textMining.extract_keywords工具，基于TF-IDF或TextRank等方法提取关键词。",
+            "tools": [
+              "KeywordExtractor.extractKeywords",
+              "textMining.extract_keywords"
+            ],
+            "dependencies": [
+              "文本预处理"
+            ]
+          },
+          {
+            "thought": "对提取出的关键词进行筛选和优化，确保其与新闻主题高度相关。",
+            "title": "关键词优化",
+            "content": "根据领域知识或上下文信息，对提取的关键词列表进行去重、排序和权重调整。",
+            "tools": null,
+            "dependencies": [
+              "关键词提取"
+            ]
+          },
+          {
+            "thought": "将优化后的关键词应用于内容分类任务，验证其效果。",
+            "title": "分类效率验证",
+            "content": "将提取的关键词作为特征输入分类模型，评估其对分类效率的提升效果。",
+            "tools": null,
+            "dependencies": [
+              "关键词优化"
+            ]
+          }
+        ]
+      },
+      "worst_score": 8.4,
+      "preference_pairs": [
+        {
+          "chosen": {
+            "fixed_question": "如何从新闻文章中自动提取关键词以提高内容分类效率？",
+            "thought": "通过多种关键词提取工具的组合使用，可以提高提取的准确性和效率，从而优化内容分类的效果。",
+            "steps": [
+              {
+                "thought": "分析输入文本的特点并确定合适的关键词提取方法。",
+                "title": "分析文本与选择方法",
+                "content": "评估新闻文章的语言特点、领域特性以及长度，选择适合的关键词提取算法或工具。",
+                "tools": null,
+                "dependencies": []
+              },
+              {
+                "thought": "利用KeywordExtractor.extractKeywords提取初步关键词。",
+                "title": "初步关键词提取",
+                "content": "调用KeywordExtractor.extractKeywords方法，基于TF-IDF或其他内置算法提取文本中的候选关键词。",
+                "tools": [
+                  "KeywordExtractor.extractKeywords"
+                ],
+                "dependencies": [
+                  "分析文本与选择方法"
+                ]
+              },
+              {
+                "thought": "使用textMining.extract_keywords进行补充提取。",
+                "title": "补充关键词提取",
+                "content": "调用textMining.extract_keywords方法，基于统计或规则的方法进一步提取可能遗漏的重要关键词。",
+                "tools": [
+                  "textMining.extract_keywords"
+                ],
+                "dependencies": [
+                  "初步关键词提取"
+                ]
+              },
+              {
+                "thought": "结合多种工具的结果进行去重和排序。",
+                "title": "关键词整合与优化",
+                "content": "将不同工具提取出的关键词列表合并，并根据词频或权重进行排序，去除重复项。",
+                "tools": null,
+                "dependencies": [
+                  "初步关键词提取",
+                  "补充关键词提取"
+                ]
+              },
+              {
+                "thought": "验证提取结果并调整参数以提升准确性。",
+                "title": "结果验证与参数调优",
+                "content": "人工检查提取的关键词是否符合预期，并根据需要调整各工具的参数（如停用词表、最小词长等）。",
+                "tools": null,
+                "dependencies": [
+                  "关键词整合与优化"
+                ]
+              }
+            ]
+          },
+          "chosen_score": 8.4,
+          "rejected": {
+            "fixed_question": "如何从新闻文章中自动提取关键词以提高内容分类效率？",
+            "thought": "通过利用可用的关键词提取工具，对新闻文章进行处理，从而生成有助于内容分类的关键词列表。",
+            "steps": [
+              {
+                "thought": "选择适合的关键词提取工具并明确输入数据。",
+                "title": "准备阶段",
+                "content": "分析各个关键词提取工具的特点，确定使用KeywordExtractor.extractKeywords作为主要工具，并准备好待处理的新闻文章文本。",
+                "tools": [
+                  "KeywordExtractor.extractKeywords"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "将新闻文章文本传递给选定的关键词提取工具。",
+                "title": "执行关键词提取",
+                "content": "调用KeywordExtractor.extractKeywords方法，从输入的新闻文章中提取出一组关键词。",
+                "tools": [
+                  "KeywordExtractor.extractKeywords"
+                ],
+                "dependencies": [
+                  "准备阶段"
+                ]
+              },
+              {
+                "thought": "验证提取结果的有效性并优化。",
+                "title": "结果评估与优化",
+                "content": "检查提取出的关键词是否能够准确反映新闻文章的主题。如果效果不理想，调整提取方法或参数，重复提取过程。",
+                "tools": null,
+                "dependencies": [
+                  "执行关键词提取"
+                ]
+              },
+              {
+                "thought": "将提取的关键词应用于内容分类流程。",
+                "title": "应用关键词于分类任务",
+                "content": "将提取出的关键词集成到内容分类系统中，以提高分类效率和准确性。",
+                "tools": null,
+                "dependencies": [
+                  "结果评估与优化"
+                ]
+              }
+            ]
+          },
+          "rejected_score": 8.4,
+          "score_diff": 0.0
+        },
+        {
+          "chosen": {
+            "fixed_question": "如何从新闻文章中自动提取关键词以提高内容分类效率？",
+            "thought": "通过多种关键词提取工具的组合使用，可以提高提取的准确性和效率，从而优化内容分类的效果。",
+            "steps": [
+              {
+                "thought": "分析输入文本的特点并确定合适的关键词提取方法。",
+                "title": "分析文本与选择方法",
+                "content": "评估新闻文章的语言特点、领域特性以及长度，选择适合的关键词提取算法或工具。",
+                "tools": null,
+                "dependencies": []
+              },
+              {
+                "thought": "利用KeywordExtractor.extractKeywords提取初步关键词。",
+                "title": "初步关键词提取",
+                "content": "调用KeywordExtractor.extractKeywords方法，基于TF-IDF或其他内置算法提取文本中的候选关键词。",
+                "tools": [
+                  "KeywordExtractor.extractKeywords"
+                ],
+                "dependencies": [
+                  "分析文本与选择方法"
+                ]
+              },
+              {
+                "thought": "使用textMining.extract_keywords进行补充提取。",
+                "title": "补充关键词提取",
+                "content": "调用textMining.extract_keywords方法，基于统计或规则的方法进一步提取可能遗漏的重要关键词。",
+                "tools": [
+                  "textMining.extract_keywords"
+                ],
+                "dependencies": [
+                  "初步关键词提取"
+                ]
+              },
+              {
+                "thought": "结合多种工具的结果进行去重和排序。",
+                "title": "关键词整合与优化",
+                "content": "将不同工具提取出的关键词列表合并，并根据词频或权重进行排序，去除重复项。",
+                "tools": null,
+                "dependencies": [
+                  "初步关键词提取",
+                  "补充关键词提取"
+                ]
+              },
+              {
+                "thought": "验证提取结果并调整参数以提升准确性。",
+                "title": "结果验证与参数调优",
+                "content": "人工检查提取的关键词是否符合预期，并根据需要调整各工具的参数（如停用词表、最小词长等）。",
+                "tools": null,
+                "dependencies": [
+                  "关键词整合与优化"
+                ]
+              }
+            ]
+          },
+          "chosen_score": 8.4,
+          "rejected": {
+            "fixed_question": "如何从新闻文章中自动提取关键词以提高内容分类效率？",
+            "thought": "通过使用关键词提取工具，从新闻文章中提取出核心关键词，从而提升内容分类的效率。规划将围绕工具选择、文本预处理、关键词提取和结果优化展开。",
+            "steps": [
+              {
+                "thought": "准备输入文本并进行必要的预处理，例如去除噪声数据和标准化格式。",
+                "title": "文本预处理",
+                "content": "对新闻文章进行清理，包括去除HTML标签、停用词过滤和分词操作，确保输入文本的质量。",
+                "tools": null,
+                "dependencies": []
+              },
+              {
+                "thought": "选择适合的关键词提取工具，并应用到预处理后的文本上。",
+                "title": "关键词提取",
+                "content": "利用KeywordExtractor.extractKeywords或textMining.extract_keywords工具，基于TF-IDF或TextRank等方法提取关键词。",
+                "tools": [
+                  "KeywordExtractor.extractKeywords",
+                  "textMining.extract_keywords"
+                ],
+                "dependencies": [
+                  "文本预处理"
+                ]
+              },
+              {
+                "thought": "对提取出的关键词进行筛选和优化，确保其与新闻主题高度相关。",
+                "title": "关键词优化",
+                "content": "根据领域知识或上下文信息，对提取的关键词列表进行去重、排序和权重调整。",
+                "tools": null,
+                "dependencies": [
+                  "关键词提取"
+                ]
+              },
+              {
+                "thought": "将优化后的关键词应用于内容分类任务，验证其效果。",
+                "title": "分类效率验证",
+                "content": "将提取的关键词作为特征输入分类模型，评估其对分类效率的提升效果。",
+                "tools": null,
+                "dependencies": [
+                  "关键词优化"
+                ]
+              }
+            ]
+          },
+          "rejected_score": 8.4,
+          "score_diff": 0.0
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": 5,
+    "scenario": "TikTok视频下载、去水印与多格式处理",
+    "tools": {
+      "Get Original TikTok Video": "获取无水印、无封面、无背景音乐的原始 TikTok 视频内容。",
+      "Download Video Without Watermark": "下载无水印的 TikTok 视频。",
+      "Video Without Watermark Downloader": "以多种格式（MP4、MP3、封面图、描述、地区、验证信息等）下载无水印的 TikTok 视频。",
+      "Remove TikTok Watermark": "移除 TikTok 视频中的水印。"
+    },
+    "tools_length": 4,
+    "user_question": "如何使用这些工具下载TikTok视频并去掉水印，同时能转换成多种格式保存？",
+    "preference_data": {
+      "user_question": "如何使用这些工具下载TikTok视频并去掉水印，同时能转换成多种格式保存？",
+      "samples": [
+        {
+          "plan": {
+            "fixed_question": "如何下载无水印的TikTok视频并转换成多种格式保存？",
+            "thought": "通过分析用户需求，首先需要获取无水印的TikTok视频，然后将其转换为多种格式进行保存。可以结合工具的功能特性制定清晰的操作步骤。",
+            "steps": [
+              {
+                "thought": "选择合适的工具下载无水印的TikTok视频。",
+                "title": "下载无水印视频",
+                "content": "使用Download Video Without Watermark或Video Without Watermark Downloader工具下载无水印的TikTok视频。",
+                "tools": [
+                  "Download Video Without Watermark",
+                  "Video Without Watermark Downloader"
+                ],
+                "dependencies": null
+              },
+              {
+                "thought": "检查是否需要进一步移除水印，确保视频完全无水印。",
+                "title": "确认水印移除",
+                "content": "如果第一步未能完全去除水印，可使用Remove TikTok Watermark工具对视频再次处理。",
+                "tools": [
+                  "Remove TikTok Watermark"
+                ],
+                "dependencies": [
+                  0
+                ]
+              },
+              {
+                "thought": "利用支持多种格式下载的工具将视频转换为目标格式。",
+                "title": "转换视频格式",
+                "content": "使用Video Without Watermark Downloader工具将视频导出为多种格式（如MP4、MP3等）。",
+                "tools": [
+                  "Video Without Watermark Downloader"
+                ],
+                "dependencies": [
+                  0,
+                  1
+                ]
+              }
+            ]
+          },
+          "evaluation": {
+            "completeness": {
+              "score": 9,
+              "reason": "规划涵盖了从下载无水印视频到格式转换的全过程，步骤清晰且完整。唯一不足是没有提及如何获取TikTok视频链接，这可能是用户操作中的前置需求。"
+            },
+            "rationality": {
+              "score": 8,
+              "reason": "整体逻辑合理，先解决水印问题再进行格式转换。但第二步中‘确认水印移除’显得多余，因为第一步已明确使用无水印下载工具，理论上不需要额外处理。"
+            },
+            "tool_usage": {
+              "score": 10,
+              "reason": "工具选择恰当，明确列出了每个步骤所需的工具，并且工具功能与任务需求高度匹配。"
+            },
+            "dependencies": {
+              "score": 9,
+              "reason": "依赖关系设置合理，例如第三步依赖于前两步的结果。不过第二步的必要性存疑，可能会影响依赖的实际执行效率。"
+            },
+            "executability": {
+              "score": 8,
+              "reason": "步骤具体且可操作性强，但需要用户对工具的功能和界面有一定了解。如果能补充更详细的工具使用说明或示例，将提升执行效果。"
+            },
+            "total_score": 8.8,
+            "overall_comment": "该规划整体质量较高，能够有效指导用户完成目标。建议优化第二步的必要性分析，并补充获取视频链接的说明以进一步完善流程。"
+          },
+          "temperature": 0.7999999999999999
+        },
+        {
+          "plan": {
+            "fixed_question": "如何下载无水印的TikTok视频并转换成多种格式保存？",
+            "thought": "用户需要完成从TikTok下载无水印视频并将其转换为多种格式的任务。可以通过工具链实现，先获取无水印视频，再进行格式转换。",
+            "steps": [
+              {
+                "thought": "确定目标视频链接，作为后续工具操作的基础。",
+                "title": "获取目标TikTok视频链接",
+                "content": "用户提供或复制要下载的TikTok视频链接，确保链接有效且指向目标视频。",
+                "tools": null,
+                "dependencies": null
+              },
+              {
+                "thought": "选择适合的工具下载无水印视频，并支持多种格式转换。",
+                "title": "下载无水印视频并转换格式",
+                "content": "使用Video Without Watermark Downloader工具，输入视频链接，下载无水印视频并选择需要的输出格式（如MP4、MP3等）。",
+                "tools": [
+                  "Video Without Watermark Downloader"
+                ],
+                "dependencies": [
+                  "获取目标TikTok视频链接"
+                ]
+              },
+              {
+                "thought": "验证下载结果是否符合需求，包括无水印和格式正确性。",
+                "title": "验证下载结果",
+                "content": "检查下载的文件是否无水印且为目标格式，若不符合要求，则重新执行下载步骤。",
+                "tools": null,
+                "dependencies": [
+                  "下载无水印视频并转换格式"
+                ]
+              }
+            ]
+          },
+          "evaluation": {
+            "completeness": {
+              "score": 9,
+              "reason": "规划涵盖了从获取视频链接到下载无水印视频、格式转换以及结果验证的完整流程，步骤清晰且全面。但未提及如何处理可能的工具不可用或网络限制问题，略显不足。"
+            },
+            "rationality": {
+              "score": 8,
+              "reason": "整体逻辑合理，符合用户需求，但在实际操作中，某些工具可能无法完全满足所有格式转换的需求，这一点未被充分考虑。"
+            },
+            "tool_usage": {
+              "score": 7,
+              "reason": "推荐了Video Without Watermark Downloader工具，但未提供备选方案或说明该工具的具体功能限制，可能导致执行时遇到困难。"
+            },
+            "dependencies": {
+              "score": 10,
+              "reason": "步骤之间的依赖关系明确且合理，每一步都基于前一步的结果，确保了流程的连贯性。"
+            },
+            "executability": {
+              "score": 8,
+              "reason": "规划具有较高的可执行性，但由于未涉及具体工具的操作细节和潜在问题（如工具收费、地区限制等），可能在实际操作中存在一定障碍。"
+            },
+            "total_score": 8.4,
+            "overall_comment": "该规划整体较为完善，能够有效指导用户完成任务，但在工具选择和潜在问题的应对方面还有改进空间。建议补充更多工具选项，并对可能的风险进行说明。"
+          },
+          "temperature": 0.8999999999999999
+        },
+        {
+          "plan": {
+            "fixed_question": "如何下载无水印的TikTok视频并转换成多种格式保存？",
+            "thought": "通过分析工具功能，优先选择支持多种格式下载且能去水印的工具，确保流程高效简洁。",
+            "steps": [
+              {
+                "thought": "确定目标视频链接，为后续操作提供输入数据。",
+                "title": "获取TikTok视频链接",
+                "content": "从TikTok应用或网页中复制目标视频的分享链接。",
+                "tools": null,
+                "dependencies": null
+              },
+              {
+                "thought": "选择一个能够直接下载无水印视频并支持多种格式的工具。",
+                "title": "使用Video Without Watermark Downloader下载视频",
+                "content": "将复制的TikTok视频链接粘贴到该工具中，选择需要的输出格式（如MP4、MP3等），然后执行下载操作。",
+                "tools": [
+                  "Video Without Watermark Downloader"
+                ],
+                "dependencies": [
+                  "获取TikTok视频链接"
+                ]
+              },
+              {
+                "thought": "验证下载结果是否符合需求，包括无水印和格式正确性。",
+                "title": "检查下载文件",
+                "content": "打开下载的文件，确认其无水印，并检查格式是否与预期一致。",
+                "tools": null,
+                "dependencies": [
+                  "使用Video Without Watermark Downloader下载视频"
+                ]
+              }
+            ]
+          },
+          "evaluation": {
+            "completeness": {
+              "score": 9,
+              "reason": "规划涵盖了从获取链接到下载、再到验证的完整流程，步骤清晰且全面。但未提及如何处理可能的工具不可用或网络问题，略显不足。"
+            },
+            "rationality": {
+              "score": 8,
+              "reason": "整体思路合理，优先选择支持多种格式和去水印功能的工具是高效的。但假设所选工具始终满足需求，缺乏备选方案，逻辑上稍有欠缺。"
+            },
+            "tool_usage": {
+              "score": 8,
+              "reason": "明确指定了一个具体工具（Video Without Watermark Downloader），并描述了其使用方法。但未说明该工具的选择依据，也未提供其他可选工具作为补充。"
+            },
+            "dependencies": {
+              "score": 10,
+              "reason": "步骤间的依赖关系明确且合理，每一步都以前一步为基础，确保了流程的连贯性。"
+            },
+            "executability": {
+              "score": 7,
+              "reason": "规划在理论上具备较高的可执行性，但实际操作中可能会遇到工具限制或地区访问问题，未对此类风险进行充分考虑。"
+            },
+            "total_score": 8.4,
+            "overall_comment": "该规划整体较为完善，目标明确，步骤清晰，依赖关系合理。但在工具选择的多样性、潜在风险的应对措施方面还有改进空间。建议增加备选工具和异常处理方案以提高规划的鲁棒性。"
+          },
+          "temperature": 0.7
+        }
+      ],
+      "best_plan": {
+        "fixed_question": "如何下载无水印的TikTok视频并转换成多种格式保存？",
+        "thought": "通过分析用户需求，首先需要获取无水印的TikTok视频，然后将其转换为多种格式进行保存。可以结合工具的功能特性制定清晰的操作步骤。",
+        "steps": [
+          {
+            "thought": "选择合适的工具下载无水印的TikTok视频。",
+            "title": "下载无水印视频",
+            "content": "使用Download Video Without Watermark或Video Without Watermark Downloader工具下载无水印的TikTok视频。",
+            "tools": [
+              "Download Video Without Watermark",
+              "Video Without Watermark Downloader"
+            ],
+            "dependencies": null
+          },
+          {
+            "thought": "检查是否需要进一步移除水印，确保视频完全无水印。",
+            "title": "确认水印移除",
+            "content": "如果第一步未能完全去除水印，可使用Remove TikTok Watermark工具对视频再次处理。",
+            "tools": [
+              "Remove TikTok Watermark"
+            ],
+            "dependencies": [
+              0
+            ]
+          },
+          {
+            "thought": "利用支持多种格式下载的工具将视频转换为目标格式。",
+            "title": "转换视频格式",
+            "content": "使用Video Without Watermark Downloader工具将视频导出为多种格式（如MP4、MP3等）。",
+            "tools": [
+              "Video Without Watermark Downloader"
+            ],
+            "dependencies": [
+              0,
+              1
+            ]
+          }
+        ]
+      },
+      "best_score": 8.8,
+      "worst_plan": {
+        "fixed_question": "如何下载无水印的TikTok视频并转换成多种格式保存？",
+        "thought": "通过分析工具功能，优先选择支持多种格式下载且能去水印的工具，确保流程高效简洁。",
+        "steps": [
+          {
+            "thought": "确定目标视频链接，为后续操作提供输入数据。",
+            "title": "获取TikTok视频链接",
+            "content": "从TikTok应用或网页中复制目标视频的分享链接。",
+            "tools": null,
+            "dependencies": null
+          },
+          {
+            "thought": "选择一个能够直接下载无水印视频并支持多种格式的工具。",
+            "title": "使用Video Without Watermark Downloader下载视频",
+            "content": "将复制的TikTok视频链接粘贴到该工具中，选择需要的输出格式（如MP4、MP3等），然后执行下载操作。",
+            "tools": [
+              "Video Without Watermark Downloader"
+            ],
+            "dependencies": [
+              "获取TikTok视频链接"
+            ]
+          },
+          {
+            "thought": "验证下载结果是否符合需求，包括无水印和格式正确性。",
+            "title": "检查下载文件",
+            "content": "打开下载的文件，确认其无水印，并检查格式是否与预期一致。",
+            "tools": null,
+            "dependencies": [
+              "使用Video Without Watermark Downloader下载视频"
+            ]
+          }
+        ]
+      },
+      "worst_score": 8.4,
+      "preference_pairs": [
+        {
+          "chosen": {
+            "fixed_question": "如何下载无水印的TikTok视频并转换成多种格式保存？",
+            "thought": "通过分析用户需求，首先需要获取无水印的TikTok视频，然后将其转换为多种格式进行保存。可以结合工具的功能特性制定清晰的操作步骤。",
+            "steps": [
+              {
+                "thought": "选择合适的工具下载无水印的TikTok视频。",
+                "title": "下载无水印视频",
+                "content": "使用Download Video Without Watermark或Video Without Watermark Downloader工具下载无水印的TikTok视频。",
+                "tools": [
+                  "Download Video Without Watermark",
+                  "Video Without Watermark Downloader"
+                ],
+                "dependencies": null
+              },
+              {
+                "thought": "检查是否需要进一步移除水印，确保视频完全无水印。",
+                "title": "确认水印移除",
+                "content": "如果第一步未能完全去除水印，可使用Remove TikTok Watermark工具对视频再次处理。",
+                "tools": [
+                  "Remove TikTok Watermark"
+                ],
+                "dependencies": [
+                  0
+                ]
+              },
+              {
+                "thought": "利用支持多种格式下载的工具将视频转换为目标格式。",
+                "title": "转换视频格式",
+                "content": "使用Video Without Watermark Downloader工具将视频导出为多种格式（如MP4、MP3等）。",
+                "tools": [
+                  "Video Without Watermark Downloader"
+                ],
+                "dependencies": [
+                  0,
+                  1
+                ]
+              }
+            ]
+          },
+          "chosen_score": 8.8,
+          "rejected": {
+            "fixed_question": "如何下载无水印的TikTok视频并转换成多种格式保存？",
+            "thought": "用户需要完成从TikTok下载无水印视频并将其转换为多种格式的任务。可以通过工具链实现，先获取无水印视频，再进行格式转换。",
+            "steps": [
+              {
+                "thought": "确定目标视频链接，作为后续工具操作的基础。",
+                "title": "获取目标TikTok视频链接",
+                "content": "用户提供或复制要下载的TikTok视频链接，确保链接有效且指向目标视频。",
+                "tools": null,
+                "dependencies": null
+              },
+              {
+                "thought": "选择适合的工具下载无水印视频，并支持多种格式转换。",
+                "title": "下载无水印视频并转换格式",
+                "content": "使用Video Without Watermark Downloader工具，输入视频链接，下载无水印视频并选择需要的输出格式（如MP4、MP3等）。",
+                "tools": [
+                  "Video Without Watermark Downloader"
+                ],
+                "dependencies": [
+                  "获取目标TikTok视频链接"
+                ]
+              },
+              {
+                "thought": "验证下载结果是否符合需求，包括无水印和格式正确性。",
+                "title": "验证下载结果",
+                "content": "检查下载的文件是否无水印且为目标格式，若不符合要求，则重新执行下载步骤。",
+                "tools": null,
+                "dependencies": [
+                  "下载无水印视频并转换格式"
+                ]
+              }
+            ]
+          },
+          "rejected_score": 8.4,
+          "score_diff": 0.40000000000000036
+        },
+        {
+          "chosen": {
+            "fixed_question": "如何下载无水印的TikTok视频并转换成多种格式保存？",
+            "thought": "通过分析用户需求，首先需要获取无水印的TikTok视频，然后将其转换为多种格式进行保存。可以结合工具的功能特性制定清晰的操作步骤。",
+            "steps": [
+              {
+                "thought": "选择合适的工具下载无水印的TikTok视频。",
+                "title": "下载无水印视频",
+                "content": "使用Download Video Without Watermark或Video Without Watermark Downloader工具下载无水印的TikTok视频。",
+                "tools": [
+                  "Download Video Without Watermark",
+                  "Video Without Watermark Downloader"
+                ],
+                "dependencies": null
+              },
+              {
+                "thought": "检查是否需要进一步移除水印，确保视频完全无水印。",
+                "title": "确认水印移除",
+                "content": "如果第一步未能完全去除水印，可使用Remove TikTok Watermark工具对视频再次处理。",
+                "tools": [
+                  "Remove TikTok Watermark"
+                ],
+                "dependencies": [
+                  0
+                ]
+              },
+              {
+                "thought": "利用支持多种格式下载的工具将视频转换为目标格式。",
+                "title": "转换视频格式",
+                "content": "使用Video Without Watermark Downloader工具将视频导出为多种格式（如MP4、MP3等）。",
+                "tools": [
+                  "Video Without Watermark Downloader"
+                ],
+                "dependencies": [
+                  0,
+                  1
+                ]
+              }
+            ]
+          },
+          "chosen_score": 8.8,
+          "rejected": {
+            "fixed_question": "如何下载无水印的TikTok视频并转换成多种格式保存？",
+            "thought": "通过分析工具功能，优先选择支持多种格式下载且能去水印的工具，确保流程高效简洁。",
+            "steps": [
+              {
+                "thought": "确定目标视频链接，为后续操作提供输入数据。",
+                "title": "获取TikTok视频链接",
+                "content": "从TikTok应用或网页中复制目标视频的分享链接。",
+                "tools": null,
+                "dependencies": null
+              },
+              {
+                "thought": "选择一个能够直接下载无水印视频并支持多种格式的工具。",
+                "title": "使用Video Without Watermark Downloader下载视频",
+                "content": "将复制的TikTok视频链接粘贴到该工具中，选择需要的输出格式（如MP4、MP3等），然后执行下载操作。",
+                "tools": [
+                  "Video Without Watermark Downloader"
+                ],
+                "dependencies": [
+                  "获取TikTok视频链接"
+                ]
+              },
+              {
+                "thought": "验证下载结果是否符合需求，包括无水印和格式正确性。",
+                "title": "检查下载文件",
+                "content": "打开下载的文件，确认其无水印，并检查格式是否与预期一致。",
+                "tools": null,
+                "dependencies": [
+                  "使用Video Without Watermark Downloader下载视频"
+                ]
+              }
+            ]
+          },
+          "rejected_score": 8.4,
+          "score_diff": 0.40000000000000036
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": 6,
+    "scenario": "房产信息与YouTube房产视频联合搜索",
+    "tools": {
+      "Locations Auto-Complete": "按城市、区、街道名称获取自动补全建议，用于其他接口调用；该接口还可通过地址查询对应房产 ID。",
+      "Get Auto-Complete Locations": "获取地点（含城市、区、街道名称）的自动补全建议；亦可通过地址检索特定房产 ID。",
+      "YouTube Auto Complete": "获取 YouTube 上针对给定查询的自动补全建议。",
+      "Get YouTube Autocomplete Suggestions": "根据提供的关键词返回 YouTube 搜索的自动补全预测列表。"
+    },
+    "tools_length": 4,
+    "user_question": "我想找上海的房产信息，同时看看YouTube上关于上海房产的视频，能帮我吗？",
+    "preference_data": {
+      "user_question": "我想找上海的房产信息，同时看看YouTube上关于上海房产的视频，能帮我吗？",
+      "samples": [
+        {
+          "plan": {
+            "fixed_question": "查询上海的房产信息，并查找YouTube上关于上海房产的视频。",
+            "thought": "需要先通过地点相关工具获取上海的房产信息，然后使用YouTube工具搜索相关内容。",
+            "steps": [
+              {
+                "thought": "获取与上海相关的房产地点建议，为后续查询提供准确的地址或ID。",
+                "title": "获取上海房产地点建议",
+                "content": "调用Get Auto-Complete Locations接口，输入关键词‘上海’，获取自动补全的地点建议。",
+                "tools": [
+                  "Get Auto-Complete Locations"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "根据获取到的地点建议，进一步确定具体的房产信息查询范围。",
+                "title": "查询具体房产信息",
+                "content": "利用Locations Auto-Complete接口，选择合适的地点建议并获取对应的房产ID及相关信息。",
+                "tools": [
+                  "Locations Auto-Complete"
+                ],
+                "dependencies": [
+                  "获取上海房产地点建议"
+                ]
+              },
+              {
+                "thought": "在YouTube上搜索与上海房产相关的视频内容，以补充对房产信息的理解。",
+                "title": "获取YouTube上的上海房产视频建议",
+                "content": "调用Get YouTube Autocomplete Suggestions接口，输入关键词‘上海 房产’，获取相关的自动补全建议。",
+                "tools": [
+                  "Get YouTube Autocomplete Suggestions"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "整理从房产信息和YouTube视频建议中获得的数据，形成最终结果。",
+                "title": "汇总信息",
+                "content": "将获取到的上海房产信息及YouTube视频建议进行整合，提供给用户。",
+                "tools": null,
+                "dependencies": [
+                  "查询具体房产信息",
+                  "获取YouTube上的上海房产视频建议"
+                ]
+              }
+            ]
+          },
+          "evaluation": {
+            "completeness": {
+              "score": 8,
+              "reason": "规划涵盖了用户需求的核心部分，包括房产信息查询和YouTube视频搜索。但未明确说明如何处理无法获取有效地点建议或视频建议的情况，缺乏对异常情况的处理步骤。"
+            },
+            "rationality": {
+              "score": 9,
+              "reason": "整体逻辑清晰合理，先通过地点工具获取房产信息，再通过YouTube工具补充相关内容，符合用户的双重要求。不过‘汇总信息’步骤可以更具体化，例如如何整合数据以及呈现形式。"
+            },
+            "tool_usage": {
+              "score": 9,
+              "reason": "工具选择恰当，Get Auto-Complete Locations、Locations Auto-Complete 和 Get YouTube Autocomplete Suggestions 都是针对问题的有效工具。然而，对于YouTube视频搜索，可以直接调用搜索接口获取结果，而不仅仅是依赖自动补全建议。"
+            },
+            "dependencies": {
+              "score": 10,
+              "reason": "步骤间的依赖关系定义准确且合理，确保了执行顺序的正确性，例如‘查询具体房产信息’依赖于‘获取上海房产地点建议’，避免了无序操作导致的问题。"
+            },
+            "executability": {
+              "score": 7,
+              "reason": "规划在理论上具备可执行性，但实际操作中可能存在一些模糊点，例如工具返回结果为空时如何应对，以及是否需要额外的人工干预来筛选和整理数据。这些细节会影响最终的执行效果。"
+            },
+            "total_score": 8.6,
+            "overall_comment": "该规划总体上结构完整、逻辑清晰，能够满足用户的基本需求。但在异常处理、工具使用优化及结果整合的具体方法上还有改进空间。如果能进一步完善这些细节，将显著提升规划的质量与实用性。"
+          },
+          "temperature": 0.7
+        },
+        {
+          "plan": {
+            "fixed_question": "查询上海的房产信息，并搜索YouTube上关于上海房产的视频。",
+            "thought": "首先通过地点自动补全工具获取上海相关房产信息的标准化地址，然后使用YouTube自动补全工具查找与上海房产相关的视频内容。",
+            "steps": [
+              {
+                "thought": "获取上海相关地点的标准化建议，以便后续查询房产信息。",
+                "title": "获取地点自动补全建议",
+                "content": "调用Get Auto-Complete Locations接口，输入关键词“上海”，获取与上海相关的城市、区、街道等地点建议。",
+                "tools": [
+                  "Get Auto-Complete Locations"
+                ],
+                "dependencies": null
+              },
+              {
+                "thought": "基于获取的地点信息，查询具体的房产ID和相关信息。",
+                "title": "查询上海房产信息",
+                "content": "使用第一步中的地点建议，调用Locations Auto-Complete接口获取对应的房产ID及相关信息。",
+                "tools": [
+                  "Locations Auto-Complete"
+                ],
+                "dependencies": [
+                  0
+                ]
+              },
+              {
+                "thought": "在YouTube上查找与上海房产相关的视频内容。",
+                "title": "获取YouTube自动补全建议",
+                "content": "调用Get YouTube Autocomplete Suggestions接口，输入关键词“上海 房产”，获取相关视频搜索建议。",
+                "tools": [
+                  "Get YouTube Autocomplete Suggestions"
+                ],
+                "dependencies": null
+              }
+            ]
+          },
+          "evaluation": {
+            "completeness": {
+              "score": 8,
+              "reason": "规划涵盖了用户需求的主要方面，包括获取房产信息和YouTube视频搜索建议。但未明确如何展示或返回最终结果给用户，缺少最后的整合步骤。"
+            },
+            "rationality": {
+              "score": 9,
+              "reason": "整体逻辑清晰合理，先通过地点标准化确保查询准确性，再分别从房产信息和YouTube视频两个维度满足用户需求，符合问题要求。"
+            },
+            "tool_usage": {
+              "score": 7,
+              "reason": "工具选择基本合理，但对工具的实际效果和覆盖范围缺乏详细说明。例如，未解释为何使用地点自动补全工具而非直接查询房产数据库，也未提及YouTube接口是否能准确匹配需求。"
+            },
+            "dependencies": {
+              "score": 10,
+              "reason": "依赖关系设置正确，第二步明确依赖于第一步的结果，且第三步独立执行，无明显问题。"
+            },
+            "executability": {
+              "score": 7,
+              "reason": "步骤描述具体，但在实际操作中可能存在一些模糊点。例如，未说明如何处理地点自动补全返回的多条建议，以及如何确保YouTube关键词搜索的相关性。"
+            },
+            "total_score": 8,
+            "overall_comment": "该规划总体上较为完整、合理，能够有效解决用户的初步需求。但在结果整合、工具选择的具体依据及执行细节上还有改进空间。建议补充最终结果呈现方式，并优化工具使用的说明以提高可操作性。"
+          },
+          "temperature": 0.8999999999999999
+        },
+        {
+          "plan": {
+            "fixed_question": "查询上海房产信息并搜索YouTube相关视频",
+            "thought": "需要分两步完成：第一步获取上海房产信息，第二步在YouTube上搜索相关内容。",
+            "steps": [
+              {
+                "thought": "首先通过地点自动补全工具获取上海的房产ID或相关信息。",
+                "title": "获取上海房产信息",
+                "content": "使用地点自动补全接口输入'上海'，获取相关的房产建议和ID。",
+                "tools": [
+                  "Get Auto-Complete Locations"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "接着通过YouTube自动补全工具查找与上海房产相关的视频内容。",
+                "title": "搜索YouTube上的上海房产视频",
+                "content": "调用YouTube自动补全接口，输入关键词'上海 房产'，获取相关视频建议。",
+                "tools": [
+                  "Get YouTube Autocomplete Suggestions"
+                ],
+                "dependencies": []
+              }
+            ]
+          },
+          "evaluation": {
+            "completeness": {
+              "score": 8,
+              "reason": "规划包含了主要任务，即获取上海房产信息和搜索YouTube视频，但未明确如何展示或返回结果给用户，缺少最终的输出环节。"
+            },
+            "rationality": {
+              "score": 9,
+              "reason": "整体逻辑清晰，分两步完成任务合理，符合用户需求。不过，'地点自动补全工具'是否能直接提供房产信息需进一步确认，可能存在一定假设性。"
+            },
+            "tool_usage": {
+              "score": 7,
+              "reason": "使用了地点自动补全和YouTube自动补全工具，但未明确这些工具是否能够满足具体需求，例如地点自动补全可能无法直接提供房产信息。"
+            },
+            "dependencies": {
+              "score": 10,
+              "reason": "步骤之间没有依赖关系，设计合理，每一步都可以独立执行。"
+            },
+            "executability": {
+              "score": 7,
+              "reason": "规划中的工具调用和步骤描述较为抽象，实际执行时可能需要更多细节支持，例如API参数、错误处理等。"
+            },
+            "total_score": 8,
+            "overall_comment": "该规划整体思路清晰，能够有效分解任务并利用工具解决问题，但在工具选择的具体适用性和结果展示方面存在改进空间。建议补充更多执行细节，并验证工具的实际能力。"
+          },
+          "temperature": 0.7999999999999999
+        }
+      ],
+      "best_plan": {
+        "fixed_question": "查询上海的房产信息，并查找YouTube上关于上海房产的视频。",
+        "thought": "需要先通过地点相关工具获取上海的房产信息，然后使用YouTube工具搜索相关内容。",
+        "steps": [
+          {
+            "thought": "获取与上海相关的房产地点建议，为后续查询提供准确的地址或ID。",
+            "title": "获取上海房产地点建议",
+            "content": "调用Get Auto-Complete Locations接口，输入关键词‘上海’，获取自动补全的地点建议。",
+            "tools": [
+              "Get Auto-Complete Locations"
+            ],
+            "dependencies": []
+          },
+          {
+            "thought": "根据获取到的地点建议，进一步确定具体的房产信息查询范围。",
+            "title": "查询具体房产信息",
+            "content": "利用Locations Auto-Complete接口，选择合适的地点建议并获取对应的房产ID及相关信息。",
+            "tools": [
+              "Locations Auto-Complete"
+            ],
+            "dependencies": [
+              "获取上海房产地点建议"
+            ]
+          },
+          {
+            "thought": "在YouTube上搜索与上海房产相关的视频内容，以补充对房产信息的理解。",
+            "title": "获取YouTube上的上海房产视频建议",
+            "content": "调用Get YouTube Autocomplete Suggestions接口，输入关键词‘上海 房产’，获取相关的自动补全建议。",
+            "tools": [
+              "Get YouTube Autocomplete Suggestions"
+            ],
+            "dependencies": []
+          },
+          {
+            "thought": "整理从房产信息和YouTube视频建议中获得的数据，形成最终结果。",
+            "title": "汇总信息",
+            "content": "将获取到的上海房产信息及YouTube视频建议进行整合，提供给用户。",
+            "tools": null,
+            "dependencies": [
+              "查询具体房产信息",
+              "获取YouTube上的上海房产视频建议"
+            ]
+          }
+        ]
+      },
+      "best_score": 8.6,
+      "worst_plan": {
+        "fixed_question": "查询上海房产信息并搜索YouTube相关视频",
+        "thought": "需要分两步完成：第一步获取上海房产信息，第二步在YouTube上搜索相关内容。",
+        "steps": [
+          {
+            "thought": "首先通过地点自动补全工具获取上海的房产ID或相关信息。",
+            "title": "获取上海房产信息",
+            "content": "使用地点自动补全接口输入'上海'，获取相关的房产建议和ID。",
+            "tools": [
+              "Get Auto-Complete Locations"
+            ],
+            "dependencies": []
+          },
+          {
+            "thought": "接着通过YouTube自动补全工具查找与上海房产相关的视频内容。",
+            "title": "搜索YouTube上的上海房产视频",
+            "content": "调用YouTube自动补全接口，输入关键词'上海 房产'，获取相关视频建议。",
+            "tools": [
+              "Get YouTube Autocomplete Suggestions"
+            ],
+            "dependencies": []
+          }
+        ]
+      },
+      "worst_score": 8,
+      "preference_pairs": [
+        {
+          "chosen": {
+            "fixed_question": "查询上海的房产信息，并查找YouTube上关于上海房产的视频。",
+            "thought": "需要先通过地点相关工具获取上海的房产信息，然后使用YouTube工具搜索相关内容。",
+            "steps": [
+              {
+                "thought": "获取与上海相关的房产地点建议，为后续查询提供准确的地址或ID。",
+                "title": "获取上海房产地点建议",
+                "content": "调用Get Auto-Complete Locations接口，输入关键词‘上海’，获取自动补全的地点建议。",
+                "tools": [
+                  "Get Auto-Complete Locations"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "根据获取到的地点建议，进一步确定具体的房产信息查询范围。",
+                "title": "查询具体房产信息",
+                "content": "利用Locations Auto-Complete接口，选择合适的地点建议并获取对应的房产ID及相关信息。",
+                "tools": [
+                  "Locations Auto-Complete"
+                ],
+                "dependencies": [
+                  "获取上海房产地点建议"
+                ]
+              },
+              {
+                "thought": "在YouTube上搜索与上海房产相关的视频内容，以补充对房产信息的理解。",
+                "title": "获取YouTube上的上海房产视频建议",
+                "content": "调用Get YouTube Autocomplete Suggestions接口，输入关键词‘上海 房产’，获取相关的自动补全建议。",
+                "tools": [
+                  "Get YouTube Autocomplete Suggestions"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "整理从房产信息和YouTube视频建议中获得的数据，形成最终结果。",
+                "title": "汇总信息",
+                "content": "将获取到的上海房产信息及YouTube视频建议进行整合，提供给用户。",
+                "tools": null,
+                "dependencies": [
+                  "查询具体房产信息",
+                  "获取YouTube上的上海房产视频建议"
+                ]
+              }
+            ]
+          },
+          "chosen_score": 8.6,
+          "rejected": {
+            "fixed_question": "查询上海的房产信息，并搜索YouTube上关于上海房产的视频。",
+            "thought": "首先通过地点自动补全工具获取上海相关房产信息的标准化地址，然后使用YouTube自动补全工具查找与上海房产相关的视频内容。",
+            "steps": [
+              {
+                "thought": "获取上海相关地点的标准化建议，以便后续查询房产信息。",
+                "title": "获取地点自动补全建议",
+                "content": "调用Get Auto-Complete Locations接口，输入关键词“上海”，获取与上海相关的城市、区、街道等地点建议。",
+                "tools": [
+                  "Get Auto-Complete Locations"
+                ],
+                "dependencies": null
+              },
+              {
+                "thought": "基于获取的地点信息，查询具体的房产ID和相关信息。",
+                "title": "查询上海房产信息",
+                "content": "使用第一步中的地点建议，调用Locations Auto-Complete接口获取对应的房产ID及相关信息。",
+                "tools": [
+                  "Locations Auto-Complete"
+                ],
+                "dependencies": [
+                  0
+                ]
+              },
+              {
+                "thought": "在YouTube上查找与上海房产相关的视频内容。",
+                "title": "获取YouTube自动补全建议",
+                "content": "调用Get YouTube Autocomplete Suggestions接口，输入关键词“上海 房产”，获取相关视频搜索建议。",
+                "tools": [
+                  "Get YouTube Autocomplete Suggestions"
+                ],
+                "dependencies": null
+              }
+            ]
+          },
+          "rejected_score": 8,
+          "score_diff": 0.5999999999999996
+        },
+        {
+          "chosen": {
+            "fixed_question": "查询上海的房产信息，并查找YouTube上关于上海房产的视频。",
+            "thought": "需要先通过地点相关工具获取上海的房产信息，然后使用YouTube工具搜索相关内容。",
+            "steps": [
+              {
+                "thought": "获取与上海相关的房产地点建议，为后续查询提供准确的地址或ID。",
+                "title": "获取上海房产地点建议",
+                "content": "调用Get Auto-Complete Locations接口，输入关键词‘上海’，获取自动补全的地点建议。",
+                "tools": [
+                  "Get Auto-Complete Locations"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "根据获取到的地点建议，进一步确定具体的房产信息查询范围。",
+                "title": "查询具体房产信息",
+                "content": "利用Locations Auto-Complete接口，选择合适的地点建议并获取对应的房产ID及相关信息。",
+                "tools": [
+                  "Locations Auto-Complete"
+                ],
+                "dependencies": [
+                  "获取上海房产地点建议"
+                ]
+              },
+              {
+                "thought": "在YouTube上搜索与上海房产相关的视频内容，以补充对房产信息的理解。",
+                "title": "获取YouTube上的上海房产视频建议",
+                "content": "调用Get YouTube Autocomplete Suggestions接口，输入关键词‘上海 房产’，获取相关的自动补全建议。",
+                "tools": [
+                  "Get YouTube Autocomplete Suggestions"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "整理从房产信息和YouTube视频建议中获得的数据，形成最终结果。",
+                "title": "汇总信息",
+                "content": "将获取到的上海房产信息及YouTube视频建议进行整合，提供给用户。",
+                "tools": null,
+                "dependencies": [
+                  "查询具体房产信息",
+                  "获取YouTube上的上海房产视频建议"
+                ]
+              }
+            ]
+          },
+          "chosen_score": 8.6,
+          "rejected": {
+            "fixed_question": "查询上海房产信息并搜索YouTube相关视频",
+            "thought": "需要分两步完成：第一步获取上海房产信息，第二步在YouTube上搜索相关内容。",
+            "steps": [
+              {
+                "thought": "首先通过地点自动补全工具获取上海的房产ID或相关信息。",
+                "title": "获取上海房产信息",
+                "content": "使用地点自动补全接口输入'上海'，获取相关的房产建议和ID。",
+                "tools": [
+                  "Get Auto-Complete Locations"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "接着通过YouTube自动补全工具查找与上海房产相关的视频内容。",
+                "title": "搜索YouTube上的上海房产视频",
+                "content": "调用YouTube自动补全接口，输入关键词'上海 房产'，获取相关视频建议。",
+                "tools": [
+                  "Get YouTube Autocomplete Suggestions"
+                ],
+                "dependencies": []
+              }
+            ]
+          },
+          "rejected_score": 8,
+          "score_diff": 0.5999999999999996
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": 7,
+    "scenario": "追踪推文转发链并关联Instagram账号",
+    "tools": {
+      "Get Username from PK": "根据指定的 Instagram PK 或 ID 获取对应用户名。",
+      "Get User": "获取 Twitter 用户信息。",
+      "Get Retweet Users": "返回转发某条推文的用户列表。",
+      "Get Retweet Users Continuation": "给定推文 ID 和分页续传令牌，返回下一批转发该推文的用户列表。"
+    },
+    "tools_length": 4,
+    "user_question": "如何通过推文转发链找到关联的Instagram账号？",
+    "preference_data": {
+      "user_question": "如何通过推文转发链找到关联的Instagram账号？",
+      "samples": [
+        {
+          "plan": {
+            "fixed_question": "如何通过推文转发链找到关联的Instagram账号？",
+            "thought": "通过分析推文的转发链，获取转发用户的Twitter信息，并尝试从中提取可能关联的Instagram账号。",
+            "steps": [
+              {
+                "thought": "首先需要获取指定推文的转发用户列表。",
+                "title": "获取推文转发用户列表",
+                "content": "调用 Get Retweet Users 工具，根据目标推文 ID 获取第一批转发该推文的用户列表。",
+                "tools": [
+                  "Get Retweet Users"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "如果转发用户数量较多，可能需要分页获取完整的转发用户列表。",
+                "title": "分页获取更多转发用户",
+                "content": "使用 Get Retweet Users Continuation 工具，结合分页续传令牌，逐步获取所有转发用户。",
+                "tools": [
+                  "Get Retweet Users Continuation"
+                ],
+                "dependencies": [
+                  "获取推文转发用户列表"
+                ]
+              },
+              {
+                "thought": "对每个转发用户，获取其 Twitter 用户信息，寻找可能关联的 Instagram 账号线索。",
+                "title": "获取转发用户的详细信息",
+                "content": "调用 Get User 工具，逐一查询转发用户的个人资料，查找描述中是否包含 Instagram 账号相关信息。",
+                "tools": [
+                  "Get User"
+                ],
+                "dependencies": [
+                  "获取推文转发用户列表",
+                  "分页获取更多转发用户"
+                ]
+              },
+              {
+                "thought": "如果发现 Instagram PK 或 ID，可以通过工具将其转换为用户名。",
+                "title": "将 Instagram PK 转换为用户名",
+                "content": "调用 Get Username from PK 工具，将找到的 Instagram PK 或 ID 转换为对应的用户名。",
+                "tools": [
+                  "Get Username from PK"
+                ],
+                "dependencies": [
+                  "获取转发用户的详细信息"
+                ]
+              }
+            ]
+          },
+          "evaluation": {
+            "completeness": {
+              "score": 8,
+              "reason": "规划涵盖了从获取转发用户到提取 Instagram 账号的主要步骤，逻辑较为完整。但未考虑转发链的深度（如多次转发的情况），可能导致遗漏部分关联账号。"
+            },
+            "rationality": {
+              "score": 9,
+              "reason": "整体思路清晰合理，通过分析转发用户的个人资料寻找线索是可行的方法。不过，假设所有用户都会在个人资料中公开 Instagram 信息可能过于乐观。"
+            },
+            "tool_usage": {
+              "score": 9,
+              "reason": "工具选择恰当，能够有效支持各步骤的需求。例如，使用分页工具处理大量数据、通过 PK 转换工具获取用户名等。但未提及如何验证工具返回数据的准确性。"
+            },
+            "dependencies": {
+              "score": 10,
+              "reason": "步骤之间的依赖关系明确且合理，每一步都基于前序步骤的结果，确保了流程的连贯性。"
+            },
+            "executability": {
+              "score": 7,
+              "reason": "规划具备较高的可执行性，但在实际操作中可能会遇到一些问题，例如 API 调用限制、用户隐私设置导致的信息缺失等，这些因素未被充分考虑。"
+            },
+            "total_score": 8.6,
+            "overall_comment": "该规划整体上具有较高的质量和可行性，覆盖了主要需求并选择了合适的工具。然而，在细节上仍有改进空间，例如增加对转发链深度的分析、考虑用户隐私和 API 限制的影响，以及补充数据验证机制。总体而言，这是一个良好的解决方案，但需要进一步完善以应对潜在挑战。"
+          },
+          "temperature": 0.7
+        },
+        {
+          "plan": {
+            "fixed_question": "如何通过推文转发链找到关联的Instagram账号？",
+            "thought": "通过分析推文的转发链，获取转发用户的Twitter信息，并尝试匹配其可能关联的Instagram账号。",
+            "steps": [
+              {
+                "thought": "获取初始推文的转发用户列表，作为分析起点。",
+                "title": "获取推文转发用户列表",
+                "content": "调用 Get Retweet Users 工具，传入目标推文 ID，获取第一批转发该推文的用户列表。",
+                "tools": [
+                  "Get Retweet Users"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "如果转发用户数量较多，需分页获取完整列表。",
+                "title": "分页获取更多转发用户",
+                "content": "根据上一步返回的分页续传令牌，调用 Get Retweet Users Continuation 工具，获取下一批转发用户，直至所有用户被获取。",
+                "tools": [
+                  "Get Retweet Users Continuation"
+                ],
+                "dependencies": [
+                  0
+                ]
+              },
+              {
+                "thought": "逐一获取转发用户的详细信息，寻找与Instagram关联的线索。",
+                "title": "获取转发用户的详细信息",
+                "content": "对每名转发用户，调用 Get User 工具，获取其 Twitter 用户信息，检查其个人资料中是否包含 Instagram 账号相关信息。",
+                "tools": [
+                  "Get User"
+                ],
+                "dependencies": [
+                  1
+                ]
+              },
+              {
+                "thought": "对于发现的 Instagram PK 或 ID，查询对应的用户名以确认关联。",
+                "title": "查询关联的 Instagram 用户名",
+                "content": "若在用户资料中找到 Instagram PK 或 ID，调用 Get Username from PK 工具，获取对应的 Instagram 用户名。",
+                "tools": [
+                  "Get Username from PK"
+                ],
+                "dependencies": [
+                  2
+                ]
+              }
+            ]
+          },
+          "evaluation": {
+            "completeness": {
+              "score": 8,
+              "reason": "规划涵盖了从获取推文转发链到查找关联Instagram账号的主要步骤，逻辑较为完整。但未考虑用户资料中可能缺乏明确的Instagram关联信息的情况，缺少备选方案（如通过其他社交媒体或外部数据源进行补充）。"
+            },
+            "rationality": {
+              "score": 9,
+              "reason": "整体思路清晰合理，按照获取转发链、分析用户信息、确认关联账号的顺序逐步推进，符合问题解决的逻辑。不过在匹配Instagram账号时，仅依赖Twitter个人资料可能不够全面，建议增加更多线索来源。"
+            },
+            "tool_usage": {
+              "score": 9,
+              "reason": "工具选择恰当，能够有效支持每一步的需求，例如使用分页工具处理大量数据，以及通过PK查询Instagram用户名。但未提及如何验证工具返回数据的准确性，可能存在一定风险。"
+            },
+            "dependencies": {
+              "score": 10,
+              "reason": "步骤间的依赖关系明确且合理，每一步都以前一步的结果为基础，确保了流程的连贯性。"
+            },
+            "executability": {
+              "score": 7,
+              "reason": "规划理论上可行，但在实际执行中可能会遇到一些挑战，例如API调用限制、用户隐私设置导致的信息缺失等。此外，未提供错误处理机制和异常情况的应对策略。"
+            },
+            "total_score": 8.6,
+            "overall_comment": "该规划总体上结构清晰、逻辑严谨，能够有效指导通过推文转发链找到关联Instagram账号的过程。然而，在数据来源的多样性和实际执行中的潜在问题方面还有改进空间。建议补充备选方案、错误处理机制，并考虑更广泛的数据匹配方法以提高成功率。"
+          },
+          "temperature": 0.7999999999999999
+        },
+        {
+          "plan": {
+            "fixed_question": "如何通过推文转发链找到关联的Instagram账号？",
+            "thought": "通过分析推文的转发链，获取转发用户信息，并尝试从其个人资料中提取关联的Instagram账号。",
+            "steps": [
+              {
+                "thought": "获取初始推文的所有转发用户列表。",
+                "title": "获取转发用户列表",
+                "content": "调用 Get Retweet Users 工具，获取指定推文的转发用户列表。",
+                "tools": [
+                  "Get Retweet Users"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "如果转发用户较多，可能需要分页加载更多用户。",
+                "title": "加载更多转发用户",
+                "content": "如果有分页续传令牌，则调用 Get Retweet Users Continuation 获取下一批转发用户。",
+                "tools": [
+                  "Get Retweet Users Continuation"
+                ],
+                "dependencies": [
+                  "获取转发用户列表"
+                ]
+              },
+              {
+                "thought": "检查每个转发用户的个人资料，寻找关联的Instagram账号。",
+                "title": "查找关联Instagram账号",
+                "content": "分析转发用户的个人资料描述或其他字段，提取可能的Instagram用户名或链接。",
+                "tools": [],
+                "dependencies": [
+                  "获取转发用户列表",
+                  "加载更多转发用户"
+                ]
+              },
+              {
+                "thought": "根据提取到的Instagram用户名或ID，查询对应的Instagram账号。",
+                "title": "验证Instagram账号",
+                "content": "使用 Get Username from PK 或其他方式验证并获取完整的Instagram账号信息。",
+                "tools": [
+                  "Get Username from PK"
+                ],
+                "dependencies": [
+                  "查找关联Instagram账号"
+                ]
+              }
+            ]
+          },
+          "evaluation": {
+            "completeness": {
+              "score": 8,
+              "reason": "规划涵盖了从获取转发用户到验证Instagram账号的主要步骤，逻辑较为完整。但缺少对异常情况（如无关联账号或隐私限制）的处理说明。"
+            },
+            "rationality": {
+              "score": 9,
+              "reason": "整体思路清晰合理，通过分析推文转发链找到关联账号的方法符合实际需求。但在查找关联账号时，未明确如何处理模糊匹配的情况。"
+            },
+            "tool_usage": {
+              "score": 7,
+              "reason": "工具选择基本合理，但部分步骤（如提取Instagram信息）缺乏具体工具支持，可能需要额外开发或使用第三方工具来实现。"
+            },
+            "dependencies": {
+              "score": 9,
+              "reason": "步骤间的依赖关系明确且合理，每一步都基于前序步骤的结果进行操作，确保了流程的连贯性。"
+            },
+            "executability": {
+              "score": 7,
+              "reason": "规划具备一定的可执行性，但某些细节（如个人资料中提取Instagram信息的具体方法）不够明确，可能导致实施困难。"
+            },
+            "total_score": 8,
+            "overall_comment": "该规划总体上是一个合理的解决方案，能够有效指导如何通过推文转发链找到关联的Instagram账号。建议补充异常处理机制，并明确关键步骤中的技术实现细节以提高可行性。"
+          },
+          "temperature": 0.8999999999999999
+        }
+      ],
+      "best_plan": {
+        "fixed_question": "如何通过推文转发链找到关联的Instagram账号？",
+        "thought": "通过分析推文的转发链，获取转发用户的Twitter信息，并尝试从中提取可能关联的Instagram账号。",
+        "steps": [
+          {
+            "thought": "首先需要获取指定推文的转发用户列表。",
+            "title": "获取推文转发用户列表",
+            "content": "调用 Get Retweet Users 工具，根据目标推文 ID 获取第一批转发该推文的用户列表。",
+            "tools": [
+              "Get Retweet Users"
+            ],
+            "dependencies": []
+          },
+          {
+            "thought": "如果转发用户数量较多，可能需要分页获取完整的转发用户列表。",
+            "title": "分页获取更多转发用户",
+            "content": "使用 Get Retweet Users Continuation 工具，结合分页续传令牌，逐步获取所有转发用户。",
+            "tools": [
+              "Get Retweet Users Continuation"
+            ],
+            "dependencies": [
+              "获取推文转发用户列表"
+            ]
+          },
+          {
+            "thought": "对每个转发用户，获取其 Twitter 用户信息，寻找可能关联的 Instagram 账号线索。",
+            "title": "获取转发用户的详细信息",
+            "content": "调用 Get User 工具，逐一查询转发用户的个人资料，查找描述中是否包含 Instagram 账号相关信息。",
+            "tools": [
+              "Get User"
+            ],
+            "dependencies": [
+              "获取推文转发用户列表",
+              "分页获取更多转发用户"
+            ]
+          },
+          {
+            "thought": "如果发现 Instagram PK 或 ID，可以通过工具将其转换为用户名。",
+            "title": "将 Instagram PK 转换为用户名",
+            "content": "调用 Get Username from PK 工具，将找到的 Instagram PK 或 ID 转换为对应的用户名。",
+            "tools": [
+              "Get Username from PK"
+            ],
+            "dependencies": [
+              "获取转发用户的详细信息"
+            ]
+          }
+        ]
+      },
+      "best_score": 8.6,
+      "worst_plan": {
+        "fixed_question": "如何通过推文转发链找到关联的Instagram账号？",
+        "thought": "通过分析推文的转发链，获取转发用户信息，并尝试从其个人资料中提取关联的Instagram账号。",
+        "steps": [
+          {
+            "thought": "获取初始推文的所有转发用户列表。",
+            "title": "获取转发用户列表",
+            "content": "调用 Get Retweet Users 工具，获取指定推文的转发用户列表。",
+            "tools": [
+              "Get Retweet Users"
+            ],
+            "dependencies": []
+          },
+          {
+            "thought": "如果转发用户较多，可能需要分页加载更多用户。",
+            "title": "加载更多转发用户",
+            "content": "如果有分页续传令牌，则调用 Get Retweet Users Continuation 获取下一批转发用户。",
+            "tools": [
+              "Get Retweet Users Continuation"
+            ],
+            "dependencies": [
+              "获取转发用户列表"
+            ]
+          },
+          {
+            "thought": "检查每个转发用户的个人资料，寻找关联的Instagram账号。",
+            "title": "查找关联Instagram账号",
+            "content": "分析转发用户的个人资料描述或其他字段，提取可能的Instagram用户名或链接。",
+            "tools": [],
+            "dependencies": [
+              "获取转发用户列表",
+              "加载更多转发用户"
+            ]
+          },
+          {
+            "thought": "根据提取到的Instagram用户名或ID，查询对应的Instagram账号。",
+            "title": "验证Instagram账号",
+            "content": "使用 Get Username from PK 或其他方式验证并获取完整的Instagram账号信息。",
+            "tools": [
+              "Get Username from PK"
+            ],
+            "dependencies": [
+              "查找关联Instagram账号"
+            ]
+          }
+        ]
+      },
+      "worst_score": 8,
+      "preference_pairs": [
+        {
+          "chosen": {
+            "fixed_question": "如何通过推文转发链找到关联的Instagram账号？",
+            "thought": "通过分析推文的转发链，获取转发用户的Twitter信息，并尝试从中提取可能关联的Instagram账号。",
+            "steps": [
+              {
+                "thought": "首先需要获取指定推文的转发用户列表。",
+                "title": "获取推文转发用户列表",
+                "content": "调用 Get Retweet Users 工具，根据目标推文 ID 获取第一批转发该推文的用户列表。",
+                "tools": [
+                  "Get Retweet Users"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "如果转发用户数量较多，可能需要分页获取完整的转发用户列表。",
+                "title": "分页获取更多转发用户",
+                "content": "使用 Get Retweet Users Continuation 工具，结合分页续传令牌，逐步获取所有转发用户。",
+                "tools": [
+                  "Get Retweet Users Continuation"
+                ],
+                "dependencies": [
+                  "获取推文转发用户列表"
+                ]
+              },
+              {
+                "thought": "对每个转发用户，获取其 Twitter 用户信息，寻找可能关联的 Instagram 账号线索。",
+                "title": "获取转发用户的详细信息",
+                "content": "调用 Get User 工具，逐一查询转发用户的个人资料，查找描述中是否包含 Instagram 账号相关信息。",
+                "tools": [
+                  "Get User"
+                ],
+                "dependencies": [
+                  "获取推文转发用户列表",
+                  "分页获取更多转发用户"
+                ]
+              },
+              {
+                "thought": "如果发现 Instagram PK 或 ID，可以通过工具将其转换为用户名。",
+                "title": "将 Instagram PK 转换为用户名",
+                "content": "调用 Get Username from PK 工具，将找到的 Instagram PK 或 ID 转换为对应的用户名。",
+                "tools": [
+                  "Get Username from PK"
+                ],
+                "dependencies": [
+                  "获取转发用户的详细信息"
+                ]
+              }
+            ]
+          },
+          "chosen_score": 8.6,
+          "rejected": {
+            "fixed_question": "如何通过推文转发链找到关联的Instagram账号？",
+            "thought": "通过分析推文的转发链，获取转发用户的Twitter信息，并尝试匹配其可能关联的Instagram账号。",
+            "steps": [
+              {
+                "thought": "获取初始推文的转发用户列表，作为分析起点。",
+                "title": "获取推文转发用户列表",
+                "content": "调用 Get Retweet Users 工具，传入目标推文 ID，获取第一批转发该推文的用户列表。",
+                "tools": [
+                  "Get Retweet Users"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "如果转发用户数量较多，需分页获取完整列表。",
+                "title": "分页获取更多转发用户",
+                "content": "根据上一步返回的分页续传令牌，调用 Get Retweet Users Continuation 工具，获取下一批转发用户，直至所有用户被获取。",
+                "tools": [
+                  "Get Retweet Users Continuation"
+                ],
+                "dependencies": [
+                  0
+                ]
+              },
+              {
+                "thought": "逐一获取转发用户的详细信息，寻找与Instagram关联的线索。",
+                "title": "获取转发用户的详细信息",
+                "content": "对每名转发用户，调用 Get User 工具，获取其 Twitter 用户信息，检查其个人资料中是否包含 Instagram 账号相关信息。",
+                "tools": [
+                  "Get User"
+                ],
+                "dependencies": [
+                  1
+                ]
+              },
+              {
+                "thought": "对于发现的 Instagram PK 或 ID，查询对应的用户名以确认关联。",
+                "title": "查询关联的 Instagram 用户名",
+                "content": "若在用户资料中找到 Instagram PK 或 ID，调用 Get Username from PK 工具，获取对应的 Instagram 用户名。",
+                "tools": [
+                  "Get Username from PK"
+                ],
+                "dependencies": [
+                  2
+                ]
+              }
+            ]
+          },
+          "rejected_score": 8.6,
+          "score_diff": 0.0
+        },
+        {
+          "chosen": {
+            "fixed_question": "如何通过推文转发链找到关联的Instagram账号？",
+            "thought": "通过分析推文的转发链，获取转发用户的Twitter信息，并尝试从中提取可能关联的Instagram账号。",
+            "steps": [
+              {
+                "thought": "首先需要获取指定推文的转发用户列表。",
+                "title": "获取推文转发用户列表",
+                "content": "调用 Get Retweet Users 工具，根据目标推文 ID 获取第一批转发该推文的用户列表。",
+                "tools": [
+                  "Get Retweet Users"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "如果转发用户数量较多，可能需要分页获取完整的转发用户列表。",
+                "title": "分页获取更多转发用户",
+                "content": "使用 Get Retweet Users Continuation 工具，结合分页续传令牌，逐步获取所有转发用户。",
+                "tools": [
+                  "Get Retweet Users Continuation"
+                ],
+                "dependencies": [
+                  "获取推文转发用户列表"
+                ]
+              },
+              {
+                "thought": "对每个转发用户，获取其 Twitter 用户信息，寻找可能关联的 Instagram 账号线索。",
+                "title": "获取转发用户的详细信息",
+                "content": "调用 Get User 工具，逐一查询转发用户的个人资料，查找描述中是否包含 Instagram 账号相关信息。",
+                "tools": [
+                  "Get User"
+                ],
+                "dependencies": [
+                  "获取推文转发用户列表",
+                  "分页获取更多转发用户"
+                ]
+              },
+              {
+                "thought": "如果发现 Instagram PK 或 ID，可以通过工具将其转换为用户名。",
+                "title": "将 Instagram PK 转换为用户名",
+                "content": "调用 Get Username from PK 工具，将找到的 Instagram PK 或 ID 转换为对应的用户名。",
+                "tools": [
+                  "Get Username from PK"
+                ],
+                "dependencies": [
+                  "获取转发用户的详细信息"
+                ]
+              }
+            ]
+          },
+          "chosen_score": 8.6,
+          "rejected": {
+            "fixed_question": "如何通过推文转发链找到关联的Instagram账号？",
+            "thought": "通过分析推文的转发链，获取转发用户信息，并尝试从其个人资料中提取关联的Instagram账号。",
+            "steps": [
+              {
+                "thought": "获取初始推文的所有转发用户列表。",
+                "title": "获取转发用户列表",
+                "content": "调用 Get Retweet Users 工具，获取指定推文的转发用户列表。",
+                "tools": [
+                  "Get Retweet Users"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "如果转发用户较多，可能需要分页加载更多用户。",
+                "title": "加载更多转发用户",
+                "content": "如果有分页续传令牌，则调用 Get Retweet Users Continuation 获取下一批转发用户。",
+                "tools": [
+                  "Get Retweet Users Continuation"
+                ],
+                "dependencies": [
+                  "获取转发用户列表"
+                ]
+              },
+              {
+                "thought": "检查每个转发用户的个人资料，寻找关联的Instagram账号。",
+                "title": "查找关联Instagram账号",
+                "content": "分析转发用户的个人资料描述或其他字段，提取可能的Instagram用户名或链接。",
+                "tools": [],
+                "dependencies": [
+                  "获取转发用户列表",
+                  "加载更多转发用户"
+                ]
+              },
+              {
+                "thought": "根据提取到的Instagram用户名或ID，查询对应的Instagram账号。",
+                "title": "验证Instagram账号",
+                "content": "使用 Get Username from PK 或其他方式验证并获取完整的Instagram账号信息。",
+                "tools": [
+                  "Get Username from PK"
+                ],
+                "dependencies": [
+                  "查找关联Instagram账号"
+                ]
+              }
+            ]
+          },
+          "rejected_score": 8,
+          "score_diff": 0.5999999999999996
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": 8,
+    "scenario": "房产信息搜索与详情获取",
+    "tools": {
+      "Get Property Photos": "获取房产的高清详细图片。",
+      "Get Search Results": "基于多种参数搜索房地产房源。",
+      "Zillow Search API": "基于多种参数在 Zillow 平台上搜索房产。",
+      "Get Property Details": "从 Zillow 获取房产详情。"
+    },
+    "tools_length": 4,
+    "user_question": "我想找一套三居室的房子，能帮我查一下房源信息并提供一些房屋的照片吗？",
+    "preference_data": {
+      "user_question": "我想找一套三居室的房子，能帮我查一下房源信息并提供一些房屋的照片吗？",
+      "samples": [
+        {
+          "plan": {
+            "fixed_question": "查找三居室房源并获取房屋照片",
+            "thought": "首先需要根据用户需求搜索符合条件的房源，然后从搜索结果中提取房产详情和照片。",
+            "steps": [
+              {
+                "thought": "使用工具搜索符合三居室条件的房源信息。",
+                "title": "搜索三居室房源",
+                "content": "通过 Zillow Search API 或 Get Search Results 工具，基于参数（如卧室数量=3）搜索房源。",
+                "tools": [
+                  "Zillow Search API",
+                  "Get Search Results"
+                ],
+                "dependencies": null
+              },
+              {
+                "thought": "从搜索结果中提取房源 ID，并进一步获取房产详细信息。",
+                "title": "获取房产详情",
+                "content": "利用上一步返回的房源 ID，调用 Get Property Details 工具获取房产的详细描述信息。",
+                "tools": [
+                  "Get Property Details"
+                ],
+                "dependencies": [
+                  "搜索三居室房源"
+                ]
+              },
+              {
+                "thought": "获取房源的照片以便用户查看。",
+                "title": "获取房源照片",
+                "content": "通过房源 ID 调用 Get Property Photos 工具下载房源的高清图片。",
+                "tools": [
+                  "Get Property Photos"
+                ],
+                "dependencies": [
+                  "搜索三居室房源"
+                ]
+              }
+            ]
+          },
+          "evaluation": {
+            "completeness": {
+              "score": 9,
+              "reason": "规划涵盖了用户需求的核心内容，包括房源搜索、获取详情和照片。但未明确提及如何处理无结果或异常情况（如无符合条件的房源）。"
+            },
+            "rationality": {
+              "score": 10,
+              "reason": "步骤逻辑清晰且合理，从搜索到获取详情再到下载照片，符合实际操作流程，能够有效满足用户需求。"
+            },
+            "tool_usage": {
+              "score": 10,
+              "reason": "工具选择恰当，Zillow Search API 和其他相关工具能够很好地支持房源搜索、详情获取及照片下载等任务。"
+            },
+            "dependencies": {
+              "score": 10,
+              "reason": "依赖关系定义准确，后续步骤明确依赖于前序步骤的结果，确保了执行顺序的正确性。"
+            },
+            "executability": {
+              "score": 8,
+              "reason": "整体规划可执行性强，但需要假设所使用的工具（如 Zillow Search API）具备稳定性和数据完整性；如果工具不可用，则可能影响执行效果。"
+            },
+            "total_score": 9.4,
+            "overall_comment": "该规划全面且合理，针对用户需求设计了清晰的操作步骤，并选择了适当的工具支持实现目标。唯一改进点是增加对异常情况的处理机制以提高鲁棒性。"
+          },
+          "temperature": 0.8999999999999999
+        },
+        {
+          "plan": {
+            "fixed_question": "查询三居室房源信息并获取房屋照片",
+            "thought": "通过多步骤操作，先搜索符合条件的房源，再获取房源详细信息和相关照片。",
+            "steps": [
+              {
+                "thought": "使用 Zillow Search API 搜索三居室房源，以获取初步的房源列表。",
+                "title": "搜索三居室房源",
+                "content": "基于用户需求，在 Zillow 平台上筛选三居室的房源信息。",
+                "tools": [
+                  "Zillow Search API"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "从初步搜索结果中提取感兴趣的房源 ID，并获取这些房源的详细信息。",
+                "title": "获取房源详细信息",
+                "content": "利用房源 ID 调用工具获取每套房源的详细信息，包括价格、位置和描述等。",
+                "tools": [
+                  "Get Property Details"
+                ],
+                "dependencies": [
+                  "搜索三居室房源"
+                ]
+              },
+              {
+                "thought": "针对用户需要的照片，调用工具获取房源的高清图片。",
+                "title": "获取房源照片",
+                "content": "根据房源 ID 获取每套房源的高清详细图片。",
+                "tools": [
+                  "Get Property Photos"
+                ],
+                "dependencies": [
+                  "搜索三居室房源"
+                ]
+              }
+            ]
+          },
+          "evaluation": {
+            "completeness": {
+              "score": 9,
+              "reason": "规划涵盖了用户需求的核心任务，包括搜索房源、获取详细信息和照片。但未明确说明如何处理无结果或异常情况（如无符合条件的房源）。"
+            },
+            "rationality": {
+              "score": 8,
+              "reason": "整体逻辑清晰合理，步骤之间衔接紧密。然而，假设 Zillow Search API 和其他工具能够完全满足需求，可能忽略了潜在的平台限制或数据缺失问题。"
+            },
+            "tool_usage": {
+              "score": 10,
+              "reason": "工具选择恰当且具体，Zillow Search API、Get Property Details 和 Get Property Photos 都是针对任务的最佳选择，能有效支持各步骤的实现。"
+            },
+            "dependencies": {
+              "score": 10,
+              "reason": "依赖关系定义准确，后续步骤明确依赖于前序步骤的结果，确保了流程的连贯性和正确性。"
+            },
+            "executability": {
+              "score": 8,
+              "reason": "规划具有较高的可执行性，但需要确认所使用的 API 是否有访问权限、调用频率限制等问题，否则可能导致实际操作中的困难。"
+            },
+            "total_score": 9,
+            "overall_comment": "该规划整体质量较高，覆盖了用户需求的主要方面，并选择了合适的工具和方法。但在异常处理和外部限制的考虑上略显不足，建议补充相关细节以提高鲁棒性。"
+          },
+          "temperature": 0.7
+        },
+        {
+          "plan": {
+            "fixed_question": "查询三居室房源信息并提供房屋照片",
+            "thought": "通过搜索工具获取符合条件的房源列表，然后获取每个房源的照片。",
+            "steps": [
+              {
+                "thought": "首先在 Zillow 平台上搜索三居室的房源。",
+                "title": "搜索三居室房源",
+                "content": "使用 Zillow Search API 搜索符合条件的三居室房源。",
+                "tools": [
+                  "Zillow Search API"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "从搜索结果中提取房源详情以备进一步处理。",
+                "title": "获取房源详细信息",
+                "content": "利用 Get Property Details 工具为每套房源获取详细信息。",
+                "tools": [
+                  "Get Property Details"
+                ],
+                "dependencies": [
+                  "搜索三居室房源"
+                ]
+              },
+              {
+                "thought": "为每套房源获取高清图片以便用户查看。",
+                "title": "获取房源照片",
+                "content": "使用 Get Property Photos 获取房源的高清图片。",
+                "tools": [
+                  "Get Property Photos"
+                ],
+                "dependencies": [
+                  "获取房源详细信息"
+                ]
+              }
+            ]
+          },
+          "evaluation": {
+            "completeness": {
+              "score": 9,
+              "reason": "规划涵盖了从房源搜索到获取照片的完整流程，步骤清晰且全面。唯一可以改进的地方是增加对用户需求的进一步细化（如预算、位置偏好等），以提高搜索结果的相关性。"
+            },
+            "rationality": {
+              "score": 8,
+              "reason": "整体逻辑合理，按照搜索房源、获取详情、提取照片的顺序进行操作。但未考虑可能的异常情况（如无符合条件的房源或图片无法加载），建议加入错误处理机制。"
+            },
+            "tool_usage": {
+              "score": 10,
+              "reason": "工具选择恰当，Zillow Search API 和 Get Property Photos 等工具非常适合完成房源搜索和图片获取的任务。"
+            },
+            "dependencies": {
+              "score": 10,
+              "reason": "步骤之间的依赖关系明确且合理，每一步都以前一步的结果为基础，确保了流程的连贯性。"
+            },
+            "executability": {
+              "score": 8,
+              "reason": "规划具有较高的可执行性，但需要确保所使用的工具（如 Zillow API）具备稳定性和权限支持。此外，实际执行时可能需要处理网络延迟或数据格式问题。"
+            },
+            "total_score": 8.8,
+            "overall_comment": "该规划整体质量较高，覆盖了房源查询和图片获取的核心需求，工具选择合理且依赖关系清晰。但在异常处理和用户需求细化方面还有提升空间。如果能补充更多细节并优化执行中的潜在问题，将更加完善。"
+          },
+          "temperature": 0.7999999999999999
+        }
+      ],
+      "best_plan": {
+        "fixed_question": "查找三居室房源并获取房屋照片",
+        "thought": "首先需要根据用户需求搜索符合条件的房源，然后从搜索结果中提取房产详情和照片。",
+        "steps": [
+          {
+            "thought": "使用工具搜索符合三居室条件的房源信息。",
+            "title": "搜索三居室房源",
+            "content": "通过 Zillow Search API 或 Get Search Results 工具，基于参数（如卧室数量=3）搜索房源。",
+            "tools": [
+              "Zillow Search API",
+              "Get Search Results"
+            ],
+            "dependencies": null
+          },
+          {
+            "thought": "从搜索结果中提取房源 ID，并进一步获取房产详细信息。",
+            "title": "获取房产详情",
+            "content": "利用上一步返回的房源 ID，调用 Get Property Details 工具获取房产的详细描述信息。",
+            "tools": [
+              "Get Property Details"
+            ],
+            "dependencies": [
+              "搜索三居室房源"
+            ]
+          },
+          {
+            "thought": "获取房源的照片以便用户查看。",
+            "title": "获取房源照片",
+            "content": "通过房源 ID 调用 Get Property Photos 工具下载房源的高清图片。",
+            "tools": [
+              "Get Property Photos"
+            ],
+            "dependencies": [
+              "搜索三居室房源"
+            ]
+          }
+        ]
+      },
+      "best_score": 9.4,
+      "worst_plan": {
+        "fixed_question": "查询三居室房源信息并提供房屋照片",
+        "thought": "通过搜索工具获取符合条件的房源列表，然后获取每个房源的照片。",
+        "steps": [
+          {
+            "thought": "首先在 Zillow 平台上搜索三居室的房源。",
+            "title": "搜索三居室房源",
+            "content": "使用 Zillow Search API 搜索符合条件的三居室房源。",
+            "tools": [
+              "Zillow Search API"
+            ],
+            "dependencies": []
+          },
+          {
+            "thought": "从搜索结果中提取房源详情以备进一步处理。",
+            "title": "获取房源详细信息",
+            "content": "利用 Get Property Details 工具为每套房源获取详细信息。",
+            "tools": [
+              "Get Property Details"
+            ],
+            "dependencies": [
+              "搜索三居室房源"
+            ]
+          },
+          {
+            "thought": "为每套房源获取高清图片以便用户查看。",
+            "title": "获取房源照片",
+            "content": "使用 Get Property Photos 获取房源的高清图片。",
+            "tools": [
+              "Get Property Photos"
+            ],
+            "dependencies": [
+              "获取房源详细信息"
+            ]
+          }
+        ]
+      },
+      "worst_score": 8.8,
+      "preference_pairs": [
+        {
+          "chosen": {
+            "fixed_question": "查找三居室房源并获取房屋照片",
+            "thought": "首先需要根据用户需求搜索符合条件的房源，然后从搜索结果中提取房产详情和照片。",
+            "steps": [
+              {
+                "thought": "使用工具搜索符合三居室条件的房源信息。",
+                "title": "搜索三居室房源",
+                "content": "通过 Zillow Search API 或 Get Search Results 工具，基于参数（如卧室数量=3）搜索房源。",
+                "tools": [
+                  "Zillow Search API",
+                  "Get Search Results"
+                ],
+                "dependencies": null
+              },
+              {
+                "thought": "从搜索结果中提取房源 ID，并进一步获取房产详细信息。",
+                "title": "获取房产详情",
+                "content": "利用上一步返回的房源 ID，调用 Get Property Details 工具获取房产的详细描述信息。",
+                "tools": [
+                  "Get Property Details"
+                ],
+                "dependencies": [
+                  "搜索三居室房源"
+                ]
+              },
+              {
+                "thought": "获取房源的照片以便用户查看。",
+                "title": "获取房源照片",
+                "content": "通过房源 ID 调用 Get Property Photos 工具下载房源的高清图片。",
+                "tools": [
+                  "Get Property Photos"
+                ],
+                "dependencies": [
+                  "搜索三居室房源"
+                ]
+              }
+            ]
+          },
+          "chosen_score": 9.4,
+          "rejected": {
+            "fixed_question": "查询三居室房源信息并获取房屋照片",
+            "thought": "通过多步骤操作，先搜索符合条件的房源，再获取房源详细信息和相关照片。",
+            "steps": [
+              {
+                "thought": "使用 Zillow Search API 搜索三居室房源，以获取初步的房源列表。",
+                "title": "搜索三居室房源",
+                "content": "基于用户需求，在 Zillow 平台上筛选三居室的房源信息。",
+                "tools": [
+                  "Zillow Search API"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "从初步搜索结果中提取感兴趣的房源 ID，并获取这些房源的详细信息。",
+                "title": "获取房源详细信息",
+                "content": "利用房源 ID 调用工具获取每套房源的详细信息，包括价格、位置和描述等。",
+                "tools": [
+                  "Get Property Details"
+                ],
+                "dependencies": [
+                  "搜索三居室房源"
+                ]
+              },
+              {
+                "thought": "针对用户需要的照片，调用工具获取房源的高清图片。",
+                "title": "获取房源照片",
+                "content": "根据房源 ID 获取每套房源的高清详细图片。",
+                "tools": [
+                  "Get Property Photos"
+                ],
+                "dependencies": [
+                  "搜索三居室房源"
+                ]
+              }
+            ]
+          },
+          "rejected_score": 9,
+          "score_diff": 0.40000000000000036
+        },
+        {
+          "chosen": {
+            "fixed_question": "查找三居室房源并获取房屋照片",
+            "thought": "首先需要根据用户需求搜索符合条件的房源，然后从搜索结果中提取房产详情和照片。",
+            "steps": [
+              {
+                "thought": "使用工具搜索符合三居室条件的房源信息。",
+                "title": "搜索三居室房源",
+                "content": "通过 Zillow Search API 或 Get Search Results 工具，基于参数（如卧室数量=3）搜索房源。",
+                "tools": [
+                  "Zillow Search API",
+                  "Get Search Results"
+                ],
+                "dependencies": null
+              },
+              {
+                "thought": "从搜索结果中提取房源 ID，并进一步获取房产详细信息。",
+                "title": "获取房产详情",
+                "content": "利用上一步返回的房源 ID，调用 Get Property Details 工具获取房产的详细描述信息。",
+                "tools": [
+                  "Get Property Details"
+                ],
+                "dependencies": [
+                  "搜索三居室房源"
+                ]
+              },
+              {
+                "thought": "获取房源的照片以便用户查看。",
+                "title": "获取房源照片",
+                "content": "通过房源 ID 调用 Get Property Photos 工具下载房源的高清图片。",
+                "tools": [
+                  "Get Property Photos"
+                ],
+                "dependencies": [
+                  "搜索三居室房源"
+                ]
+              }
+            ]
+          },
+          "chosen_score": 9.4,
+          "rejected": {
+            "fixed_question": "查询三居室房源信息并提供房屋照片",
+            "thought": "通过搜索工具获取符合条件的房源列表，然后获取每个房源的照片。",
+            "steps": [
+              {
+                "thought": "首先在 Zillow 平台上搜索三居室的房源。",
+                "title": "搜索三居室房源",
+                "content": "使用 Zillow Search API 搜索符合条件的三居室房源。",
+                "tools": [
+                  "Zillow Search API"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "从搜索结果中提取房源详情以备进一步处理。",
+                "title": "获取房源详细信息",
+                "content": "利用 Get Property Details 工具为每套房源获取详细信息。",
+                "tools": [
+                  "Get Property Details"
+                ],
+                "dependencies": [
+                  "搜索三居室房源"
+                ]
+              },
+              {
+                "thought": "为每套房源获取高清图片以便用户查看。",
+                "title": "获取房源照片",
+                "content": "使用 Get Property Photos 获取房源的高清图片。",
+                "tools": [
+                  "Get Property Photos"
+                ],
+                "dependencies": [
+                  "获取房源详细信息"
+                ]
+              }
+            ]
+          },
+          "rejected_score": 8.8,
+          "score_diff": 0.5999999999999996
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": 9,
+    "scenario": "全球多区域房产经纪人精准搜索",
+    "tools": {
+      "Find Commercial Agents": "按指定地理位置搜索商业地产经纪人。",
+      "Search for Real Estate Agents": "按地理位置、姓名、语言、专业领域及页码搜索房地产经纪人。",
+      "UK Estate Agents Search": "搜索英国境内的房地产经纪人。",
+      "Find Estate Agents": "按指定地理位置搜索房地产经纪人。"
+    },
+    "tools_length": 4,
+    "user_question": "如何在全球范围内精准找到多区域的房产经纪人？",
+    "preference_data": {
+      "user_question": "如何在全球范围内精准找到多区域的房产经纪人？",
+      "samples": [
+        {
+          "plan": {
+            "fixed_question": "如何在全球范围内精准找到多区域的房产经纪人？",
+            "thought": "通过分区域搜索和工具组合，实现全球范围内的精准定位。针对不同地区使用对应的工具，并汇总结果。",
+            "steps": [
+              {
+                "thought": "明确需要覆盖的目标区域，并分类为英国境内和全球其他地区。",
+                "title": "划分目标区域",
+                "content": "将用户需求拆解为英国境内和其他国际区域两部分，分别制定搜索策略。",
+                "tools": null,
+                "dependencies": null
+              },
+              {
+                "thought": "优先处理英国境内的房产经纪人搜索。",
+                "title": "搜索英国境内经纪人",
+                "content": "使用UK Estate Agents Search工具，定位英国范围内的房地产经纪人信息。",
+                "tools": [
+                  "UK Estate Agents Search"
+                ],
+                "dependencies": [
+                  "划分目标区域"
+                ]
+              },
+              {
+                "thought": "针对全球其他区域，按照地理位置、语言和专业领域进行细化搜索。",
+                "title": "搜索全球其他区域经纪人",
+                "content": "利用Search for Real Estate Agents工具，根据具体区域、语言及专业领域筛选合适的经纪人。",
+                "tools": [
+                  "Search for Real Estate Agents"
+                ],
+                "dependencies": [
+                  "划分目标区域"
+                ]
+              },
+              {
+                "thought": "对商业地产有需求时，可单独补充搜索商业地产经纪人。",
+                "title": "补充商业地产经纪人搜索",
+                "content": "使用Find Commercial Agents工具，在指定区域寻找商业地产经纪人。",
+                "tools": [
+                  "Find Commercial Agents"
+                ],
+                "dependencies": [
+                  "划分目标区域"
+                ]
+              },
+              {
+                "thought": "整合所有搜索结果，形成完整的经纪人名单。",
+                "title": "汇总经纪人信息",
+                "content": "将英国境内及其他区域的搜索结果整理成统一的清单，便于用户查阅。",
+                "tools": null,
+                "dependencies": [
+                  "搜索英国境内经纪人",
+                  "搜索全球其他区域经纪人",
+                  "补充商业地产经纪人搜索"
+                ]
+              }
+            ]
+          },
+          "evaluation": {
+            "completeness": {
+              "score": 9,
+              "reason": "规划涵盖了从区域划分到结果汇总的完整流程，步骤清晰且全面。但未提及如何处理搜索过程中可能遇到的数据质量问题或信息不全的情况。"
+            },
+            "rationality": {
+              "score": 8,
+              "reason": "整体逻辑合理，分区域和工具组合的方式符合实际需求。然而，商业地产经纪人搜索作为补充步骤，可能会被忽略，建议更明确地融入主流程。"
+            },
+            "tool_usage": {
+              "score": 10,
+              "reason": "针对不同区域和需求选择了合适的工具（如UK Estate Agents Search、Search for Real Estate Agents、Find Commercial Agents），工具选择贴合任务目标。"
+            },
+            "dependencies": {
+              "score": 9,
+              "reason": "各步骤之间的依赖关系明确，确保了流程的连贯性。但‘划分目标区域’作为多个步骤的前置依赖，其重要性可以进一步强调以避免执行中的疏漏。"
+            },
+            "executability": {
+              "score": 8,
+              "reason": "规划具有较高的可操作性，但需要假设用户能够熟练使用所提到的工具。如果能提供工具使用的简要说明或培训建议，将更具可行性。"
+            },
+            "total_score": 8.8,
+            "overall_comment": "该规划结构清晰、工具选择得当，具备较强的实用性和逻辑性。但在数据质量处理、工具使用指导以及商业地产经纪人搜索的整合方面还有改进空间。总体而言，这是一个高质量的解决方案，稍作优化即可更加完善。"
+          },
+          "temperature": 0.7999999999999999
+        },
+        {
+          "plan": {
+            "fixed_question": "如何在全球范围内精准找到多区域的房产经纪人？",
+            "thought": "根据用户需求，需要结合多种工具按地理位置、语言及其他筛选条件搜索全球范围内的房产经纪人。同时需考虑分步骤执行以覆盖不同区域和细化搜索结果。",
+            "steps": [
+              {
+                "thought": "优先明确目标区域并分类搜索范围，例如区分国内外及特定国家。",
+                "title": "划分目标区域",
+                "content": "将全球范围划分为多个目标区域，例如英国境内、其他具体国家或地区，以便后续针对性选择工具。",
+                "tools": null,
+                "dependencies": null
+              },
+              {
+                "thought": "使用工具定位英国境内的房地产经纪人。",
+                "title": "搜索英国境内经纪人",
+                "content": "通过UK Estate Agents Search工具，获取英国范围内的经纪人信息。",
+                "tools": [
+                  "UK Estate Agents Search"
+                ],
+                "dependencies": [
+                  "划分目标区域"
+                ]
+              },
+              {
+                "thought": "对非英国地区的经纪人进行搜索，可以利用Find Commercial Agents和Search for Real Estate Agents工具。",
+                "title": "搜索非英国地区经纪人",
+                "content": "分别使用Find Commercial Agents（针对商业地产）和Search for Real Estate Agents（综合住宅及商业地产），按照地理位置、语言及专业领域细化搜索。",
+                "tools": [
+                  "Find Commercial Agents",
+                  "Search for Real Estate Agents"
+                ],
+                "dependencies": [
+                  "划分目标区域"
+                ]
+              },
+              {
+                "thought": "进一步优化搜索结果，特别是在某些指定区域内可能需要补充搜索。",
+                "title": "补充指定区域搜索",
+                "content": "如果某些区域的搜索结果不够全面，使用Find Estate Agents工具补充搜索。",
+                "tools": [
+                  "Find Estate Agents"
+                ],
+                "dependencies": [
+                  "搜索非英国地区经纪人"
+                ]
+              },
+              {
+                "thought": "整理所有搜索结果并输出汇总清单。",
+                "title": "整合经纪人信息",
+                "content": "将从各工具中获取的经纪人数据整合为统一列表，并按区域或专业领域分类。",
+                "tools": null,
+                "dependencies": [
+                  "搜索英国境内经纪人",
+                  "搜索非英国地区经纪人",
+                  "补充指定区域搜索"
+                ]
+              }
+            ]
+          },
+          "evaluation": {
+            "completeness": {
+              "score": 9,
+              "reason": "规划涵盖了从区域划分到信息整合的完整流程，步骤清晰且全面。唯一可改进之处是未提及如何处理语言和文化差异的问题，这在全球范围内尤其重要。"
+            },
+            "rationality": {
+              "score": 8,
+              "reason": "整体逻辑合理，分步执行的方式有助于逐步细化搜索结果。但某些工具的选择（如Find Estate Agents）显得有些冗余，可能与前序工具功能重叠。"
+            },
+            "tool_usage": {
+              "score": 8,
+              "reason": "工具选择针对性较强，能够覆盖英国及非英国地区的不同需求。然而，对于全球范围内的搜索，缺少对更通用或国际化的工具（如LinkedIn或全球房产平台）的考虑。"
+            },
+            "dependencies": {
+              "score": 10,
+              "reason": "各步骤之间的依赖关系明确且合理，确保了流程的连贯性和逻辑性。例如，补充搜索依赖于前期的基础搜索结果，避免了重复劳动。"
+            },
+            "executability": {
+              "score": 9,
+              "reason": "规划具有较高的可执行性，每一步都具体且易于操作。不过，实际执行中可能会遇到数据格式不统一或工具访问限制等问题，需提前考虑解决方案。"
+            },
+            "total_score": 8.8,
+            "overall_comment": "该规划整体质量较高，结构清晰、逻辑严谨，能够有效解决用户问题。但在工具选择的多样性和应对全球化挑战（如语言和文化差异）方面还有提升空间。建议增加对国际化工具的使用，并在规划中加入对潜在问题的预案。"
+          },
+          "temperature": 0.8999999999999999
+        },
+        {
+          "plan": {
+            "fixed_question": "如何在全球范围内精准找到多区域的房产经纪人？",
+            "thought": "需要综合使用多种工具，按地理位置、语言和专业领域筛选经纪人，并覆盖全球范围内的主要市场。",
+            "steps": [
+              {
+                "thought": "首先明确目标区域并分组，以便针对不同地区选择合适的工具。",
+                "title": "确定目标区域",
+                "content": "将全球划分为若干区域（如北美、欧洲、亚洲等），为后续搜索提供依据。",
+                "tools": null,
+                "dependencies": null
+              },
+              {
+                "thought": "针对英国地区，使用专门工具快速定位经纪人。",
+                "title": "搜索英国经纪人",
+                "content": "使用UK Estate Agents Search工具，搜索英国境内的房地产经纪人。",
+                "tools": [
+                  "UK Estate Agents Search"
+                ],
+                "dependencies": [
+                  "确定目标区域"
+                ]
+              },
+              {
+                "thought": "对于其他区域，采用通用工具进行地理筛选。",
+                "title": "按地理位置搜索经纪人",
+                "content": "利用Find Estate Agents工具，按指定地理位置逐一搜索目标区域的房地产经纪人。",
+                "tools": [
+                  "Find Estate Agents"
+                ],
+                "dependencies": [
+                  "确定目标区域"
+                ]
+              },
+              {
+                "thought": "根据用户需求，进一步筛选符合语言或专业领域的经纪人。",
+                "title": "细化筛选条件",
+                "content": "通过Search for Real Estate Agents工具，按语言、专业领域及页码优化搜索结果。",
+                "tools": [
+                  "Search for Real Estate Agents"
+                ],
+                "dependencies": [
+                  "按地理位置搜索经纪人"
+                ]
+              },
+              {
+                "thought": "针对商业地产需求，单独查找相关经纪人以确保专业性。",
+                "title": "搜索商业地产经纪人",
+                "content": "使用Find Commercial Agents工具，按地理位置搜索商业地产经纪人。",
+                "tools": [
+                  "Find Commercial Agents"
+                ],
+                "dependencies": [
+                  "确定目标区域"
+                ]
+              },
+              {
+                "thought": "整合所有搜索结果，形成完整的经纪人名单。",
+                "title": "汇总经纪人信息",
+                "content": "将各区域的搜索结果整理成统一的列表，便于用户参考和联系。",
+                "tools": null,
+                "dependencies": [
+                  "搜索英国经纪人",
+                  "按地理位置搜索经纪人",
+                  "细化筛选条件",
+                  "搜索商业地产经纪人"
+                ]
+              }
+            ]
+          },
+          "evaluation": {
+            "completeness": {
+              "score": 9,
+              "reason": "规划涵盖了从目标区域划分到最终汇总经纪人信息的全流程，步骤清晰且完整。唯一可改进之处是未提及如何处理数据更新或动态变化的情况。"
+            },
+            "rationality": {
+              "score": 8,
+              "reason": "整体逻辑合理，按地理位置、语言和专业领域筛选经纪人的方法科学。但对某些区域（如南美、非洲）缺乏具体工具支持，可能影响覆盖范围的全面性。"
+            },
+            "tool_usage": {
+              "score": 8,
+              "reason": "针对不同区域和需求选择了合适的工具，体现了针对性。然而，部分工具（如UK Estate Agents Search）仅适用于特定地区，全球通用性不足，可能需要补充更多工具。"
+            },
+            "dependencies": {
+              "score": 10,
+              "reason": "各步骤之间的依赖关系明确且合理，确保了流程的连贯性和执行效率。例如，‘确定目标区域’作为前置步骤为后续操作提供了基础。"
+            },
+            "executability": {
+              "score": 7,
+              "reason": "规划在理论上具备较高的可行性，但在实际操作中可能存在挑战，例如工具的可用性、语言障碍以及跨区域协调等问题，需进一步细化应对措施。"
+            },
+            "total_score": 8.4,
+            "overall_comment": "该规划整体设计较为完善，能够有效解决在全球范围内精准找到多区域房产经纪人的问题。其优势在于步骤清晰、依赖关系明确，并结合了多种工具进行筛选。然而，在工具选择的全球覆盖范围和实际执行中的潜在问题上仍有改进空间。建议增加对非英语国家和地区工具的支持，同时考虑动态数据更新机制以提升长期实用性。"
+          },
+          "temperature": 0.7
+        }
+      ],
+      "best_plan": {
+        "fixed_question": "如何在全球范围内精准找到多区域的房产经纪人？",
+        "thought": "通过分区域搜索和工具组合，实现全球范围内的精准定位。针对不同地区使用对应的工具，并汇总结果。",
+        "steps": [
+          {
+            "thought": "明确需要覆盖的目标区域，并分类为英国境内和全球其他地区。",
+            "title": "划分目标区域",
+            "content": "将用户需求拆解为英国境内和其他国际区域两部分，分别制定搜索策略。",
+            "tools": null,
+            "dependencies": null
+          },
+          {
+            "thought": "优先处理英国境内的房产经纪人搜索。",
+            "title": "搜索英国境内经纪人",
+            "content": "使用UK Estate Agents Search工具，定位英国范围内的房地产经纪人信息。",
+            "tools": [
+              "UK Estate Agents Search"
+            ],
+            "dependencies": [
+              "划分目标区域"
+            ]
+          },
+          {
+            "thought": "针对全球其他区域，按照地理位置、语言和专业领域进行细化搜索。",
+            "title": "搜索全球其他区域经纪人",
+            "content": "利用Search for Real Estate Agents工具，根据具体区域、语言及专业领域筛选合适的经纪人。",
+            "tools": [
+              "Search for Real Estate Agents"
+            ],
+            "dependencies": [
+              "划分目标区域"
+            ]
+          },
+          {
+            "thought": "对商业地产有需求时，可单独补充搜索商业地产经纪人。",
+            "title": "补充商业地产经纪人搜索",
+            "content": "使用Find Commercial Agents工具，在指定区域寻找商业地产经纪人。",
+            "tools": [
+              "Find Commercial Agents"
+            ],
+            "dependencies": [
+              "划分目标区域"
+            ]
+          },
+          {
+            "thought": "整合所有搜索结果，形成完整的经纪人名单。",
+            "title": "汇总经纪人信息",
+            "content": "将英国境内及其他区域的搜索结果整理成统一的清单，便于用户查阅。",
+            "tools": null,
+            "dependencies": [
+              "搜索英国境内经纪人",
+              "搜索全球其他区域经纪人",
+              "补充商业地产经纪人搜索"
+            ]
+          }
+        ]
+      },
+      "best_score": 8.8,
+      "worst_plan": {
+        "fixed_question": "如何在全球范围内精准找到多区域的房产经纪人？",
+        "thought": "需要综合使用多种工具，按地理位置、语言和专业领域筛选经纪人，并覆盖全球范围内的主要市场。",
+        "steps": [
+          {
+            "thought": "首先明确目标区域并分组，以便针对不同地区选择合适的工具。",
+            "title": "确定目标区域",
+            "content": "将全球划分为若干区域（如北美、欧洲、亚洲等），为后续搜索提供依据。",
+            "tools": null,
+            "dependencies": null
+          },
+          {
+            "thought": "针对英国地区，使用专门工具快速定位经纪人。",
+            "title": "搜索英国经纪人",
+            "content": "使用UK Estate Agents Search工具，搜索英国境内的房地产经纪人。",
+            "tools": [
+              "UK Estate Agents Search"
+            ],
+            "dependencies": [
+              "确定目标区域"
+            ]
+          },
+          {
+            "thought": "对于其他区域，采用通用工具进行地理筛选。",
+            "title": "按地理位置搜索经纪人",
+            "content": "利用Find Estate Agents工具，按指定地理位置逐一搜索目标区域的房地产经纪人。",
+            "tools": [
+              "Find Estate Agents"
+            ],
+            "dependencies": [
+              "确定目标区域"
+            ]
+          },
+          {
+            "thought": "根据用户需求，进一步筛选符合语言或专业领域的经纪人。",
+            "title": "细化筛选条件",
+            "content": "通过Search for Real Estate Agents工具，按语言、专业领域及页码优化搜索结果。",
+            "tools": [
+              "Search for Real Estate Agents"
+            ],
+            "dependencies": [
+              "按地理位置搜索经纪人"
+            ]
+          },
+          {
+            "thought": "针对商业地产需求，单独查找相关经纪人以确保专业性。",
+            "title": "搜索商业地产经纪人",
+            "content": "使用Find Commercial Agents工具，按地理位置搜索商业地产经纪人。",
+            "tools": [
+              "Find Commercial Agents"
+            ],
+            "dependencies": [
+              "确定目标区域"
+            ]
+          },
+          {
+            "thought": "整合所有搜索结果，形成完整的经纪人名单。",
+            "title": "汇总经纪人信息",
+            "content": "将各区域的搜索结果整理成统一的列表，便于用户参考和联系。",
+            "tools": null,
+            "dependencies": [
+              "搜索英国经纪人",
+              "按地理位置搜索经纪人",
+              "细化筛选条件",
+              "搜索商业地产经纪人"
+            ]
+          }
+        ]
+      },
+      "worst_score": 8.4,
+      "preference_pairs": [
+        {
+          "chosen": {
+            "fixed_question": "如何在全球范围内精准找到多区域的房产经纪人？",
+            "thought": "通过分区域搜索和工具组合，实现全球范围内的精准定位。针对不同地区使用对应的工具，并汇总结果。",
+            "steps": [
+              {
+                "thought": "明确需要覆盖的目标区域，并分类为英国境内和全球其他地区。",
+                "title": "划分目标区域",
+                "content": "将用户需求拆解为英国境内和其他国际区域两部分，分别制定搜索策略。",
+                "tools": null,
+                "dependencies": null
+              },
+              {
+                "thought": "优先处理英国境内的房产经纪人搜索。",
+                "title": "搜索英国境内经纪人",
+                "content": "使用UK Estate Agents Search工具，定位英国范围内的房地产经纪人信息。",
+                "tools": [
+                  "UK Estate Agents Search"
+                ],
+                "dependencies": [
+                  "划分目标区域"
+                ]
+              },
+              {
+                "thought": "针对全球其他区域，按照地理位置、语言和专业领域进行细化搜索。",
+                "title": "搜索全球其他区域经纪人",
+                "content": "利用Search for Real Estate Agents工具，根据具体区域、语言及专业领域筛选合适的经纪人。",
+                "tools": [
+                  "Search for Real Estate Agents"
+                ],
+                "dependencies": [
+                  "划分目标区域"
+                ]
+              },
+              {
+                "thought": "对商业地产有需求时，可单独补充搜索商业地产经纪人。",
+                "title": "补充商业地产经纪人搜索",
+                "content": "使用Find Commercial Agents工具，在指定区域寻找商业地产经纪人。",
+                "tools": [
+                  "Find Commercial Agents"
+                ],
+                "dependencies": [
+                  "划分目标区域"
+                ]
+              },
+              {
+                "thought": "整合所有搜索结果，形成完整的经纪人名单。",
+                "title": "汇总经纪人信息",
+                "content": "将英国境内及其他区域的搜索结果整理成统一的清单，便于用户查阅。",
+                "tools": null,
+                "dependencies": [
+                  "搜索英国境内经纪人",
+                  "搜索全球其他区域经纪人",
+                  "补充商业地产经纪人搜索"
+                ]
+              }
+            ]
+          },
+          "chosen_score": 8.8,
+          "rejected": {
+            "fixed_question": "如何在全球范围内精准找到多区域的房产经纪人？",
+            "thought": "根据用户需求，需要结合多种工具按地理位置、语言及其他筛选条件搜索全球范围内的房产经纪人。同时需考虑分步骤执行以覆盖不同区域和细化搜索结果。",
+            "steps": [
+              {
+                "thought": "优先明确目标区域并分类搜索范围，例如区分国内外及特定国家。",
+                "title": "划分目标区域",
+                "content": "将全球范围划分为多个目标区域，例如英国境内、其他具体国家或地区，以便后续针对性选择工具。",
+                "tools": null,
+                "dependencies": null
+              },
+              {
+                "thought": "使用工具定位英国境内的房地产经纪人。",
+                "title": "搜索英国境内经纪人",
+                "content": "通过UK Estate Agents Search工具，获取英国范围内的经纪人信息。",
+                "tools": [
+                  "UK Estate Agents Search"
+                ],
+                "dependencies": [
+                  "划分目标区域"
+                ]
+              },
+              {
+                "thought": "对非英国地区的经纪人进行搜索，可以利用Find Commercial Agents和Search for Real Estate Agents工具。",
+                "title": "搜索非英国地区经纪人",
+                "content": "分别使用Find Commercial Agents（针对商业地产）和Search for Real Estate Agents（综合住宅及商业地产），按照地理位置、语言及专业领域细化搜索。",
+                "tools": [
+                  "Find Commercial Agents",
+                  "Search for Real Estate Agents"
+                ],
+                "dependencies": [
+                  "划分目标区域"
+                ]
+              },
+              {
+                "thought": "进一步优化搜索结果，特别是在某些指定区域内可能需要补充搜索。",
+                "title": "补充指定区域搜索",
+                "content": "如果某些区域的搜索结果不够全面，使用Find Estate Agents工具补充搜索。",
+                "tools": [
+                  "Find Estate Agents"
+                ],
+                "dependencies": [
+                  "搜索非英国地区经纪人"
+                ]
+              },
+              {
+                "thought": "整理所有搜索结果并输出汇总清单。",
+                "title": "整合经纪人信息",
+                "content": "将从各工具中获取的经纪人数据整合为统一列表，并按区域或专业领域分类。",
+                "tools": null,
+                "dependencies": [
+                  "搜索英国境内经纪人",
+                  "搜索非英国地区经纪人",
+                  "补充指定区域搜索"
+                ]
+              }
+            ]
+          },
+          "rejected_score": 8.8,
+          "score_diff": 0.0
+        },
+        {
+          "chosen": {
+            "fixed_question": "如何在全球范围内精准找到多区域的房产经纪人？",
+            "thought": "通过分区域搜索和工具组合，实现全球范围内的精准定位。针对不同地区使用对应的工具，并汇总结果。",
+            "steps": [
+              {
+                "thought": "明确需要覆盖的目标区域，并分类为英国境内和全球其他地区。",
+                "title": "划分目标区域",
+                "content": "将用户需求拆解为英国境内和其他国际区域两部分，分别制定搜索策略。",
+                "tools": null,
+                "dependencies": null
+              },
+              {
+                "thought": "优先处理英国境内的房产经纪人搜索。",
+                "title": "搜索英国境内经纪人",
+                "content": "使用UK Estate Agents Search工具，定位英国范围内的房地产经纪人信息。",
+                "tools": [
+                  "UK Estate Agents Search"
+                ],
+                "dependencies": [
+                  "划分目标区域"
+                ]
+              },
+              {
+                "thought": "针对全球其他区域，按照地理位置、语言和专业领域进行细化搜索。",
+                "title": "搜索全球其他区域经纪人",
+                "content": "利用Search for Real Estate Agents工具，根据具体区域、语言及专业领域筛选合适的经纪人。",
+                "tools": [
+                  "Search for Real Estate Agents"
+                ],
+                "dependencies": [
+                  "划分目标区域"
+                ]
+              },
+              {
+                "thought": "对商业地产有需求时，可单独补充搜索商业地产经纪人。",
+                "title": "补充商业地产经纪人搜索",
+                "content": "使用Find Commercial Agents工具，在指定区域寻找商业地产经纪人。",
+                "tools": [
+                  "Find Commercial Agents"
+                ],
+                "dependencies": [
+                  "划分目标区域"
+                ]
+              },
+              {
+                "thought": "整合所有搜索结果，形成完整的经纪人名单。",
+                "title": "汇总经纪人信息",
+                "content": "将英国境内及其他区域的搜索结果整理成统一的清单，便于用户查阅。",
+                "tools": null,
+                "dependencies": [
+                  "搜索英国境内经纪人",
+                  "搜索全球其他区域经纪人",
+                  "补充商业地产经纪人搜索"
+                ]
+              }
+            ]
+          },
+          "chosen_score": 8.8,
+          "rejected": {
+            "fixed_question": "如何在全球范围内精准找到多区域的房产经纪人？",
+            "thought": "需要综合使用多种工具，按地理位置、语言和专业领域筛选经纪人，并覆盖全球范围内的主要市场。",
+            "steps": [
+              {
+                "thought": "首先明确目标区域并分组，以便针对不同地区选择合适的工具。",
+                "title": "确定目标区域",
+                "content": "将全球划分为若干区域（如北美、欧洲、亚洲等），为后续搜索提供依据。",
+                "tools": null,
+                "dependencies": null
+              },
+              {
+                "thought": "针对英国地区，使用专门工具快速定位经纪人。",
+                "title": "搜索英国经纪人",
+                "content": "使用UK Estate Agents Search工具，搜索英国境内的房地产经纪人。",
+                "tools": [
+                  "UK Estate Agents Search"
+                ],
+                "dependencies": [
+                  "确定目标区域"
+                ]
+              },
+              {
+                "thought": "对于其他区域，采用通用工具进行地理筛选。",
+                "title": "按地理位置搜索经纪人",
+                "content": "利用Find Estate Agents工具，按指定地理位置逐一搜索目标区域的房地产经纪人。",
+                "tools": [
+                  "Find Estate Agents"
+                ],
+                "dependencies": [
+                  "确定目标区域"
+                ]
+              },
+              {
+                "thought": "根据用户需求，进一步筛选符合语言或专业领域的经纪人。",
+                "title": "细化筛选条件",
+                "content": "通过Search for Real Estate Agents工具，按语言、专业领域及页码优化搜索结果。",
+                "tools": [
+                  "Search for Real Estate Agents"
+                ],
+                "dependencies": [
+                  "按地理位置搜索经纪人"
+                ]
+              },
+              {
+                "thought": "针对商业地产需求，单独查找相关经纪人以确保专业性。",
+                "title": "搜索商业地产经纪人",
+                "content": "使用Find Commercial Agents工具，按地理位置搜索商业地产经纪人。",
+                "tools": [
+                  "Find Commercial Agents"
+                ],
+                "dependencies": [
+                  "确定目标区域"
+                ]
+              },
+              {
+                "thought": "整合所有搜索结果，形成完整的经纪人名单。",
+                "title": "汇总经纪人信息",
+                "content": "将各区域的搜索结果整理成统一的列表，便于用户参考和联系。",
+                "tools": null,
+                "dependencies": [
+                  "搜索英国经纪人",
+                  "按地理位置搜索经纪人",
+                  "细化筛选条件",
+                  "搜索商业地产经纪人"
+                ]
+              }
+            ]
+          },
+          "rejected_score": 8.4,
+          "score_diff": 0.40000000000000036
+        }
+      ]
+    }
+  },
+  {
+    "scenario_id": 10,
+    "scenario": "多项目体育赛事信息整合查询",
+    "tools": {
+      "Tournament List WTA": "返回指定年份的网球赛事列表，包含场地、场地类型、奖金等基本信息。",
+      "Tennis Category Tournaments": "返回指定类别的网球赛事列表。",
+      "E-Sports Category Tournaments": "返回指定电子竞技类别的赛事列表。",
+      "Get Tournament List": "返回 Sports 领域中 football_data 工具所覆盖的赛事列表。",
+      "TeamTournaments": "获取某支棒球队参与的所有赛事列表。"
+    },
+    "tools_length": 5,
+    "user_question": "我想了解WTA巡回赛和电子竞技类赛事的详细信息，包括比赛时间、地点和参赛队伍。",
+    "preference_data": {
+      "user_question": "我想了解WTA巡回赛和电子竞技类赛事的详细信息，包括比赛时间、地点和参赛队伍。",
+      "samples": [
+        {
+          "plan": {
+            "fixed_question": "查询WTA巡回赛和电子竞技类赛事的详细信息，包括比赛时间、地点和参赛队伍。",
+            "thought": "通过合适的工具分别获取WTA巡回赛和电子竞技类赛事的信息，并整理出比赛时间、地点和参赛队伍等详细数据。",
+            "steps": [
+              {
+                "thought": "获取WTA巡回赛的基本信息，例如比赛时间、地点等。",
+                "title": "获取WTA巡回赛列表",
+                "content": "使用 Tournament List WTA 工具查询指定年份的网球赛事列表，提取场地、时间、地点等信息。",
+                "tools": [
+                  "Tournament List WTA"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "获取电子竞技类赛事的基本信息，例如比赛时间、地点和参赛队伍。",
+                "title": "获取电子竞技赛事列表",
+                "content": "使用 E-Sports Category Tournaments 工具查询指定类别的电子竞技赛事列表，提取比赛时间、地点和参赛队伍等信息。",
+                "tools": [
+                  "E-Sports Category Tournaments"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "整合从两个工具中获得的数据，形成完整的赛事信息报告。",
+                "title": "整合赛事信息",
+                "content": "将WTA巡回赛和电子竞技类赛事的时间、地点、参赛队伍等信息汇总成统一的格式并输出。",
+                "tools": null,
+                "dependencies": [
+                  0,
+                  1
+                ]
+              }
+            ]
+          },
+          "evaluation": {
+            "completeness": {
+              "score": 9,
+              "reason": "规划涵盖了问题中提到的所有关键信息（比赛时间、地点和参赛队伍），并明确分步骤获取WTA巡回赛和电子竞技类赛事的数据。唯一可以改进的地方是未提及如何处理可能缺失的信息，例如某些赛事未公开参赛队伍的情况。"
+            },
+            "rationality": {
+              "score": 10,
+              "reason": "整体逻辑清晰合理，先分别获取两类赛事的信息，再进行整合，符合问题需求且步骤之间衔接自然。"
+            },
+            "tool_usage": {
+              "score": 10,
+              "reason": "针对WTA巡回赛和电子竞技类赛事分别选择了合适的工具（Tournament List WTA 和 E-Sports Category Tournaments），能够有效满足数据获取的需求。"
+            },
+            "dependencies": {
+              "score": 10,
+              "reason": "步骤之间的依赖关系明确且合理，第三步整合信息依赖于前两步的结果，确保了流程的连贯性和正确性。"
+            },
+            "executability": {
+              "score": 8,
+              "reason": "规划总体可执行性强，但未考虑潜在的工具限制或数据获取失败的情况，例如工具无法返回完整数据或网络问题导致查询失败。增加异常处理机制会进一步提升可行性。"
+            },
+            "total_score": 9.4,
+            "overall_comment": "该规划整体设计优秀，覆盖了问题的核心需求，并通过合理的步骤和工具选择实现了目标。建议在数据完整性保障和异常处理方面进一步完善，以提高规划的鲁棒性和实际操作性。"
+          },
+          "temperature": 0.7
+        },
+        {
+          "plan": {
+            "fixed_question": "查询WTA巡回赛和电子竞技类赛事的详细信息，包括比赛时间、地点和参赛队伍。",
+            "thought": "需要分别获取WTA巡回赛和电子竞技类赛事的相关信息，并确保结果包含比赛时间、地点以及参赛队伍等细节。可以通过调用对应的工具来实现分步查询。",
+            "steps": [
+              {
+                "thought": "获取WTA巡回赛的基本信息，例如比赛时间、地点等。",
+                "title": "获取WTA巡回赛列表",
+                "content": "调用 Tournament List WTA 工具获取指定年份的网球赛事列表，筛选出相关信息，如比赛时间、地点等。",
+                "tools": [
+                  "Tournament List WTA"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "进一步补充WTA巡回赛的详细信息，特别是参赛队伍。",
+                "title": "获取WTA巡回赛详细信息",
+                "content": "根据第一步中返回的赛事列表，结合 Tennis Category Tournaments 工具，提取参赛队伍和其他补充信息。",
+                "tools": [
+                  "Tennis Category Tournaments"
+                ],
+                "dependencies": [
+                  0
+                ]
+              },
+              {
+                "thought": "获取电子竞技类赛事的基本信息，例如比赛时间、地点等。",
+                "title": "获取电子竞技类赛事列表",
+                "content": "调用 E-Sports Category Tournaments 工具获取指定电子竞技类别的赛事列表，筛选出相关信息，如比赛时间、地点等。",
+                "tools": [
+                  "E-Sports Category Tournaments"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "整合所有数据并生成最终结果。",
+                "title": "汇总赛事信息",
+                "content": "将WTA巡回赛和电子竞技类赛事的相关信息进行合并整理，形成完整的输出，包括比赛时间、地点和参赛队伍。",
+                "tools": null,
+                "dependencies": [
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          "evaluation": {
+            "completeness": {
+              "score": 9,
+              "reason": "规划涵盖了问题中的所有关键点，包括比赛时间、地点和参赛队伍，并且分别对WTA巡回赛和电子竞技类赛事进行了详细安排。唯一可以改进的是未明确说明如何处理可能缺失的数据（如某些赛事未列出参赛队伍的情况）。"
+            },
+            "rationality": {
+              "score": 10,
+              "reason": "整体逻辑清晰合理，分步设计符合查询需求，先获取基本信息再补充细节，最后汇总整理，步骤之间衔接紧密。"
+            },
+            "tool_usage": {
+              "score": 9,
+              "reason": "工具选择恰当，针对不同赛事类型使用了专门的工具（Tournament List WTA 和 E-Sports Category Tournaments），但没有提到是否需要额外验证工具返回数据的准确性或完整性。"
+            },
+            "dependencies": {
+              "score": 10,
+              "reason": "依赖关系设置合理，每一步都基于前序步骤的结果展开，确保流程顺畅且无冗余操作。"
+            },
+            "executability": {
+              "score": 8,
+              "reason": "规划具备较高的可执行性，但由于涉及多个外部工具调用，可能存在接口限制或数据延迟等问题，这些潜在风险未被提及。"
+            },
+            "total_score": 9,
+            "overall_comment": "该规划总体上非常全面且结构化，能够有效满足用户需求。建议在实际执行中增加对异常情况的处理机制，例如数据缺失或工具调用失败时的备选方案，以进一步提升鲁棒性。"
+          },
+          "temperature": 0.8999999999999999
+        },
+        {
+          "plan": {
+            "fixed_question": "查询WTA巡回赛和电子竞技类赛事的详细信息，包括比赛时间、地点和参赛队伍。",
+            "thought": "需要分别获取WTA巡回赛和电子竞技类赛事的信息，并确保涵盖比赛时间、地点和参赛队伍等细节。可以通过调用相关工具完成数据收集。",
+            "steps": [
+              {
+                "thought": "获取WTA巡回赛的基本信息，例如比赛时间、地点等。",
+                "title": "获取WTA巡回赛列表",
+                "content": "调用Tournament List WTA工具获取指定年份的网球赛事列表，包含场地、场地类型、奖金等信息。",
+                "tools": [
+                  "Tournament List WTA"
+                ],
+                "dependencies": null
+              },
+              {
+                "thought": "进一步筛选并确认特定类别的WTA赛事信息。",
+                "title": "筛选WTA赛事类别",
+                "content": "使用Tennis Category Tournaments工具返回特定类别的网球赛事列表，以补充更详细的分类信息。",
+                "tools": [
+                  "Tennis Category Tournaments"
+                ],
+                "dependencies": [
+                  "获取WTA巡回赛列表"
+                ]
+              },
+              {
+                "thought": "获取电子竞技类赛事的基本信息，例如比赛时间、地点等。",
+                "title": "获取电子竞技赛事列表",
+                "content": "调用E-Sports Category Tournaments工具获取指定类别的电子竞技赛事列表，包括相关信息。",
+                "tools": [
+                  "E-Sports Category Tournaments"
+                ],
+                "dependencies": null
+              },
+              {
+                "thought": "整理所有收集到的数据并提取关键字段（如比赛时间、地点、参赛队伍）。",
+                "title": "整合赛事信息",
+                "content": "将WTA巡回赛和电子竞技类赛事的相关信息进行汇总，形成最终结果。",
+                "tools": null,
+                "dependencies": [
+                  "获取WTA巡回赛列表",
+                  "筛选WTA赛事类别",
+                  "获取电子竞技赛事列表"
+                ]
+              }
+            ]
+          },
+          "evaluation": {
+            "completeness": {
+              "score": 9,
+              "reason": "规划涵盖了WTA巡回赛和电子竞技类赛事的查询需求，并明确列出了比赛时间、地点和参赛队伍等关键信息。但未提及如何获取参赛队伍的具体细节，可能需要进一步补充。"
+            },
+            "rationality": {
+              "score": 8,
+              "reason": "整体逻辑清晰，步骤合理，能够有效解决问题。但在筛选WTA赛事类别时，是否有必要单独使用一个工具值得商榷，可能会增加复杂性。"
+            },
+            "tool_usage": {
+              "score": 10,
+              "reason": "针对不同需求选用了合适的工具（如Tournament List WTA、Tennis Category Tournaments、E-Sports Category Tournaments），工具选择准确且高效。"
+            },
+            "dependencies": {
+              "score": 9,
+              "reason": "依赖关系设置合理，确保了各步骤之间的衔接顺畅。不过‘筛选WTA赛事类别’这一步骤的必要性可以再评估，以避免冗余操作。"
+            },
+            "executability": {
+              "score": 8,
+              "reason": "规划具有较高的可执行性，但由于缺少对某些工具输出结果格式的假设说明，可能导致实际执行中出现数据整合困难的情况。"
+            },
+            "total_score": 8.8,
+            "overall_comment": "该规划总体上非常全面且结构化，能够很好地满足用户的需求。建议优化部分步骤的必要性和细化数据提取方法，以提升效率与准确性。"
+          },
+          "temperature": 0.7999999999999999
+        }
+      ],
+      "best_plan": {
+        "fixed_question": "查询WTA巡回赛和电子竞技类赛事的详细信息，包括比赛时间、地点和参赛队伍。",
+        "thought": "通过合适的工具分别获取WTA巡回赛和电子竞技类赛事的信息，并整理出比赛时间、地点和参赛队伍等详细数据。",
+        "steps": [
+          {
+            "thought": "获取WTA巡回赛的基本信息，例如比赛时间、地点等。",
+            "title": "获取WTA巡回赛列表",
+            "content": "使用 Tournament List WTA 工具查询指定年份的网球赛事列表，提取场地、时间、地点等信息。",
+            "tools": [
+              "Tournament List WTA"
+            ],
+            "dependencies": []
+          },
+          {
+            "thought": "获取电子竞技类赛事的基本信息，例如比赛时间、地点和参赛队伍。",
+            "title": "获取电子竞技赛事列表",
+            "content": "使用 E-Sports Category Tournaments 工具查询指定类别的电子竞技赛事列表，提取比赛时间、地点和参赛队伍等信息。",
+            "tools": [
+              "E-Sports Category Tournaments"
+            ],
+            "dependencies": []
+          },
+          {
+            "thought": "整合从两个工具中获得的数据，形成完整的赛事信息报告。",
+            "title": "整合赛事信息",
+            "content": "将WTA巡回赛和电子竞技类赛事的时间、地点、参赛队伍等信息汇总成统一的格式并输出。",
+            "tools": null,
+            "dependencies": [
+              0,
+              1
+            ]
+          }
+        ]
+      },
+      "best_score": 9.4,
+      "worst_plan": {
+        "fixed_question": "查询WTA巡回赛和电子竞技类赛事的详细信息，包括比赛时间、地点和参赛队伍。",
+        "thought": "需要分别获取WTA巡回赛和电子竞技类赛事的信息，并确保涵盖比赛时间、地点和参赛队伍等细节。可以通过调用相关工具完成数据收集。",
+        "steps": [
+          {
+            "thought": "获取WTA巡回赛的基本信息，例如比赛时间、地点等。",
+            "title": "获取WTA巡回赛列表",
+            "content": "调用Tournament List WTA工具获取指定年份的网球赛事列表，包含场地、场地类型、奖金等信息。",
+            "tools": [
+              "Tournament List WTA"
+            ],
+            "dependencies": null
+          },
+          {
+            "thought": "进一步筛选并确认特定类别的WTA赛事信息。",
+            "title": "筛选WTA赛事类别",
+            "content": "使用Tennis Category Tournaments工具返回特定类别的网球赛事列表，以补充更详细的分类信息。",
+            "tools": [
+              "Tennis Category Tournaments"
+            ],
+            "dependencies": [
+              "获取WTA巡回赛列表"
+            ]
+          },
+          {
+            "thought": "获取电子竞技类赛事的基本信息，例如比赛时间、地点等。",
+            "title": "获取电子竞技赛事列表",
+            "content": "调用E-Sports Category Tournaments工具获取指定类别的电子竞技赛事列表，包括相关信息。",
+            "tools": [
+              "E-Sports Category Tournaments"
+            ],
+            "dependencies": null
+          },
+          {
+            "thought": "整理所有收集到的数据并提取关键字段（如比赛时间、地点、参赛队伍）。",
+            "title": "整合赛事信息",
+            "content": "将WTA巡回赛和电子竞技类赛事的相关信息进行汇总，形成最终结果。",
+            "tools": null,
+            "dependencies": [
+              "获取WTA巡回赛列表",
+              "筛选WTA赛事类别",
+              "获取电子竞技赛事列表"
+            ]
+          }
+        ]
+      },
+      "worst_score": 8.8,
+      "preference_pairs": [
+        {
+          "chosen": {
+            "fixed_question": "查询WTA巡回赛和电子竞技类赛事的详细信息，包括比赛时间、地点和参赛队伍。",
+            "thought": "通过合适的工具分别获取WTA巡回赛和电子竞技类赛事的信息，并整理出比赛时间、地点和参赛队伍等详细数据。",
+            "steps": [
+              {
+                "thought": "获取WTA巡回赛的基本信息，例如比赛时间、地点等。",
+                "title": "获取WTA巡回赛列表",
+                "content": "使用 Tournament List WTA 工具查询指定年份的网球赛事列表，提取场地、时间、地点等信息。",
+                "tools": [
+                  "Tournament List WTA"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "获取电子竞技类赛事的基本信息，例如比赛时间、地点和参赛队伍。",
+                "title": "获取电子竞技赛事列表",
+                "content": "使用 E-Sports Category Tournaments 工具查询指定类别的电子竞技赛事列表，提取比赛时间、地点和参赛队伍等信息。",
+                "tools": [
+                  "E-Sports Category Tournaments"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "整合从两个工具中获得的数据，形成完整的赛事信息报告。",
+                "title": "整合赛事信息",
+                "content": "将WTA巡回赛和电子竞技类赛事的时间、地点、参赛队伍等信息汇总成统一的格式并输出。",
+                "tools": null,
+                "dependencies": [
+                  0,
+                  1
+                ]
+              }
+            ]
+          },
+          "chosen_score": 9.4,
+          "rejected": {
+            "fixed_question": "查询WTA巡回赛和电子竞技类赛事的详细信息，包括比赛时间、地点和参赛队伍。",
+            "thought": "需要分别获取WTA巡回赛和电子竞技类赛事的相关信息，并确保结果包含比赛时间、地点以及参赛队伍等细节。可以通过调用对应的工具来实现分步查询。",
+            "steps": [
+              {
+                "thought": "获取WTA巡回赛的基本信息，例如比赛时间、地点等。",
+                "title": "获取WTA巡回赛列表",
+                "content": "调用 Tournament List WTA 工具获取指定年份的网球赛事列表，筛选出相关信息，如比赛时间、地点等。",
+                "tools": [
+                  "Tournament List WTA"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "进一步补充WTA巡回赛的详细信息，特别是参赛队伍。",
+                "title": "获取WTA巡回赛详细信息",
+                "content": "根据第一步中返回的赛事列表，结合 Tennis Category Tournaments 工具，提取参赛队伍和其他补充信息。",
+                "tools": [
+                  "Tennis Category Tournaments"
+                ],
+                "dependencies": [
+                  0
+                ]
+              },
+              {
+                "thought": "获取电子竞技类赛事的基本信息，例如比赛时间、地点等。",
+                "title": "获取电子竞技类赛事列表",
+                "content": "调用 E-Sports Category Tournaments 工具获取指定电子竞技类别的赛事列表，筛选出相关信息，如比赛时间、地点等。",
+                "tools": [
+                  "E-Sports Category Tournaments"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "整合所有数据并生成最终结果。",
+                "title": "汇总赛事信息",
+                "content": "将WTA巡回赛和电子竞技类赛事的相关信息进行合并整理，形成完整的输出，包括比赛时间、地点和参赛队伍。",
+                "tools": null,
+                "dependencies": [
+                  1,
+                  2
+                ]
+              }
+            ]
+          },
+          "rejected_score": 9,
+          "score_diff": 0.40000000000000036
+        },
+        {
+          "chosen": {
+            "fixed_question": "查询WTA巡回赛和电子竞技类赛事的详细信息，包括比赛时间、地点和参赛队伍。",
+            "thought": "通过合适的工具分别获取WTA巡回赛和电子竞技类赛事的信息，并整理出比赛时间、地点和参赛队伍等详细数据。",
+            "steps": [
+              {
+                "thought": "获取WTA巡回赛的基本信息，例如比赛时间、地点等。",
+                "title": "获取WTA巡回赛列表",
+                "content": "使用 Tournament List WTA 工具查询指定年份的网球赛事列表，提取场地、时间、地点等信息。",
+                "tools": [
+                  "Tournament List WTA"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "获取电子竞技类赛事的基本信息，例如比赛时间、地点和参赛队伍。",
+                "title": "获取电子竞技赛事列表",
+                "content": "使用 E-Sports Category Tournaments 工具查询指定类别的电子竞技赛事列表，提取比赛时间、地点和参赛队伍等信息。",
+                "tools": [
+                  "E-Sports Category Tournaments"
+                ],
+                "dependencies": []
+              },
+              {
+                "thought": "整合从两个工具中获得的数据，形成完整的赛事信息报告。",
+                "title": "整合赛事信息",
+                "content": "将WTA巡回赛和电子竞技类赛事的时间、地点、参赛队伍等信息汇总成统一的格式并输出。",
+                "tools": null,
+                "dependencies": [
+                  0,
+                  1
+                ]
+              }
+            ]
+          },
+          "chosen_score": 9.4,
+          "rejected": {
+            "fixed_question": "查询WTA巡回赛和电子竞技类赛事的详细信息，包括比赛时间、地点和参赛队伍。",
+            "thought": "需要分别获取WTA巡回赛和电子竞技类赛事的信息，并确保涵盖比赛时间、地点和参赛队伍等细节。可以通过调用相关工具完成数据收集。",
+            "steps": [
+              {
+                "thought": "获取WTA巡回赛的基本信息，例如比赛时间、地点等。",
+                "title": "获取WTA巡回赛列表",
+                "content": "调用Tournament List WTA工具获取指定年份的网球赛事列表，包含场地、场地类型、奖金等信息。",
+                "tools": [
+                  "Tournament List WTA"
+                ],
+                "dependencies": null
+              },
+              {
+                "thought": "进一步筛选并确认特定类别的WTA赛事信息。",
+                "title": "筛选WTA赛事类别",
+                "content": "使用Tennis Category Tournaments工具返回特定类别的网球赛事列表，以补充更详细的分类信息。",
+                "tools": [
+                  "Tennis Category Tournaments"
+                ],
+                "dependencies": [
+                  "获取WTA巡回赛列表"
+                ]
+              },
+              {
+                "thought": "获取电子竞技类赛事的基本信息，例如比赛时间、地点等。",
+                "title": "获取电子竞技赛事列表",
+                "content": "调用E-Sports Category Tournaments工具获取指定类别的电子竞技赛事列表，包括相关信息。",
+                "tools": [
+                  "E-Sports Category Tournaments"
+                ],
+                "dependencies": null
+              },
+              {
+                "thought": "整理所有收集到的数据并提取关键字段（如比赛时间、地点、参赛队伍）。",
+                "title": "整合赛事信息",
+                "content": "将WTA巡回赛和电子竞技类赛事的相关信息进行汇总，形成最终结果。",
+                "tools": null,
+                "dependencies": [
+                  "获取WTA巡回赛列表",
+                  "筛选WTA赛事类别",
+                  "获取电子竞技赛事列表"
+                ]
+              }
+            ]
+          },
+          "rejected_score": 8.8,
+          "score_diff": 0.5999999999999996
+        }
+      ]
+    }
+  }
+]

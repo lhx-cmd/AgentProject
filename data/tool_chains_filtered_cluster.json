@@ -1,0 +1,778 @@
+[
+  {
+    "scenario": "加密货币投资与汇率监控",
+    "tools": {
+      "Get Cross-Currencies": "获取多种货币之间的实时汇率",
+      "Most Visited Cryptocurrencies": "返回今日访问量最高的加密货币列表，及其市场数据与统计指标",
+      "Get Exchanges From Screener": "从筛选器中获取交易所列表，支持金融数据的筛选与分析。",
+      "Get Currency Exchange Rates": "获取旅行常用货币的当前汇率"
+    },
+    "tools_count": 4,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 24,
+      "reason": "场景清晰但工具集存在不相关项且功能覆盖不全，匹配度一般。",
+      "details": {
+        "scenario_quality": 7,
+        "tools_relevance": 6,
+        "tools_completeness": 5,
+        "scenario_tools_match": 6
+      }
+    }
+  },
+  {
+    "scenario": "股息收益与增长潜力评估",
+    "tools": {
+      "Stocks Tickers": "从 Seeking Alpha Finance 的指定股票筛选器中获取股票代码（Ticker）列表",
+      "/equity/dividends": "返回指定证券的历史股息数据",
+      "Earnings Per Share (EPS) Trend": "该 API 接口返回指定周期内每股收益（EPS）的估算历史变动分解，含趋势分析与变动解读"
+    },
+    "tools_count": 3,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 31,
+      "reason": "场景清晰且有价值，工具高度相关，但缺少评估增长潜力的关键工具（如股价/估值数据），导致完整性不足。",
+      "details": {
+        "scenario_quality": 9,
+        "tools_relevance": 9,
+        "tools_completeness": 6,
+        "scenario_tools_match": 7
+      }
+    }
+  },
+  {
+    "scenario": "社交媒体名言精选",
+    "tools": {
+      "Search Quotes": "在社交媒体平台上搜索名言",
+      "Get Quote": "根据ID从社交媒体平台检索指定名言"
+    },
+    "tools_count": 2,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 27,
+      "reason": "场景清晰但工具集过于单薄，仅支持检索无法实现“精选”功能。",
+      "details": {
+        "scenario_quality": 7,
+        "tools_relevance": 9,
+        "tools_completeness": 5,
+        "scenario_tools_match": 6
+      }
+    }
+  },
+  {
+    "scenario": "社区安全与用户行为研究",
+    "tools": {
+      "index": "数据挖掘（Data Scouting）的根端点",
+      "auditLogs": "审计数据库日志中的安全事件",
+      "forum.post_analysis": "分析论坛内帖子的内容质量与用户互动情况",
+      "ethnography.collect_data": "收集并结构化整理田野调查所得的人类学（民族志）数据"
+    },
+    "tools_count": 4,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 25,
+      "reason": "场景描述过于宽泛，工具集存在关键缺失且部分工具描述不完整，但整体方向相关。",
+      "details": {
+        "scenario_quality": 6,
+        "tools_relevance": 7,
+        "tools_completeness": 5,
+        "scenario_tools_match": 7
+      }
+    }
+  },
+  {
+    "scenario": "房产投资与加密货币联动分析",
+    "tools": {
+      "Get Intervals": "获取金融领域技术分析所支持的有效时间周期列表。",
+      "Get House Prices": "获取 Rightmove 英国网站中某套房产的详细售价信息。",
+      "Backtrack Kline": "获取指定加密货币交易对在选定交易所及市场的历史 K 线（蜡烛图）数据。"
+    },
+    "tools_count": 3,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 24,
+      "reason": "场景新颖但工具集支撑不足，相关性较弱且缺少关键分析工具。",
+      "details": {
+        "scenario_quality": 7,
+        "tools_relevance": 6,
+        "tools_completeness": 5,
+        "scenario_tools_match": 6
+      }
+    }
+  },
+  {
+    "scenario": "音乐趋势分享",
+    "tools": {
+      "HOT TRENDING SONGS POWERED BY TWITTER": "根据指定字符串和时间范围，获取 Twitter 热门趋势歌曲列表。",
+      "post_social_media_status": "在社交媒体发布状态更新。"
+    },
+    "tools_count": 2,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 31,
+      "reason": "场景清晰工具相关，但工具集过于单薄，缺少获取歌曲内容或分析趋势的关键环节。",
+      "details": {
+        "scenario_quality": 8,
+        "tools_relevance": 9,
+        "tools_completeness": 6,
+        "scenario_tools_match": 8
+      }
+    }
+  },
+  {
+    "scenario": "摩托车车队任务分配与检查",
+    "tools": {
+      "GetAssignedVehicle": "获取指定任务所分配的车辆，用于创建检查清单。",
+      "Get Motorcycle Models by Make and Category": "根据厂商ID和类别获取摩托车车型列表。"
+    },
+    "tools_count": 2,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 26,
+      "reason": "场景清晰但工具集不完整，无法支撑完整的车队任务分配与检查流程。",
+      "details": {
+        "scenario_quality": 7,
+        "tools_relevance": 8,
+        "tools_completeness": 5,
+        "scenario_tools_match": 6
+      }
+    }
+  },
+  {
+    "scenario": "客户身份验证与通知服务",
+    "tools": {
+      "Phone Number Validation and Look-up": "验证电话号码有效性，并返回运营商、线路类型、携号转网状态、GeoIP 及时区等信息。",
+      "Send SMS with Sender Name": "发送带自定义发件人名称的短信。",
+      "Is a Business?": "验证指定电话号码是否注册为 WhatsApp Business 账户。",
+      "Get Delivery Report": "获取通过 2Factor.in 发送的事务性短信的投递报告。"
+    },
+    "tools_count": 4,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 30,
+      "reason": "工具集高度相关且匹配场景，但缺少核心的身份验证工具，完整性不足。",
+      "details": {
+        "scenario_quality": 8,
+        "tools_relevance": 9,
+        "tools_completeness": 6,
+        "scenario_tools_match": 7
+      }
+    }
+  },
+  {
+    "scenario": "热点话题追踪与内容挖掘",
+    "tools": {
+      "Get Hot Topics": "获取Google当前热门话题排行榜。",
+      "Get Posts from Subreddit": "根据用户自定义参数，检索指定子版块（subreddit）的帖子。",
+      "Twitter Auto Complete API": "返回Twitter搜索查询的自动补全结果。"
+    },
+    "tools_count": 3,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 24,
+      "reason": "场景清晰但工具集存在明显缺口，无法完整支撑热点话题的深度挖掘与分析。",
+      "details": {
+        "scenario_quality": 7,
+        "tools_relevance": 6,
+        "tools_completeness": 5,
+        "scenario_tools_match": 6
+      }
+    }
+  },
+  {
+    "scenario": "物流配送区域规划",
+    "tools": {
+      "Find Places by Prefix": "通过输入地点名称前缀搜索地点，并返回匹配地点列表及其地理信息。",
+      "IP Lookup": "返回指定IP地址的地理位置数据。",
+      "Get County Boundaries": "以GeoJSON格式返回指定县区的行政边界。",
+      "Search for Regions by Keyword": "支持按关键词搜索区域，返回匹配区域列表及其对应详情。"
+    },
+    "tools_count": 4,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 30,
+      "reason": "场景清晰实用，工具高度相关但缺乏核心规划分析工具。",
+      "details": {
+        "scenario_quality": 8,
+        "tools_relevance": 9,
+        "tools_completeness": 6,
+        "scenario_tools_match": 7
+      }
+    }
+  },
+  {
+    "scenario": "社交媒体与期货市场联动分析",
+    "tools": {
+      "Get Posts By Subreddit": "获取Reddit指定子版块（subreddit）中的帖子列表",
+      "Get User Likes": "获取指定用户已点赞的推文列表",
+      "Grains Futures Prices API": "获取Investing.com提供的谷物期货当前价格",
+      "Ticker Changes": "返回指定市场及交易代码（symbol）的行情代码（ticker）值与价格变动"
+    },
+    "tools_count": 4,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 24,
+      "reason": "场景有潜力但工具集不完整且相关性弱，社交媒体数据源单一且期货工具仅覆盖谷物，难以实现有效的联动分析。",
+      "details": {
+        "scenario_quality": 7,
+        "tools_relevance": 6,
+        "tools_completeness": 5,
+        "scenario_tools_match": 6
+      }
+    }
+  },
+  {
+    "scenario": "智能设备新闻推送服务",
+    "tools": {
+      "Get Device Asset Information": "根据唯一标识符获取指定设备资产的详细信息",
+      "Get Project": "返回指定ID的单个项目，包含项目详情及翻译状态",
+      "News Category": "获取按体育类别分类的新闻文章，支持按地区（locale）和时区筛选",
+      "Latest News API": "获取来自不同信源的最新新闻文章"
+    },
+    "tools_count": 4,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 24,
+      "reason": "场景描述清晰但工具集存在不相关项且功能不完整。",
+      "details": {
+        "scenario_quality": 7,
+        "tools_relevance": 6,
+        "tools_completeness": 5,
+        "scenario_tools_match": 6
+      }
+    }
+  },
+  {
+    "scenario": "能源行业招聘与市场分析",
+    "tools": {
+      "Gas Price Predictions": "提供加拿大各城市明日汽油价格的实时预测，并附带预期日环比变动（单位：美分）。",
+      "getFossilFuelPrice": "获取指定化石燃料的当前价格。",
+      "SERP Analysis": "针对给定搜索词返回 SERP（搜索引擎结果页）分析数据，包括关键词排名难度与流量潜力评估。",
+      "Jobs Search": "使用 Indeed 职位搜索 API，按关键词和地理位置检索职位。"
+    },
+    "tools_count": 4,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 28,
+      "reason": "场景清晰有价值，但工具集在支撑“市场分析”方面存在明显缺口，且部分工具相关性较弱。",
+      "details": {
+        "scenario_quality": 8,
+        "tools_relevance": 7,
+        "tools_completeness": 6,
+        "scenario_tools_match": 7
+      }
+    }
+  },
+  {
+    "scenario": "电商物流地址优化",
+    "tools": {
+      "GetMarketplaces": "获取指定项目所接入的电商平台列表。",
+      "Get All Products": "从数据库中检索产品列表及其对应编码。",
+      "Get addresses by postcode": "根据指定邮政编码，检索对应的地址或街道列表。",
+      "Postalcode to Location Information": "该接口支持批量查询一个或多个邮政编码，返回其地理位置等详细信息。"
+    },
+    "tools_count": 4,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 28,
+      "reason": "场景描述清晰但工具集存在冗余且缺少核心的地址优化或验证工具。",
+      "details": {
+        "scenario_quality": 7,
+        "tools_relevance": 8,
+        "tools_completeness": 6,
+        "scenario_tools_match": 7
+      }
+    }
+  },
+  {
+    "scenario": "印度政治新闻趋势分析",
+    "tools": {
+      "Politics News API": "获取最新政治新闻文章。",
+      "/v1/aggregation": "搜索新闻文章，并按小时或天统计文章数量。",
+      "Get News Articles": "从《印度今日》（India Today）平台获取最新新闻文章列表。"
+    },
+    "tools_count": 3,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 28,
+      "reason": "场景清晰但工具集存在功能重叠且缺少深度分析工具。",
+      "details": {
+        "scenario_quality": 7,
+        "tools_relevance": 8,
+        "tools_completeness": 6,
+        "scenario_tools_match": 7
+      }
+    }
+  },
+  {
+    "scenario": "TikTok音乐动态分析与展示",
+    "tools": {
+      "Format Units": "将给定数值按指定单位格式化并返回格式化后的字符串",
+      "jsAstModifier": "该函数根据提供的修改规则，修改JavaScript代码片段的抽象语法树（AST）",
+      "String Captcha": "生成字符串形式的验证码（CAPTCHA）",
+      "Get Music ID by URL": "从TikTok URL中提取音乐ID",
+      "Get Music Posts": "根据music_id获取音乐动态列表",
+      "Music Posts API": "根据指定music_id获取音乐动态列表，支持可选游标分页"
+    },
+    "tools_count": 6,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 26,
+      "reason": "场景清晰但工具集存在不相关项且分析功能不足。",
+      "details": {
+        "scenario_quality": 7,
+        "tools_relevance": 6,
+        "tools_completeness": 6,
+        "scenario_tools_match": 7
+      }
+    }
+  },
+  {
+    "scenario": "特殊学生体育课程优化",
+    "tools": {
+      "getAdaptedPEInformation": "获取适应性体育教育相关信息。",
+      "adaptive_learning.update_learning_path": "基于学生在自适应学习平台中的表现，更新其个性化学习路径"
+    },
+    "tools_count": 2,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 26,
+      "reason": "场景清晰但工具集不完整，缺少关键执行工具。",
+      "details": {
+        "scenario_quality": 7,
+        "tools_relevance": 8,
+        "tools_completeness": 5,
+        "scenario_tools_match": 6
+      }
+    }
+  },
+  {
+    "scenario": "民宿预订税费计算",
+    "tools": {
+      "Tax Rate Retrieval": "获取指定邮政编码对应的税率",
+      "Airbnb Search API": "按位置、关键词及其他条件搜索 Airbnb 房源"
+    },
+    "tools_count": 2,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 27,
+      "reason": "场景清晰但工具集不完整，缺少核心的税费计算工具。",
+      "details": {
+        "scenario_quality": 7,
+        "tools_relevance": 9,
+        "tools_completeness": 5,
+        "scenario_tools_match": 6
+      }
+    }
+  },
+  {
+    "scenario": "短视频内容本地化推广",
+    "tools": {
+      "Get TikTok Video Detail without Watermark": "获取无水印的TikTok视频详情，含标题、描述及其他元数据。",
+      "Convert/Translate/Download Subtitle": "转换、翻译并下载视频字幕；支持传入字幕URL、可选格式及目标语言；响应返回指定格式与语言的转换后字幕。",
+      "GIF Generation API": "该API用于从视频URL生成GIF动图。"
+    },
+    "tools_count": 3,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 26,
+      "reason": "场景清晰但工具集不完整，缺少本地化推广的核心处理工具。",
+      "details": {
+        "scenario_quality": 7,
+        "tools_relevance": 8,
+        "tools_completeness": 5,
+        "scenario_tools_match": 6
+      }
+    }
+  },
+  {
+    "scenario": "影视名言分享平台",
+    "tools": {
+      "Get All Motivational Quotes": "该端点返回全部励志名言；支持通过`skip`和`limit`参数实现分页。",
+      "Get Quote by Movie or TV Show Name": "通过影视作品名称检索其中的名言。",
+      "getRandomQuote": "从预设集合中随机返回一条名言。"
+    },
+    "tools_count": 3,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 30,
+      "reason": "场景清晰，工具高度相关，但工具集功能覆盖不足，缺少名言创建或管理能力。",
+      "details": {
+        "scenario_quality": 8,
+        "tools_relevance": 9,
+        "tools_completeness": 6,
+        "scenario_tools_match": 7
+      }
+    }
+  },
+  {
+    "scenario": "品牌社交媒体内容分析",
+    "tools": {
+      "Get IGTV Prostring": "从指定Instagram专业账号（prostring）获取IGTV内容。",
+      "Get Hashtag Posts": "按给定话题标签（hashtag）检索Instagram帖子。"
+    },
+    "tools_count": 2,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 26,
+      "reason": "场景清晰但工具集过于单一，无法支撑完整的社交媒体内容分析。",
+      "details": {
+        "scenario_quality": 7,
+        "tools_relevance": 8,
+        "tools_completeness": 5,
+        "scenario_tools_match": 6
+      }
+    }
+  },
+  {
+    "scenario": "动漫主题图片智能分类与分享",
+    "tools": {
+      "Image Hosting API": "用于在Imgur平台上传及获取图片的API",
+      "GET Label Detection": "利用视觉识别工具检测图像关联的标签或分类",
+      "Anime Wallpapers API": "获取与指定CP相关的动漫壁纸，支持按页码、敏感度过滤及可选画质参数"
+    },
+    "tools_count": 3,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 28,
+      "reason": "场景清晰但工具链存在逻辑缺口，无法完全支撑“智能分类与分享”的核心功能。",
+      "details": {
+        "scenario_quality": 7,
+        "tools_relevance": 8,
+        "tools_completeness": 6,
+        "scenario_tools_match": 7
+      }
+    }
+  },
+  {
+    "scenario": "英国航班增长与热门航线分析",
+    "tools": {
+      "United Kingdom Scheduled Flights Growth API": "该API提供英国定期出发航班的周度增长数据",
+      "Get Popular Airline Routes": "返回指定航空公司的热门航线列表（按热度排序）。"
+    },
+    "tools_count": 2,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 28,
+      "reason": "场景清晰但工具集不完整，无法完全支撑“增长与热门航线分析”的复合需求。",
+      "details": {
+        "scenario_quality": 7,
+        "tools_relevance": 8,
+        "tools_completeness": 6,
+        "scenario_tools_match": 7
+      }
+    }
+  },
+  {
+    "scenario": "加拿大地区业务拓展规划",
+    "tools": {
+      "Get Province/Territory Names": "获取全部省份/地区名称列表",
+      "City List": "返回加拿大指定省份内所有有效城市列表"
+    },
+    "tools_count": 2,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 27,
+      "reason": "场景清晰但工具集过于基础，无法支撑“业务拓展规划”的复杂需求。",
+      "details": {
+        "scenario_quality": 7,
+        "tools_relevance": 9,
+        "tools_completeness": 5,
+        "scenario_tools_match": 6
+      }
+    }
+  },
+  {
+    "scenario": "欧盟企业税务合规检查",
+    "tools": {
+      "VAT Validation and Tax Rates": "验证增值税（VAT）号码有效性，并返回关联企业的附加信息",
+      "Valistring VAT": "批量验证增值税（VAT）号码，获取每家公司对应的地址等信息",
+      "Valistring VAT Number": "验证欧盟增值税（VAT）号码，并检索其所属企业的相关信息",
+      "EU VAT Number Checker": "检查欧盟增值税（VAT）号码的有效性"
+    },
+    "tools_count": 4,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 29,
+      "reason": "场景清晰但工具功能高度重叠，缺乏对税务合规检查中其他关键环节（如申报、审计）的支持。",
+      "details": {
+        "scenario_quality": 7,
+        "tools_relevance": 9,
+        "tools_completeness": 6,
+        "scenario_tools_match": 7
+      }
+    }
+  },
+  {
+    "scenario": "加密货币投资分析",
+    "tools": {
+      "Get Technical Information of Cryptocurrency": "获取指定加密货币的技术信息",
+      "Historical Crypto Price API": "返回指定时间区间和加密货币的历史数据，包括开盘价、最高价、最低价和收盘价"
+    },
+    "tools_count": 2,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 30,
+      "reason": "场景清晰且工具高度相关，但工具集在支撑完整投资分析方面存在明显缺口。",
+      "details": {
+        "scenario_quality": 8,
+        "tools_relevance": 9,
+        "tools_completeness": 6,
+        "scenario_tools_match": 7
+      }
+    }
+  },
+  {
+    "scenario": "社交媒体股票热度分析",
+    "tools": {
+      "/get-social-trending/impressions": "获取社交媒体上按曝光量排序的前 50 只金融类股票代码（Ticker）。",
+      "Get Social Trending Likes": "获取按点赞数排序、并按社交平台及可选参数筛选的前 50 只热门股票代码（Ticker）。"
+    },
+    "tools_count": 2,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 27,
+      "reason": "场景清晰但工具集过于单一，无法支撑完整的“热度分析”任务。",
+      "details": {
+        "scenario_quality": 7,
+        "tools_relevance": 9,
+        "tools_completeness": 5,
+        "scenario_tools_match": 6
+      }
+    }
+  },
+  {
+    "scenario": "体育赛事多语言直播支持",
+    "tools": {
+      "Locales": "获取支持的本地化语言环境（locale）列表，用于翻译目的。",
+      "Get Teams Translations": "获取体育领域各球队名称的翻译。",
+      "Get Team Translations": "获取指定本地化语言环境下各球队名称的翻译。"
+    },
+    "tools_count": 3,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 26,
+      "reason": "场景清晰但工具集过于单一，仅聚焦队名翻译，无法支撑完整的“多语言直播”场景。",
+      "details": {
+        "scenario_quality": 7,
+        "tools_relevance": 8,
+        "tools_completeness": 5,
+        "scenario_tools_match": 6
+      }
+    }
+  },
+  {
+    "scenario": "外卖平台地址输入优化",
+    "tools": {
+      "/addresses/autocomplete": "根据搜索关键词提供地址建议结果",
+      "Address Autosuggest API": "地址自动补全 API 是一项网络服务，针对给定搜索词返回地址建议；通过 JSON 接口支持完整或部分地址查询的建议提取"
+    },
+    "tools_count": 2,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 32,
+      "reason": "场景清晰且工具高度相关，但工具集过于单一，无法完整支撑地址输入优化场景。",
+      "details": {
+        "scenario_quality": 9,
+        "tools_relevance": 10,
+        "tools_completeness": 5,
+        "scenario_tools_match": 8
+      }
+    }
+  },
+  {
+    "scenario": "短视频平台内容调研",
+    "tools": {
+      "Search": "在YouTube上搜索视频",
+      "Search Videos by Keywords": "基于关键词在TikTok上搜索视频，并支持按排序方式、发布时间、地区及分页进行筛选"
+    },
+    "tools_count": 2,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 28,
+      "reason": "场景清晰但工具集仅提供搜索功能，缺乏内容分析或数据导出等关键环节，完整性不足。",
+      "details": {
+        "scenario_quality": 7,
+        "tools_relevance": 8,
+        "tools_completeness": 6,
+        "scenario_tools_match": 7
+      }
+    }
+  },
+  {
+    "scenario": "宠物店犬种信息管理",
+    "tools": {
+      "Get Breeds by Type": "按类型检索犬种列表",
+      "Get All Dog Breeds": "获取全部犬种及其详细信息列表",
+      "Get Breed Information": "该接口返回某一特定犬种的详细信息"
+    },
+    "tools_count": 3,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 31,
+      "reason": "场景清晰工具相关，但工具集功能重叠且缺乏关键管理功能。",
+      "details": {
+        "scenario_quality": 8,
+        "tools_relevance": 9,
+        "tools_completeness": 6,
+        "scenario_tools_match": 8
+      }
+    }
+  },
+  {
+    "scenario": "圣训研究与分类查询",
+    "tools": {
+      "Get Hadith Collection by ID": "根据唯一 ID 获取指定圣训集（Hadith Collection）",
+      "Get Hadiths by Collection": "按圣训集分页检索圣训列表；每个圣训集包含若干分类，每条圣训归属于一个分类，每个分类隶属于一个圣训集；默认每页 10 条、第 1 页，支持自定义 limit 和 page 参数",
+      "Get Hadiths by Category": "按指定分类检索圣训列表；每条圣训关联一个分类及所属圣训集"
+    },
+    "tools_count": 3,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 35,
+      "reason": "场景清晰实用，工具高度相关且匹配，但工具集在高级查询功能上略有不足。",
+      "details": {
+        "scenario_quality": 9,
+        "tools_relevance": 10,
+        "tools_completeness": 7,
+        "scenario_tools_match": 9
+      }
+    }
+  },
+  {
+    "scenario": "社交媒体内容策划",
+    "tools": {
+      "Get Memes": "获取指定类型与风格（genre）的梗图（meme）列表。",
+      "Trending Memes": "获取指定 Reddit 子版块（subreddit）中最新的热门梗图。"
+    },
+    "tools_count": 2,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 28,
+      "reason": "场景清晰且工具相关，但工具集过于单一，无法完整支撑内容策划的完整流程。",
+      "details": {
+        "scenario_quality": 8,
+        "tools_relevance": 9,
+        "tools_completeness": 5,
+        "scenario_tools_match": 6
+      }
+    }
+  },
+  {
+    "scenario": "全球股指对比分析",
+    "tools": {
+      "Get Global Indices by Performance": "基于表现情况获取全球股票市场指数数据。",
+      "Get Major Indices": "获取指定国家在金融领域的主要股指数据。"
+    },
+    "tools_count": 2,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 27,
+      "reason": "场景清晰但工具集过于单薄，无法支撑深入的对比分析。",
+      "details": {
+        "scenario_quality": 7,
+        "tools_relevance": 9,
+        "tools_completeness": 5,
+        "scenario_tools_match": 6
+      }
+    }
+  },
+  {
+    "scenario": "动漫语录内容创作",
+    "tools": {
+      "Get Anime Quotes by Character": "按角色名称检索动漫语录",
+      "Get 10 Random Anime Quotes": "获取 10 条随机动漫语录。",
+      "Search Anime Quotes": "基于搜索关键词分页检索动漫语录",
+      "Get a Random Anime Quote": "获取一条来自动漫来源的随机语录。"
+    },
+    "tools_count": 4,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 35,
+      "reason": "场景清晰聚焦，工具高度相关且匹配，但功能略有重叠，完整性可提升。",
+      "details": {
+        "scenario_quality": 9,
+        "tools_relevance": 10,
+        "tools_completeness": 7,
+        "scenario_tools_match": 9
+      }
+    }
+  },
+  {
+    "scenario": "线下活动门票核销",
+    "tools": {
+      "Create QR Code": "为指定 URL 生成二维码，并以指定格式返回。",
+      "qrcodepro": "生成支持自定义参数（如尺寸、颜色、容错等级等）的二维码。"
+    },
+    "tools_count": 2,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 26,
+      "reason": "场景描述清晰但工具集不完整，缺少核心的核销验证工具。",
+      "details": {
+        "scenario_quality": 7,
+        "tools_relevance": 8,
+        "tools_completeness": 5,
+        "scenario_tools_match": 6
+      }
+    }
+  },
+  {
+    "scenario": "非洲市场资源与语言调研",
+    "tools": {
+      "African Country Resources": "提供非洲国家维持经济运转所依赖的最重要资源列表；输入国家名称作为参数，返回含描述的资源清单",
+      "Languages by Country": "返回指定非洲国家所使用语言的 JSON 对象信息"
+    },
+    "tools_count": 2,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 27,
+      "reason": "场景清晰但工具集不完整，无法全面支撑“调研”所需的深度分析。",
+      "details": {
+        "scenario_quality": 7,
+        "tools_relevance": 9,
+        "tools_completeness": 5,
+        "scenario_tools_match": 6
+      }
+    }
+  },
+  {
+    "scenario": "民宿投资选址分析",
+    "tools": {
+      "Download Filtered Amenities": "下载酒店或住宿设施的配套服务（amenities）列表，并支持按条件筛选。",
+      "Get Rent Zestimate and Comparable Properties": "返回房产租金估值（Rent Zestimate）及同区域可比房源信息。"
+    },
+    "tools_count": 2,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 28,
+      "reason": "场景清晰有价值，但工具集过于单薄，无法完整支撑投资选址分析。",
+      "details": {
+        "scenario_quality": 9,
+        "tools_relevance": 8,
+        "tools_completeness": 5,
+        "scenario_tools_match": 6
+      }
+    }
+  },
+  {
+    "scenario": "幽默内容创作助手",
+    "tools": {
+      "Get Joke": "从黑色幽默笑话工具中获取一则笑话。",
+      "Get Jokes By Specific Category": "按类别检索笑话列表，支持分页与排序。",
+      "/dad-jokes/random": "返回一则随机“老爸笑话”（Dad Joke）。"
+    },
+    "tools_count": 3,
+    "quality_evaluation": {
+      "is_valid": true,
+      "score": 28,
+      "reason": "场景清晰但工具集过于单一，仅能获取笑话，缺乏创作辅助功能。",
+      "details": {
+        "scenario_quality": 7,
+        "tools_relevance": 10,
+        "tools_completeness": 5,
+        "scenario_tools_match": 6
+      }
+    }
+  }
+]
